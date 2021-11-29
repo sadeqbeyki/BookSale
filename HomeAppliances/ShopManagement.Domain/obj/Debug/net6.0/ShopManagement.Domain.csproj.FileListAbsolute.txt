@@ -1,0 +1,17 @@
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ShopManagement.Domain.deps.json
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ref\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ShopManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\AppFramework.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\AppFramework.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.csproj.AssemblyReference.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.AssemblyInfoInputs.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.AssemblyInfo.cs
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.csproj.CoreCompileInputs.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.csproj.CopyComplete
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ref\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\obj\Debug\net6.0\ShopManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Domain\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb

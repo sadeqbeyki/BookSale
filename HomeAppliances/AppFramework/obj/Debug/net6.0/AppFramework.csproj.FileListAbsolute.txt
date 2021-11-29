@@ -1,0 +1,11 @@
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\bin\Debug\net6.0\AppFramework.deps.json
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\bin\Debug\net6.0\AppFramework.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\bin\Debug\net6.0\ref\AppFramework.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\bin\Debug\net6.0\AppFramework.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.GeneratedMSBuildEditorConfig.editorconfig
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.AssemblyInfoInputs.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.AssemblyInfo.cs
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.csproj.CoreCompileInputs.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\ref\AppFramework.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.pdb

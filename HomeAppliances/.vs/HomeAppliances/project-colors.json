@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6703a150-8c74-421e-bc38-994d023f648c": {
+      "ProjectGuid": "6703a150-8c74-421e-bc38-994d023f648c",
+      "DisplayName": "ShopManagement.Domain",
+      "ColorIndex": 0
+    },
+    "3769d0e6-0be0-4f97-8adf-b39441f8051d": {
+      "ProjectGuid": "3769d0e6-0be0-4f97-8adf-b39441f8051d",
+      "DisplayName": "AppFramework",
+      "ColorIndex": 1
+    },
+    "6b17c1d8-21b2-4ac3-9627-75c806d1eb60": {
+      "ProjectGuid": "6b17c1d8-21b2-4ac3-9627-75c806d1eb60",
+      "DisplayName": "ShopManagement.Application.Contracts",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
