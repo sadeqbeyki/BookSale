@@ -15,7 +15,6 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\ServiceHost.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\ref\ServiceHost.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\ServiceHost.pdb
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\FluentAssertions.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
