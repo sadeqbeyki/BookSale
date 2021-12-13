@@ -11,8 +11,11 @@ namespace ShopManagement.Application.Contracts.ProductCategory
         public string Picture { get; set; }
         public string PictureAlt { get; set; }
         public string PictureTitle { get; set; }
+        [Required(ErrorMessage = ValidationMessage.IsRequired)]
         public string Keywords { get; set; }
+        [Required(ErrorMessage = ValidationMessage.IsRequired)]
         public string MetaDescription { get; set; }
+        [Required(ErrorMessage = ValidationMessage.IsRequired)]
         public string Slug { get; set; }
     }
 }
