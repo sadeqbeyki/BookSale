@@ -6,6 +6,8 @@ using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Infrastructure.EFCore;
 using ShopManagement.Infrastructure.EFCore.Repositories;
 using Microsoft.Extensions.DependencyInjection;
+using ShopManagement.Domain.ProductAgg;
+using ShopManagement.Application.Contracts.Product;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,8 @@ var connectionString = builder.Configuration.GetConnectionString("HomeAppliances
 builder.Services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
 builder.Services.AddTransient<IProductCategoryApplication, ProductCategoryApplication>();
 builder.Services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>(); 
+builder.Services.AddTransient<IProductApplication, ProductApplication>();
 
 builder.Services.AddRazorPages();
 
