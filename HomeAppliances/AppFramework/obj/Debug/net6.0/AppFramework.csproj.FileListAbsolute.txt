@@ -9,4 +9,3 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\ref\AppFramework.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.pdb
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppFramework\obj\Debug\net6.0\AppFramework.csproj.AssemblyReference.cache

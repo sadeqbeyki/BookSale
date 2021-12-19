@@ -1,6 +1,7 @@
 ﻿using AppFramework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repositories
@@ -13,7 +14,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
         {
             _context = context;
         }
-
         public EditProduct GetDetails(long id)
         {
             return _context.Products.Select(p => new EditProduct 
@@ -45,6 +45,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 Code = x.Code,
                 Picture = x.Picture,
                 UnitPrice = x.UnitPrice,
+                CreationDate = x.CreationDate.ToString()
             });
             if(!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x=>x.Name.Contains(searchModel.Name));
