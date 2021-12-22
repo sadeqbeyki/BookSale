@@ -50,14 +50,14 @@ namespace ShopManagement.Application
             return _productRepository.GetDetails(id);
         }
 
-        public OperationResult InStock(long id)
+        public OperationResult IsInStock(long id)
         {
             var operation = new OperationResult();
             var product = _productRepository.Get(id);
             if (product == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            product.InStock();
+            product.IsInStock();
             _productRepository.SaveChanges();
             return operation.Succeeded();
         }
