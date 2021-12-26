@@ -71,9 +71,3 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6.0\scopedcss\Areas\Administration\Pages\Shared\_AdminLayout.cshtml.rz.scp.css
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Humanizer.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs

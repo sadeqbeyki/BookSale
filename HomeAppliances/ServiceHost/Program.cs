@@ -8,6 +8,8 @@ using ShopManagement.Infrastructure.EFCore.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Domain.ProductPictureAgg;
+using ShopManagement.Application.Contracts.ProductPicture;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ builder.Services.AddTransient<IProductCategoryApplication, ProductCategoryApplic
 builder.Services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>(); 
 builder.Services.AddTransient<IProductApplication, ProductApplication>();
+builder.Services.AddTransient<IProductPictureRepository,ProductPictureRepository>();
+builder.Services.AddTransient<IProductPictureApplication, ProductPictureApplication>();
 
 builder.Services.AddRazorPages();
 
