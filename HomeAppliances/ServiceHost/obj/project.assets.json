@@ -643,6 +643,19 @@
           "bin/placeholder/AppFramework.dll": {}
         }
       },
+      "AppQuery/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppQuery.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppQuery.dll": {}
+        }
+      },
       "ShopManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1894,6 +1907,11 @@
       "path": "../AppFramework/AppFramework.csproj",
       "msbuildProject": "../AppFramework/AppFramework.csproj"
     },
+    "AppQuery/1.0.0": {
+      "type": "project",
+      "path": "../AppQuery/AppQuery.csproj",
+      "msbuildProject": "../AppQuery/AppQuery.csproj"
+    },
     "ShopManagement.Application/1.0.0": {
       "type": "project",
       "path": "../ShopManagement.Application/ShopManagement.Application.csproj",
@@ -1922,6 +1940,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AppQuery >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
       "ShopManagement.Configuration >= 1.0.0",
@@ -1955,6 +1974,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj": {
+              "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj"
+            },
             "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
               "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
             }

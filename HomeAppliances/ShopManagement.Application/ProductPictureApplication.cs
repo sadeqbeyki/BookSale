@@ -18,7 +18,7 @@ namespace ShopManagement.Application
             var operation=new OperationResult();
             if (_productPictureRepository.Exists(x => x.Picture == command.Picture && x.ProductId == command.ProductId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
-
+            
             var productPicture = new ProductPicture(command.ProductId, 
                 command.Picture, command.PictureAlt, command.PictureTitle);
             _productPictureRepository.Create(productPicture);

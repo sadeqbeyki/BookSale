@@ -31,7 +31,6 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         {
             var command = new CreateProduct
             {
-                //Categories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name")
                 Categories = _productCategoryApplication.GetProductCategories()
             };
             return Partial("./Create", command);
@@ -46,7 +45,6 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         public PartialViewResult OnGetEdit(long id)
         {
             var product = _productApplication.GetDetails(id);
-            //product.Categories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id" , "Name");
             product.Categories = _productCategoryApplication.GetProductCategories();
             return Partial("Edit", product);
         }
