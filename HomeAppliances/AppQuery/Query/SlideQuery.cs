@@ -3,7 +3,7 @@ using ShopManagement.Infrastructure.EFCore;
 
 namespace AppQuery.Query
 {
-    public class SlideQuery:ISlideQuery
+    public class SlideQuery : ISlideQuery
     {
         private readonly ShopContext _context;
 
@@ -12,18 +12,20 @@ namespace AppQuery.Query
             _context = context;
         }
 
-        public List<SlideQueryModel> GetSlide()
+        public List<SlideQueryModel> GetSlides()
         {
-            return _context.Slides.Where(x=>x.IsRemoved==false).Select(x=>new SlideQueryModel
+            return _context.Slides
+                .Where(x => x.IsRemoved == false)
+                .Select(x => new SlideQueryModel
             {
-                Picture=x.Picture,
-                PictureAlt=x.PictureAlt,
-                PictureTitle=x.PictureTitle,
-                Heading=x.Heading,
-                Title=x.Title,
-                Text=x.Text,
-                Link=x.Link,
-                BtnText=x.BtnText
+                Picture = x.Picture,
+                PictureAlt = x.PictureAlt,
+                PictureTitle = x.PictureTitle,
+                Heading = x.Heading,
+                Title = x.Title,
+                Text = x.Text,
+                Link = x.Link,
+                BtnText = x.BtnText
             }).ToList();
         }
     }

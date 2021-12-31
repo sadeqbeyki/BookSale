@@ -71,3 +71,5 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6.0\scopedcss\Areas\Administration\Pages\Shared\_AdminLayout.cshtml.rz.scp.css
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Humanizer.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\AppQuery.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\AppQuery.pdb

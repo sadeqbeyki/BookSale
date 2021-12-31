@@ -2,6 +2,6 @@
 {
     public  interface ISlideQuery
     {
-        List<SlideQueryModel> GetSlide();
+        List<SlideQueryModel> GetSlides();
     }
 }

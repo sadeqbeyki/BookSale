@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ServiceHost/1.0.0": {
         "dependencies": {
+          "AppQuery": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "ShopManagement.Configuration": "1.0.0",
@@ -422,6 +423,14 @@
           "AppFramework.dll": {}
         }
       },
+      "AppQuery/1.0.0": {
+        "dependencies": {
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "runtime": {
+          "AppQuery.dll": {}
+        }
+      },
       "ShopManagement.Application/1.0.0": {
         "dependencies": {
           "ShopManagement.Application.Contracts": "1.0.0",
@@ -772,6 +781,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "AppFramework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AppQuery/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -58,7 +58,7 @@ body {
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'IranianSans', sans-serif;
 	font-size: 12px;
 	font-weight: 400;
 	font-style: normal;
@@ -511,7 +511,7 @@ select {
 }
 
 .navigation-menu-wrapper nav > ul > li.menu-item-has-children > a::after {
-	font-family: Ionicons;
+	font-family: IranianSans, Ionicons;
 	font-size: 11px;
 	font-weight: 300;
 	float: right;
@@ -590,7 +590,7 @@ select {
 }
 
 .navigation-menu-wrapper .sub-menu li.menu-item-has-children > a::after {
-	font-family: Ionicons;
+	font-family: IranianSans,Ionicons;
 	font-size: 11px;
 	font-weight: 300;
 	float: right;
@@ -905,7 +905,7 @@ select {
 }
 
 .mini-cart .cart-calculation table tbody tr td:last-child {
-	font-family: 'Karla', sans-serif;
+	font-family: IranianSans, sans-serif;
 	font-weight: 700;
 }
 
@@ -2351,7 +2351,7 @@ select {
 }
 
 .single-grid-product__price {
-	font-family: 'Karla', sans-serif;
+	font-family: 'IranianSans', sans-serif;
 }
 
 .single-grid-product__price .main-price {
@@ -4934,7 +4934,7 @@ select {
 }
 
 .checkout-form .check-box input[type='checkbox'] + label::after {
-	font-family: Fontawesome;
+	font-family: IranianSans;
 	font-size: 12px;
 	line-height: 20px;
 	position: absolute;
@@ -5451,7 +5451,7 @@ select {
 }
 
 .login-form .check-box input[type='checkbox'] + label::after {
-	font-family: Fontawesome;
+	font-family: IranianSans;
 	font-size: 12px;
 	line-height: 20px;
 	position: absolute;
