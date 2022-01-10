@@ -1,6 +1,6 @@
 ﻿namespace AppQuery.Contracts.Slide
 {
-    public  interface ISlideQuery
+    public  interface ISideQuery
     {
         List<SlideQueryModel> GetSlides();
     }

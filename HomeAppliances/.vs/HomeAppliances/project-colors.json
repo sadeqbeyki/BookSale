@@ -45,7 +45,12 @@
       "ProjectGuid": "58550d24-8f54-45f8-ad33-644645c23bba",
       "DisplayName": "AppQuery",
       "ColorIndex": 7
+    },
+    "f4470807-1957-4919-ab93-e2c5f713beaf": {
+      "ProjectGuid": "f4470807-1957-4919-ab93-e2c5f713beaf",
+      "DisplayName": "DiscountManagement.Domain",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 9
 }

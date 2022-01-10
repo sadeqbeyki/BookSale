@@ -3,7 +3,7 @@ using ShopManagement.Infrastructure.EFCore;
 
 namespace AppQuery.Query
 {
-    public class SlideQuery : ISlideQuery
+    public class SlideQuery : ISideQuery
     {
         private readonly ShopContext _context;
 

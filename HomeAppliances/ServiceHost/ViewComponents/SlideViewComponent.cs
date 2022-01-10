@@ -5,9 +5,9 @@ namespace ServiceHost.ViewComponents;
 
 public class SlideViewComponent : ViewComponent
 {
-    private readonly ISlideQuery _slideQuery;
+    private readonly ISideQuery _slideQuery;
 
-    public SlideViewComponent(ISlideQuery slideQuery)
+    public SlideViewComponent(ISideQuery slideQuery)
     {
         _slideQuery = slideQuery;
     }

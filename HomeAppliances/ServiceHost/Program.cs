@@ -1,3 +1,4 @@
+using AppQuery.Contracts.ProductCategory;
 using AppQuery.Contracts.Slide;
 using AppQuery.Query;
 using Microsoft.EntityFrameworkCore;
@@ -34,8 +35,8 @@ builder.Services.AddTransient<IProductPictureApplication, ProductPictureApplicat
 builder.Services.AddTransient<ISlideApplication, SlideApplication>();
 builder.Services.AddTransient<ISlideRepository, SlideRepository>();
 
-builder.Services.AddTransient<ISlideQuery, SlideQuery>();
-
+builder.Services.AddTransient<ISideQuery, SlideQuery>();
+builder.Services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
 
 builder.Services.AddRazorPages();
 
