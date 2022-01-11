@@ -122,6 +122,338 @@
         }
       }
     },
+    "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "projectName": "DiscountManagement.Application.Contract",
+        "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "packagesPath": "C:\\Users\\cix\\.nuget\\packages\\",
+        "outputPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "projectName": "DiscountManagement.Application",
+        "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\cix\\.nuget\\packages\\",
+        "outputPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
+        "projectName": "DiscountManagement.Configuration",
+        "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
+        "packagesPath": "C:\\Users\\cix\\.nuget\\packages\\",
+        "outputPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application\\DiscountManagement.Application.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "projectName": "DiscountManagement.Domain",
+        "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\cix\\.nuget\\packages\\",
+        "outputPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "projectName": "DiscountManagement.Infrastructure.EFCore",
+        "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "packagesPath": "C:\\Users\\cix\\.nuget\\packages\\",
+        "outputPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Infrastructure.EFCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\ServiceHost.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -148,6 +480,9 @@
             "projectReferences": {
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"
               },
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
@@ -345,6 +680,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj"
+              },
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Application\\ShopManagement.Application.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Application\\ShopManagement.Application.csproj"
               },
@@ -364,13 +702,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.Extensions.DependencyInjection": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
-              "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.1, )"
             }
           },
           "imports": [

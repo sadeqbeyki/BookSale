@@ -50,7 +50,27 @@
       "ProjectGuid": "f4470807-1957-4919-ab93-e2c5f713beaf",
       "DisplayName": "DiscountManagement.Domain",
       "ColorIndex": 8
+    },
+    "d0e49439-3e73-41dd-93ff-12af75d11803": {
+      "ProjectGuid": "d0e49439-3e73-41dd-93ff-12af75d11803",
+      "DisplayName": "DiscountManagement.Application",
+      "ColorIndex": 9
+    },
+    "d3378e9d-613f-4eba-8591-d4c1debc3a8f": {
+      "ProjectGuid": "d3378e9d-613f-4eba-8591-d4c1debc3a8f",
+      "DisplayName": "DiscountManagement.Application.Contract",
+      "ColorIndex": 10
+    },
+    "1f273c75-2bf6-4df7-b9e0-b96dcce81827": {
+      "ProjectGuid": "1f273c75-2bf6-4df7-b9e0-b96dcce81827",
+      "DisplayName": "DiscountManagement.Infrastructure.EFCore",
+      "ColorIndex": 11
+    },
+    "1faf0ba3-7831-46f6-823a-cecebb19274e": {
+      "ProjectGuid": "1faf0ba3-7831-46f6-823a-cecebb19274e",
+      "DisplayName": "DiscountManagement.Configuration",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 13
 }

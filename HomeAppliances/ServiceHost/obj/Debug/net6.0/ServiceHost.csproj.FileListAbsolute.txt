@@ -73,3 +73,13 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\AppQuery.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\AppQuery.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Application.Contract.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Application.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Configuration.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Configuration.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Application.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Application.Contract.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Infrastructure.EFCore.pdb

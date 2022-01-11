@@ -21,3 +21,7 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configurati
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\obj\Debug\net6.0\ShopManagement.Configuration.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\obj\Debug\net6.0\ref\ShopManagement.Configuration.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\obj\Debug\net6.0\ShopManagement.Configuration.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Configuration.runtimeconfig.json
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\obj\Debug\net6.0\ShopManagement.Configuration.genruntimeconfig.cache
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\bin\Debug\net6.0\AppQuery.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ShopManagement.Configuration\bin\Debug\net6.0\AppQuery.pdb

@@ -40,13 +40,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Domain",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Application", "DM.Application", "{B9B3A1DE-02FB-4670-859D-5068FD7CEA3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{D0E49439-3E73-41DD-93FF-12AF75D11803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{D0E49439-3E73-41DD-93FF-12AF75D11803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Application.Contract", "DiscountManagement.Application.Contract\DiscountManagement.Application.Contract.csproj", "{D3378E9D-613F-4EBA-8591-D4C1DEBC3A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application.Contract", "DiscountManagement.Application.Contract\DiscountManagement.Application.Contract.csproj", "{D3378E9D-613F-4EBA-8591-D4C1DEBC3A8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Infrastructure", "DM.Infrastructure", "{A668A6E5-B166-4E18-932A-7EA9556DF6F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Configuration", "DiscountManagement.Configuration\DiscountManagement.Configuration.csproj", "{1FAF0BA3-7831-46F6-823A-CECEBB19274E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +104,10 @@ Global
 		{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FAF0BA3-7831-46F6-823A-CECEBB19274E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAF0BA3-7831-46F6-823A-CECEBB19274E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAF0BA3-7831-46F6-823A-CECEBB19274E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAF0BA3-7831-46F6-823A-CECEBB19274E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{D3378E9D-613F-4EBA-8591-D4C1DEBC3A8F} = {B9B3A1DE-02FB-4670-859D-5068FD7CEA3E}
 		{A668A6E5-B166-4E18-932A-7EA9556DF6F7} = {710939C7-C65B-4A4A-9A87-788AEC180A95}
 		{1F273C75-2BF6-4DF7-B9E0-B96DCCE81827} = {A668A6E5-B166-4E18-932A-7EA9556DF6F7}
+		{1FAF0BA3-7831-46F6-823A-CECEBB19274E} = {A668A6E5-B166-4E18-932A-7EA9556DF6F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C28E221-7CEE-4F56-A77B-84ECC8F5FB1F}

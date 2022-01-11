@@ -9,6 +9,7 @@
       "ServiceHost/1.0.0": {
         "dependencies": {
           "AppQuery": "1.0.0",
+          "DiscountManagement.Configuration": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "ShopManagement.Configuration": "1.0.0",
@@ -431,6 +432,54 @@
           "AppQuery.dll": {}
         }
       },
+      "DiscountManagement.Application/1.0.0": {
+        "dependencies": {
+          "DiscountManagement.Application.Contract": "1.0.0",
+          "DiscountManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Application.dll": {}
+        }
+      },
+      "DiscountManagement.Application.Contract/1.0.0": {
+        "dependencies": {
+          "AppFramework": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Application.Contract.dll": {}
+        }
+      },
+      "DiscountManagement.Configuration/1.0.0": {
+        "dependencies": {
+          "DiscountManagement.Application": "1.0.0",
+          "DiscountManagement.Application.Contract": "1.0.0",
+          "DiscountManagement.Domain": "1.0.0",
+          "DiscountManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Configuration.dll": {}
+        }
+      },
+      "DiscountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "AppFramework": "1.0.0",
+          "DiscountManagement.Application.Contract": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Domain.dll": {}
+        }
+      },
+      "DiscountManagement.Infrastructure.EFCore/1.0.0": {
+        "dependencies": {
+          "DiscountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "runtime": {
+          "DiscountManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
       "ShopManagement.Application/1.0.0": {
         "dependencies": {
           "ShopManagement.Application.Contracts": "1.0.0",
@@ -450,8 +499,7 @@
       },
       "ShopManagement.Configuration/1.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "AppQuery": "1.0.0",
           "ShopManagement.Application": "1.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
@@ -786,6 +834,31 @@
       "sha512": ""
     },
     "AppQuery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DiscountManagement.Infrastructure.EFCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
