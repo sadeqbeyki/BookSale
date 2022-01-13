@@ -13,3 +13,7 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Applica
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\bin\Debug\net6.0\AppFramework.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\obj\Debug\net6.0\DiscountManagement.Application.Contract.csproj.AssemblyReference.cache
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\obj\Debug\net6.0\DiscountManagement.Application.Contract.csproj.CopyComplete
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\bin\Debug\net6.0\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\bin\Debug\net6.0\ShopManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application.Contract\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb

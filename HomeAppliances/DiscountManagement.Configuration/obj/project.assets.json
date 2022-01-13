@@ -663,7 +663,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AppFramework": "1.0.0"
+          "AppFramework": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DiscountManagement.Application.Contract.dll": {}
@@ -691,7 +692,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DiscountManagement.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
@@ -733,7 +734,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
           "ShopManagement.Domain": "1.0.0"
         },

@@ -148,6 +148,9 @@
             "projectReferences": {
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppFramework\\AppFramework.csproj"
+              },
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }
@@ -422,7 +425,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -831,7 +834,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

@@ -504,7 +504,8 @@
       },
       "DiscountManagement.Application.Contract/1.0.0": {
         "dependencies": {
-          "AppFramework": "1.0.0"
+          "AppFramework": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
         },
         "runtime": {
           "DiscountManagement.Application.Contract.dll": {}

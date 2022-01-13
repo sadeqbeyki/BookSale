@@ -31,15 +31,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 PictureTitle = p.PictureTitle,
                 ShortDescription = p.ShortDescription,
                 UnitPrice = p.UnitPrice
-            }).FirstOrDefault(p => p.Id == id);
+            }).FirstOrDefault(x => x.Id == id);
         }
 
         public List<ProductViewModel> GetProducts()
         {
-            return _context.Products.Select(x=>new ProductViewModel
+            return _context.Products.Select(x => new ProductViewModel
             {
-                Id=x.Id,
-                Name=x.Name
+                Id = x.Id,
+                Name = x.Name
             }).ToList();
         }
 
@@ -48,17 +48,17 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
             var query = _context.Products
                 .Include(x => x.Category)
                 .Select(x => new ProductViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Category = x.Category.Name,
-                CategoryId = x.CategoryId,
-                Code = x.Code,
-                Picture = x.Picture,
-                UnitPrice = x.UnitPrice,
-                InStock = x.InStock,
-                CreationDate = x.CreationDate.ToFarsi()
-            });
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Category = x.Category.Name,
+                    CategoryId = x.CategoryId,
+                    Code = x.Code,
+                    Picture = x.Picture,
+                    UnitPrice = x.UnitPrice,
+                    InStock = x.InStock,
+                    CreationDate = x.CreationDate.ToFarsi()
+                });
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 

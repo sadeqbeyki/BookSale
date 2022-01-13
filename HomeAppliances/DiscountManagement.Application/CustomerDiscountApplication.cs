@@ -33,8 +33,9 @@ namespace DiscountManagement.Application
         {
             var operation = new OperationResult();
             var customerDiscount = _customerDiscountRepository.Get(command.Id);
+
             if (customerDiscount == null)
-                operation.Failed(ApplicationMessages.RecordNotFound);
+                return operation.Failed(ApplicationMessages.RecordNotFound);
 
             if (_customerDiscountRepository.Exists(x => x.ProductId == command.ProductId
             && x.DiscountRate == command.DiscountRate && x.Id != command.Id))
@@ -42,8 +43,7 @@ namespace DiscountManagement.Application
 
             var startDate = command.StartDate.ToGeorgianDateTime();
             var endDate = command.EndDate.ToGeorgianDateTime();
-            customerDiscount.Edit
-                (command.ProductId, command.DiscountRate, startDate, endDate, command.Reason);
+            customerDiscount.Edit(command.ProductId, command.DiscountRate, startDate, endDate, command.Reason);
             _customerDiscountRepository.SaveChanges();
             return operation.Succeeded();
         }
@@ -53,7 +53,7 @@ namespace DiscountManagement.Application
             return _customerDiscountRepository.GetDetails(id);
         }
 
-        public List<CustomerDisciuntViewModel> Search(CustomerDiscountSearchModel searchModel)
+        public List<CustomerDiscountViewModel> Search(CustomerDiscountSearchModel searchModel)
         {
             return _customerDiscountRepository.Search(searchModel);
         }

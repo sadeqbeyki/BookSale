@@ -17,3 +17,7 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Applica
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\obj\Debug\net6.0\DiscountManagement.Application.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\obj\Debug\net6.0\ref\DiscountManagement.Application.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\obj\Debug\net6.0\DiscountManagement.Application.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\bin\Debug\net6.0\ShopManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\DiscountManagement.Application\bin\Debug\net6.0\ShopManagement.Domain.pdb
