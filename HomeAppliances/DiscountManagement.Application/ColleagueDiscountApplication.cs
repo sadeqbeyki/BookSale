@@ -25,11 +25,10 @@ namespace DiscountManagement.Application
             _colleagueDiscountRepository.SaveChanges();
             return operation.Succeeded();
         }
-
         public OperationResult Edit(EditColleagueDiscount command)
         {
             var operation = new OperationResult();
-            var colleagueDiscount = _colleagueDiscountRepository.Get(command.ProductId);
+            var colleagueDiscount = _colleagueDiscountRepository.Get(command.Id);
             if (colleagueDiscount == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 

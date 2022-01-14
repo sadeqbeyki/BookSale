@@ -2,7 +2,7 @@
 
 namespace DiscountManagement.Domain.ColleagueDiscountAgg
 {
-    public class ColleagueDiscount:EntityBase
+    public class ColleagueDiscount : EntityBase
     {
         public long ProductId { get; private set; }
         public int DiscountRate { get; private set; }
@@ -13,7 +13,7 @@ namespace DiscountManagement.Domain.ColleagueDiscountAgg
             DiscountRate = discountRate;
             IsRemoved = false;
         }
-        public void Edit (long productId, int discountRate)
+        public void Edit(long productId, int discountRate)
         {
             ProductId = productId;
             DiscountRate = discountRate;
@@ -24,7 +24,7 @@ namespace DiscountManagement.Domain.ColleagueDiscountAgg
         }
         public void Restore()
         {
-            IsRemoved=false;
+            IsRemoved = false;
         }
     }
 }

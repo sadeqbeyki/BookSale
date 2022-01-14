@@ -19,27 +19,28 @@ namespace DiscountManagement.Infrastructure.EFCore.Repositories
 
         public EditColleagueDiscount GetDetails(long id)
         {
-            return _discountContext.CustomerDiscounts.Select(c => new EditColleagueDiscount
+            return _discountContext.ColleagueDiscounts.Select(c => new EditColleagueDiscount
             {
-                Id = id,
+                Id = c.Id,
                 ProductId = c.ProductId,
-                DiscountRate = c.DiscountRate,
-            }).FirstOrDefault(x=>x.Id==id);
+                DiscountRate = c.DiscountRate
+            }).FirstOrDefault(x => x.Id == id);
         }
 
         public List<ColleagueDiscountViewModel> Search(ColleagueDiscountSearchModel searchModel)
         {
-            var products = _shopContext.Products.Select(x => new {x.Id, x.Name }).ToList(); 
-            var query = _discountContext.CustomerDiscounts.Select(x => new ColleagueDiscountViewModel
+            var products = _shopContext.Products.Select(x => new { x.Id, x.Name }).ToList();
+            var query = _discountContext.ColleagueDiscounts.Select(x => new ColleagueDiscountViewModel
             {
                 Id = x.Id,
                 ProductId = x.ProductId,
-                DisciuntRate = x.DiscountRate,
-                CreationDate = x.CreationDate.ToFarsi()
+                DiscountRate = x.DiscountRate,
+                CreationDate = x.CreationDate.ToFarsi(),
+                IsRemoved = x.IsRemoved
             });
 
-            if(searchModel.ProductId>0)
-                query = query.Where(x=>x.ProductId==searchModel.ProductId);
+            if (searchModel.ProductId > 0)
+                query = query.Where(x => x.ProductId == searchModel.ProductId);
             var discounts = query.OrderByDescending(x => x.Id).ToList();
             discounts.ForEach(discount =>
             discount.Product = products.FirstOrDefault(x => x.Id == discount.ProductId)?.Name);

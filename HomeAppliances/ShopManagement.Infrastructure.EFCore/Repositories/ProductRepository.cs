@@ -26,11 +26,11 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 Description = p.Description,
                 Keywords = p.Keywords,
                 MetaDescription = p.MetaDescription,
-                Picture = p.Picture,
                 PictureAlt = p.PictureAlt,
                 PictureTitle = p.PictureTitle,
                 ShortDescription = p.ShortDescription,
-                UnitPrice = p.UnitPrice
+                //Picture = p.Picture,
+                //UnitPrice = p.UnitPrice
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -55,10 +55,11 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                     CategoryId = x.CategoryId,
                     Code = x.Code,
                     Picture = x.Picture,
-                    UnitPrice = x.UnitPrice,
-                    InStock = x.InStock,
+                    //UnitPrice = x.UnitPrice,
+                    //InStock = x.InStock,
                     CreationDate = x.CreationDate.ToFarsi()
                 });
+
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 

@@ -1,4 +1,5 @@
 using DiscountManagement.Configuration;
+using InventoryManagement.Configuration;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Configuration;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("HomeAppliancesDB");
 ShopManagementBootstraper.Configure(builder.Services, connectionString);
 DiscountManagementBootstrapper.Configure(builder.Services, connectionString);
+InventoryManagementBootstrapper.Configure(builder.Services, connectionString);
 
 builder.Services.AddRazorPages();
 

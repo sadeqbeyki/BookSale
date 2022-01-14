@@ -83,3 +83,13 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Application.Contract.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Domain.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\DiscountManagement.Infrastructure.EFCore.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Application.Contract.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Application.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Configuration.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Infrastructure.EFCore.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Configuration.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Application.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Application.Contract.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Infrastructure.EFCore.pdb
