@@ -478,7 +478,8 @@
       },
       "InventoryManagement.Application.Contract/1.0.0": {
         "dependencies": {
-          "AppFramework": "1.0.0"
+          "AppFramework": "1.0.0",
+          "ShopManagement.Application.Contracts": "1.0.0"
         },
         "runtime": {
           "InventoryManagement.Application.Contract.dll": {}

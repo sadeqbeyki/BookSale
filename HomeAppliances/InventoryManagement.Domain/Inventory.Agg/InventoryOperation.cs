@@ -5,7 +5,7 @@
         public long Id { get; private set; }
         public bool Operation { get; private set; }
         public long Count { get; private set; }
-        public long OperationId { get; private set; }
+        public long OperatorId { get; private set; }
         public DateTime OperationDate { get; private set; }
         public long CurrentCount { get; private set; }
         public string Descriotion { get; set; }
@@ -19,11 +19,12 @@
         {
             Operation = operation;
             Count = count;
-            OperationId = operationId;
+            OperatorId = operationId;
             CurrentCount = currentCount;
             Descriotion = descriotion;
             OrderId = orderId;
             InventoryId = inventoryId;
+            OperationDate = DateTime.Now;
         }
     }
 }

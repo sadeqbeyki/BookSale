@@ -52,20 +52,4 @@ public class IndexModel : PageModel
         var result = _productApplication.Edit(command);
         return new JsonResult(result);
     }
-    public IActionResult OnGetOutOfStock(long id)
-    {
-        var result = _productApplication.OutOfStock(id);
-        if (result.IsSucceeded)
-            return RedirectToPage("./Index");
-        Message = result.Message;
-        return RedirectToPage("./Index");
-    }
-    public IActionResult OnGetIsInStock(long id)
-    {
-        var result = _productApplication.IsInStock(id);
-        if (result.IsSucceeded)
-            return RedirectToPage("./Index");
-        Message = result.Message;
-        return RedirectToPage("./Index");
-    }
 }

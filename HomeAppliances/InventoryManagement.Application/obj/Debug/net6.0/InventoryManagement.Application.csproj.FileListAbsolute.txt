@@ -17,3 +17,5 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Applic
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Application\obj\Debug\net6.0\InventoryManagement.Application.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Application\bin\Debug\net6.0\InventoryManagement.Domain.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Application\bin\Debug\net6.0\InventoryManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Application\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\InventoryManagement.Application\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb
