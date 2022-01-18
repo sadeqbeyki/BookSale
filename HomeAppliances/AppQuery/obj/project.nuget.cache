@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+6WmOxreAQ/zLppgGnKZgh58wHwMgYnB8c8c3U9Zj4fIizAEhMzRCBL+6DawjgPlDc50bkNuq2oaYJEqn4XmhQ==",
+  "dgSpecHash": "tZaBzEbrsLiV8wQRp1jAcL4Qn3QLt6mWly3s3k4av79NxRRobwOCEJapA2HWNO0+n7tE0q4Ah7gVrazroAafkw==",
   "success": true,
   "projectFilePath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,8 @@
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.1\\microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.1\\microsoft.entityframeworkcore.abstractions.6.0.1.nupkg.sha512",
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.1\\microsoft.entityframeworkcore.analyzers.6.0.1.nupkg.sha512",
-    "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.0\\microsoft.entityframeworkcore.relational.6.0.0.nupkg.sha512",
-    "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.0\\microsoft.entityframeworkcore.sqlserver.6.0.0.nupkg.sha512",
+    "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.1\\microsoft.entityframeworkcore.relational.6.0.1.nupkg.sha512",
+    "C:\\Users\\cix\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.1\\microsoft.entityframeworkcore.sqlserver.6.0.1.nupkg.sha512",
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "C:\\Users\\cix\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

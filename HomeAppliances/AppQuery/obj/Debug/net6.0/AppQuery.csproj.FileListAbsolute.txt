@@ -19,3 +19,15 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\obj\Debug\net6.0\
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\obj\Debug\net6.0\AppQuery.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\obj\Debug\net6.0\ref\AppQuery.dll
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\obj\Debug\net6.0\AppQuery.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Application.Contract.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Infrastructure.EFCore.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Infrastructure.EFCore.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Application.Contract.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\InventoryManagement.Domain.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Application.Contract.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Domain.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Infrastructure.EFCore.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Application.Contract.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\AppQuery\bin\Debug\net6.0\DiscountManagement.Domain.pdb

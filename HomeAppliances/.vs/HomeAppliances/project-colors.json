@@ -95,7 +95,12 @@
       "ProjectGuid": "1819c2ff-9788-49cc-8650-53ebf6f7f706",
       "DisplayName": "InventoryManagement.Configuration",
       "ColorIndex": 1
+    },
+    "cad7d02d-6d16-480a-88c6-5ea08a7cd056": {
+      "ProjectGuid": "cad7d02d-6d16-480a-88c6-5ea08a7cd056",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
