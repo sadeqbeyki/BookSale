@@ -93,3 +93,7 @@ D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Application.Contract.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Domain.pdb
 D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\InventoryManagement.Infrastructure.EFCore.pdb
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\xunit.abstractions.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\xunit.core.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\bin\Debug\net6.0\xunit.execution.dotnet.dll
+D:\02- Learning\Project\HomeAppliances\HomeAppliances\ServiceHost\obj\Debug\net6.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
