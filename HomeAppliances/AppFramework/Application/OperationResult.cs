@@ -10,7 +10,7 @@
             IsSucceeded = false;
         }
 
-        public OperationResult Succeeded(string message="عملیات با موفقیت انجام شد")
+        public OperationResult Succeeded(string message = "عملیات با موفقیت انجام شد")
         {
             IsSucceeded = true;
             Message = message;
@@ -19,7 +19,7 @@
 
         public OperationResult Failed(string message)
         {
-            IsSucceeded=false;
+            IsSucceeded = false;
             Message = message;
             return this;
         }

@@ -1,4 +1,5 @@
-﻿using AppFramework.Application;
+﻿
+using AppFramework.Application;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
