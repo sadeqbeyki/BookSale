@@ -16,7 +16,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 
         public EditProductCategory GetDetails(long id)
         {
-            return _context.ProductCategories.Select(x => new EditProductCategory()
+            return _context.ProductCategories
+                .Select(x => new EditProductCategory()
             {
                 Id = x.Id,
                 Name = x.Name,

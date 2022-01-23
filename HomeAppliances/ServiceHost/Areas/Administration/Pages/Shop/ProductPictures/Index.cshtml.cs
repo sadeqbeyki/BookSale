@@ -13,9 +13,9 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPictures
         public ProductPictureSearchModel SearchModel;
         public List<ProductPictureViewModel> ProductPictures;
         public SelectList Products;
+
         private readonly IProductApplication _productApplication;
         private readonly IProductPictureApplication _productPictureApplication;
-
         public IndexModel(IProductApplication productApplication, IProductPictureApplication productPictureApplication)
         {
             _productApplication = productApplication;
@@ -53,12 +53,14 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPictures
             var result = _productPictureApplication.Edit(command);
             return new JsonResult(result);
         }
+
         public IActionResult OnGetRemove(long id)
         {
             var result = _productPictureApplication.Remove(id);
             if (result.IsSucceeded)
                 return RedirectToPage("./Index");
-            Message=result.Message;
+
+            Message = result.Message;
             return RedirectToPage("./Index");
         }
         public IActionResult OnGetRestore(long id)
@@ -66,6 +68,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPictures
             var result = _productPictureApplication.Restore(id);
             if (result.IsSucceeded)
                 return RedirectToPage("./Index");
+
             Message = result.Message;
             return RedirectToPage("./Index");
         }
