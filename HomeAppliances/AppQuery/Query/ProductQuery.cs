@@ -1,5 +1,7 @@
 ﻿using AppFramework.Application;
+using AppQuery.Contracts.Comment;
 using AppQuery.Contracts.Product;
+using CommentManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +14,13 @@ public class ProductQuery : IProductQuery
     private readonly ShopContext _shopContext;
     private readonly InventoryContext _inventoryContext;
     private readonly DiscountContext _discountContext;
-    public ProductQuery(ShopContext shopContext, InventoryContext inventoryContext, DiscountContext discountContext)
+    private readonly CommentContext _commentContext;
+    public ProductQuery(ShopContext shopContext, InventoryContext inventoryContext, DiscountContext discountContext, CommentContext commentContext)
     {
         _shopContext = shopContext;
         _inventoryContext = inventoryContext;
         _discountContext = discountContext;
+        _commentContext = commentContext;
     }
 
     public List<ProductQueryModel> GetLatestArrivals()
@@ -111,6 +115,20 @@ public class ProductQuery : IProductQuery
                 product.PriceWithDiscount = (price - discountAmount).ToMoney();
             }
         }
+
+        product.Comments = _commentContext.Comments
+            .Where(x => !x.IsCanceled)
+            .Where(x => x.IsConfirmed)
+            .Where(x => x.Type == CommentType.Product)
+            .Where(x => x.OwnerRecordId == product.Id)
+            .Select(x => new CommentQueryModel
+            {
+                Id = x.Id,
+                Message = x.Message,
+                Name = x.Name,
+                CreationDate = x.CreationDate.ToFarsi()
+            }).OrderByDescending(x => x.Id).ToList();
+
         return product;
     }
 

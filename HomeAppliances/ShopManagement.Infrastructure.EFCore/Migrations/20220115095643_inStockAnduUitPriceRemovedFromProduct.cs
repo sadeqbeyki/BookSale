@@ -4,7 +4,7 @@
 
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class inStockAnduUitPriceRemovedFromProduct : Migration
+    public partial class InStockAndUitPriceRemovedFromProduct : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

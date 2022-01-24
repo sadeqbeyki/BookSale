@@ -7,16 +7,16 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 {
     public class ProductCategoryRepository : RepositoryBase<long, ProductCategory>, IProductCategoryRepository
     {
-        private readonly ShopContext _context;
+        private readonly ShopContext _shopContext;
 
         public ProductCategoryRepository(ShopContext context) : base(context)
         {
-            _context = context;
+            _shopContext = context;
         }
 
         public EditProductCategory GetDetails(long id)
         {
-            return _context.ProductCategories
+            return _shopContext.ProductCategories
                 .Select(x => new EditProductCategory()
             {
                 Id = x.Id,
@@ -33,7 +33,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 
         public List<ProductCategoryViewModel> GetProductCategories()
         {
-            return _context.ProductCategories.Select(c => new ProductCategoryViewModel
+            return _shopContext.ProductCategories.Select(c => new ProductCategoryViewModel
             {
                 Id = c.Id,
                 Name = c.Name
@@ -42,14 +42,14 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 
         public string GetSlugById(long id)
         {
-            return _context.ProductCategories
+            return _shopContext.ProductCategories
                 .Select(x=>new {x.Id, x.Slug})
                 .FirstOrDefault(x=>x.Id==id).Slug;
         }
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
-            var query = _context.ProductCategories.Select(x => new ProductCategoryViewModel()
+            var query = _shopContext.ProductCategories.Select(x => new ProductCategoryViewModel()
             {
                 Id = x.Id,
                 Name = x.Name,

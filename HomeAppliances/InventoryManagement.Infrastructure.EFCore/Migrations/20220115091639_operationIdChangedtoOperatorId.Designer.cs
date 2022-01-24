@@ -13,7 +13,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(InventoryContext))]
     [Migration("20220115091639_operationIdChangedtoOperatorId")]
-    partial class operationIdChangedtoOperatorId
+    partial class OperationIdChangedtoOperatorId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

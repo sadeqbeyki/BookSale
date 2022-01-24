@@ -4,7 +4,7 @@
 
 namespace InventoryManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class operationIdChangedtoOperatorId : Migration
+    public partial class OperationIdChangedtoOperatorId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

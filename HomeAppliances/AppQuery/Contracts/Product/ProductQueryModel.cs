@@ -1,4 +1,6 @@
-﻿namespace AppQuery.Contracts.Product
+﻿using AppQuery.Contracts.Comment;
+
+namespace AppQuery.Contracts.Product
 {
     public class ProductQueryModel
     {
@@ -21,6 +23,7 @@
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public bool IsInStock { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
         public List<ProductPictureQueryModel> Pictures { get; set; }
     }
 }

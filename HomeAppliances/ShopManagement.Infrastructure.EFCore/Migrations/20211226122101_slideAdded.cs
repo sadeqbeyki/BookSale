@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class slideAdded : Migration
+    public partial class SlideAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
