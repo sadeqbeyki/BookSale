@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DqVW1FXKzWeeHRnq6vpZWTRofHnYbiy3NYGsleeREZo=",
+  "Hash": "dpZ9dlvJoeXlFFje4tVhpLIeRTRVFZfQwqwBXtXR00M=",
   "Source": "ServiceHost",
   "BasePath": "_content/ServiceHost",
   "Mode": "Default",
@@ -6171,6 +6171,23 @@
       "OriginalItemSpec": "wwwroot\\ProductPictures\\profilePhotos\\2020-09-28-14-37-59-user1.png"
     },
     {
+      "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\sadfsad\\2022-01-25-22-41-50-111623315.jpg",
+      "SourceId": "ServiceHost",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\",
+      "BasePath": "_content/ServiceHost",
+      "RelativePath": "ProductPictures/sadfsad/2022-01-25-22-41-50-111623315.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductPictures\\sadfsad\\2022-01-25-22-41-50-111623315.jpg"
+    },
+    {
       "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\sample.png",
       "SourceId": "ServiceHost",
       "SourceType": "Discovered",
@@ -7189,6 +7206,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductPictures\\فضای-نگهدارنده\\img1-top-eposi1.jpg"
+    },
+    {
+      "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\کتابهای-روانشناسی\\2022-01-25-22-30-37-111623315.jpg",
+      "SourceId": "ServiceHost",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\",
+      "BasePath": "_content/ServiceHost",
+      "RelativePath": "ProductPictures/کتابهای-روانشناسی/2022-01-25-22-30-37-111623315.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductPictures\\کتابهای-روانشناسی\\2022-01-25-22-30-37-111623315.jpg"
+    },
+    {
+      "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\کتابهای-روانشناسی\\2022-01-25-22-32-39-111623315.jpg",
+      "SourceId": "ServiceHost",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\",
+      "BasePath": "_content/ServiceHost",
+      "RelativePath": "ProductPictures/کتابهای-روانشناسی/2022-01-25-22-32-39-111623315.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductPictures\\کتابهای-روانشناسی\\2022-01-25-22-32-39-111623315.jpg"
     },
     {
       "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\لوازم-برقی-آشپزخانه\\2022-01-19-18-23-25-es51-steel.jpg",
