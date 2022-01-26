@@ -15,14 +15,23 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
             _blogContext = blogContext;
         }
 
+        public List<ArticleCategoryViewModel> GetArticleCategories()
+        {
+            return _blogContext.ArticleCategories.Select(c => new ArticleCategoryViewModel
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
+        }
+
         public EditArticleCategory GetDetails(long id)
         {
             return _blogContext.ArticleCategories.Select(x => new EditArticleCategory
             {
                 Id = id,
                 Name = x.Name,
-                PictureAlt=x.PictureAlt,
-                PictureTitle=x.PictureTitle,
+                PictureAlt = x.PictureAlt,
+                PictureTitle = x.PictureTitle,
                 CanonicalAddress = x.CanonicalAddress,
                 Description = x.Description,
                 Keywords = x.Keywords,
@@ -31,6 +40,12 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 Slug = x.Slug
 
             }).FirstOrDefault(x => x.Id == id);
+        }
+
+        public string GetSlugBy(long id)
+        {
+            return _blogContext.ArticleCategories
+                .Select(x => new { x.Id, x.Slug }).FirstOrDefault(x => x.Id == id).Slug;
         }
 
         public List<ArticleCategoryViewModel> Search(ArticleCategorySearchModel searchModel)

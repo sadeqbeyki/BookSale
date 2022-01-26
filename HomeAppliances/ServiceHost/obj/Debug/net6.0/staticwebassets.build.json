@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dpZ9dlvJoeXlFFje4tVhpLIeRTRVFZfQwqwBXtXR00M=",
+  "Hash": "BWyXZCiOUVBGFad4i2eUeU62kp7mL6zhD7NcdShjidg=",
   "Source": "ServiceHost",
   "BasePath": "_content/ServiceHost",
   "Mode": "Default",
@@ -5899,6 +5899,23 @@
       "OriginalItemSpec": "wwwroot\\ProductPictures\\es51-steel.jpg"
     },
     {
+      "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\gdsgsddfgsdfg\\2022-01-25-22-55-05-111623315.jpg",
+      "SourceId": "ServiceHost",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\",
+      "BasePath": "_content/ServiceHost",
+      "RelativePath": "ProductPictures/gdsgsddfgsdfg/2022-01-25-22-55-05-111623315.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductPictures\\gdsgsddfgsdfg\\2022-01-25-22-55-05-111623315.jpg"
+    },
+    {
       "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\product01.jpg",
       "SourceId": "ServiceHost",
       "SourceType": "Discovered",
@@ -7070,6 +7087,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductPictures\\دکوری\\صندلی-پاف-مدل-2\\2020-08-11-11-33-56-sample.png"
+    },
+    {
+      "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\روانشناسی\\2022-01-25-22-55-35-111623315.jpg",
+      "SourceId": "ServiceHost",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\",
+      "BasePath": "_content/ServiceHost",
+      "RelativePath": "ProductPictures/روانشناسی/2022-01-25-22-55-35-111623315.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductPictures\\روانشناسی\\2022-01-25-22-55-35-111623315.jpg"
     },
     {
       "Identity": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\ServiceHost\\wwwroot\\ProductPictures\\روشنایی\\2022-01-19-19-55-33-abazhur.jpg",
