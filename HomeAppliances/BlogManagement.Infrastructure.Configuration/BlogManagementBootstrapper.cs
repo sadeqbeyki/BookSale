@@ -1,4 +1,7 @@
-﻿using BlogManagement.Application;
+﻿using AppQuery.Contracts.Article;
+using AppQuery.Contracts.ArticleCategory;
+using AppQuery.Query;
+using BlogManagement.Application;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
 using BlogManagement.Domain.ArticleCategoryAgg;
@@ -17,10 +20,13 @@ namespace BlogManagement.Infrastructure.Configuration
             services.AddTransient<IArticleCategoryApplication, ArticleCategoryApplication>();
             services.AddTransient<IArticleCategoryRepository, ArticleCategoryRepository>();
 
-            services.AddTransient<IArticleApplication,ArticleApplication>();
+            services.AddTransient<IArticleApplication, ArticleApplication>();
             services.AddTransient<IArticleRepository, ArticleRepository>();
 
-            services.AddDbContext<BlogContext>(x=>x.UseSqlServer(connectionString));
+            services.AddTransient<IArticleQuery, ArticleQuery>();
+            services.AddTransient<IArticleCategoryQuery, ArticleCategoryQuery>();
+
+            services.AddDbContext<BlogContext>(x => x.UseSqlServer(connectionString));
         }
     }
 }

@@ -8,8 +8,8 @@ namespace BlogManagement.Application
 {
     public class ArticleApplication : IArticleApplication
     {
-        private readonly IArticleRepository _articleRepository;
         private readonly IFileUploader _fileUploader;
+        private readonly IArticleRepository _articleRepository;
         private readonly IArticleCategoryRepository _articleCategoryRepository;
 
         public ArticleApplication(IArticleRepository articleRepository, IFileUploader fileUploader, IArticleCategoryRepository articleCategoryRepository)
@@ -25,11 +25,12 @@ namespace BlogManagement.Application
             if (_articleRepository.Exists(x => x.Title == command.Title))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var categorySlug = _articleCategoryRepository.GetSlugBy(command.CategoryId);
             var slug = command.Slug.Slugify();
+            var categorySlug = _articleCategoryRepository.GetSlugBy(command.CategoryId);
             var path = $"{categorySlug}/{slug}";
             var pictureName = _fileUploader.Upload(command.Picture, path);
             var publishDate = command.PublishDate.ToGeorgianDateTime();
+
             var article = new Article(command.Title, command.ShortDescription, command.Description,
                 pictureName, command.PictureAlt, command.PictureTitle, publishDate, slug,
                 command.Keywords, command.MetaDescription, command.CanonicalAddress, command.CategoryId);

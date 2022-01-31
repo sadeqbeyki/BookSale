@@ -36,10 +36,11 @@ namespace BlogManagement.Application
         {
             var operation = new OperationResult();
             var articleCategory = _articleCategoryRepository.Get(command.Id);
+
             if (articleCategory == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            if (_articleCategoryRepository.Exists(x => x.Id != command.Id && x.Name == command.Name))
+            if (_articleCategoryRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
@@ -50,7 +51,6 @@ namespace BlogManagement.Application
 
             _articleCategoryRepository.SaveChanges();
             return operation.Succeeded();
-
         }
 
         public List<ArticleCategoryViewModel> GetArticleCategories()

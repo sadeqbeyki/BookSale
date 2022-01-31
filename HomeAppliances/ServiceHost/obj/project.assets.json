@@ -1893,6 +1893,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "CommentManagement.Infrastructure.EFCore": "1.0.0",
           "DiscountManagement.Infrastructure.EFCore": "1.0.0",
           "InventoryManagement.Infrastructure.EFCore": "1.0.0",
@@ -1951,6 +1952,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AppQuery": "1.0.0",
           "BlogManagement.Application": "1.0.0",
           "BlogManagement.Domain": "1.0.0",
           "BlogManagement.Infrastructure.EFCore": "1.0.0",

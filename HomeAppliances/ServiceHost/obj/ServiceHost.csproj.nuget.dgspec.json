@@ -96,6 +96,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
+              },
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj"
               },
@@ -349,6 +352,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj": {
+                "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\AppQuery\\AppQuery.csproj"
+              },
               "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\BlogManagement.Application\\BlogManagement.Application.csproj": {
                 "projectPath": "D:\\02- Learning\\Project\\HomeAppliances\\HomeAppliances\\BlogManagement.Application\\BlogManagement.Application.csproj"
               },

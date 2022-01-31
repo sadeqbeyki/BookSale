@@ -45,6 +45,7 @@ namespace ShopManagement.Application
 
             if (_productRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
+
             var slug = command.Slug;
             var path = $"{product.Category.Slug}/{slug}";
             var picturePath = _fileUploader.Upload(command.Picture, path);

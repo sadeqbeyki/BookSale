@@ -44,9 +44,10 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
             var query = _blogContext.Articles.Select(x => new ArticleViewModel
             {
                 Id = x.Id,
+                CategoryId = x.CategoryId,
                 Title = x.Title,
                 Picture = x.Picture,
-                ShortDescription = x.ShortDescription,
+                ShortDescription = x.ShortDescription.Substring(0, Math.Min(x.ShortDescription.Length, 50)) + "...",
                 PublishDate = x.PublishDate.ToFarsi(),
                 Category = x.Category.Name
             });

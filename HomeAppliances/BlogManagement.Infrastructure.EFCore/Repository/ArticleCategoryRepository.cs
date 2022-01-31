@@ -28,7 +28,7 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
         {
             return _blogContext.ArticleCategories.Select(x => new EditArticleCategory
             {
-                Id = id,
+                Id = x.Id,
                 Name = x.Name,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
@@ -38,27 +38,30 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 MetaDescription = x.MetaDescription,
                 ShowOrder = x.ShowOrder,
                 Slug = x.Slug
-
             }).FirstOrDefault(x => x.Id == id);
         }
 
         public string GetSlugBy(long id)
         {
             return _blogContext.ArticleCategories
-                .Select(x => new { x.Id, x.Slug }).FirstOrDefault(x => x.Id == id).Slug;
+                .Select(x => new { x.Id, x.Slug })
+                .FirstOrDefault(x => x.Id == id).Slug;
         }
 
         public List<ArticleCategoryViewModel> Search(ArticleCategorySearchModel searchModel)
         {
-            var query = _blogContext.ArticleCategories.Select(x => new ArticleCategoryViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                Picture = x.Picture,
-                ShowOrder = x.ShowOrder,
-                CreationDate = x.CreationDate.ToFarsi()
-            });
+            var query = _blogContext.ArticleCategories
+                .Include(x => x.Articles)
+                .Select(x => new ArticleCategoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Description = x.Description,
+                    Picture = x.Picture,
+                    ShowOrder = x.ShowOrder,
+                    CreationDate = x.CreationDate.ToFarsi(),
+                    ArticlesCount = x.Articles.Count
+                });
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 

@@ -26,7 +26,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         
         public IActionResult OnPost(EditArticle command)
         {
-            var result = _articleApplication.Edit(command);
+            _articleApplication.Edit(command);
             return RedirectToPage("./Index");
         }
     }
