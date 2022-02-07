@@ -1,4 +1,6 @@
-﻿namespace AppQuery.Contracts.Article
+﻿using AppQuery.Contracts.Comment;
+
+namespace AppQuery.Contracts.Article
 {
     public class ArticleQueryModel
     {
@@ -18,5 +20,6 @@
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategorySlug { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }

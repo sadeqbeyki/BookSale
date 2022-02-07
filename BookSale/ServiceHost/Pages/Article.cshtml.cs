@@ -29,7 +29,7 @@ namespace ServiceHost.Pages
         {
             Article = _articleQuery.GetArticleDetails(id);
             LatestArticles = _articleQuery.LatestArticles();
-            ArticleCategories=_articleCategoryQuery.GetArticleCategories();
+            ArticleCategories = _articleCategoryQuery.GetArticleCategories();
         }
         public IActionResult OnPost(AddComment command, string articleSlug)
         {
