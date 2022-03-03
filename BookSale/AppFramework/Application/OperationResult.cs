@@ -23,5 +23,10 @@
             Message = message;
             return this;
         }
+
+        public OperationResult Failed(object passwordNotMatch)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

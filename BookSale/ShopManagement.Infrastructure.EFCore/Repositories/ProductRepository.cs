@@ -8,15 +8,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 {
     public class ProductRepository : RepositoryBase<long, Product>, IProductRepository
     {
-        private readonly ShopContext _context;
+        private readonly ShopContext _shopContext;
 
         public ProductRepository(ShopContext context) : base(context)
         {
-            _context = context;
+            _shopContext = context;
         }
         public EditProduct GetDetails(long id)
         {
-            return _context.Products.Select(p => new EditProduct
+            return _shopContext.Products.Select(p => new EditProduct
             {
                 Id = p.Id,
                 Name = p.Name,
@@ -34,7 +34,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 
         public List<ProductViewModel> GetProducts()
         {
-            return _context.Products.Select(x => new ProductViewModel
+            return _shopContext.Products.Select(x => new ProductViewModel
             {
                 Id = x.Id,
                 Name = x.Name
@@ -43,14 +43,14 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
 
         public Product GetProductWithCategory(long id)
         {
-            return _context.Products
+            return _shopContext.Products
                 .Include(x => x.Category)
                 .FirstOrDefault(x => x.Id == id);
         }
 
         public List<ProductViewModel> Search(ProductSearchModel searchModel)
         {
-            var query = _context.Products
+            var query = _shopContext.Products
                 .Include(x => x.Category)
                 .Select(x => new ProductViewModel
                 {

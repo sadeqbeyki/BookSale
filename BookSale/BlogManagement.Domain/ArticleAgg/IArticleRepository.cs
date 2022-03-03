@@ -3,15 +3,11 @@ using BlogManagement.Application.Contract.Article;
 
 namespace BlogManagement.Domain.ArticleAgg
 {
-    public partial class Article
+    public interface IArticleRepository : IRepository<long, Article>
     {
-        public interface IArticleRepository : IRepository<long, Article>
-        {
+        EditArticle GetDetails(long id);
+        Article GetArticleWithCategory(long id);
+        List<ArticleViewModel> Search(ArticleSearchModel searchModel);
 
-            EditArticle GetDetails(long id);
-            Article GetWithCategory(long id);
-            List<ArticleViewModel>Search(ArticleSearchModel searchModel);
-
-        }
     }
 }

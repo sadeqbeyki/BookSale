@@ -40,15 +40,17 @@ namespace ShopManagement.Application
         {
             var operation = new OperationResult();
             var product = _productRepository.GetProductWithCategory(command.Id);
+
             if (product == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
             if (_productRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var slug = command.Slug;
+            var slug = command.Slug.Slugify();
             var path = $"{product.Category.Slug}/{slug}";
             var picturePath = _fileUploader.Upload(command.Picture, path);
+
             product.Edit(command.Name, command.Code, command.ShortDescription,
                 command.Description, picturePath, command.PictureAlt, command.PictureTitle,
                 command.CategoryId, slug, command.Keywords, command.MetaDescription);

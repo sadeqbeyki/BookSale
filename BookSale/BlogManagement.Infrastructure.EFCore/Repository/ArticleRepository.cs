@@ -11,7 +11,6 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
     public class ArticleRepository : RepositoryBase<long, Article>, IArticleRepository
     {
         private readonly BlogContext _blogContext;
-
         public ArticleRepository(BlogContext blogContext) : base(blogContext)
         {
             _blogContext = blogContext;
@@ -34,9 +33,11 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public Article GetWithCategory(long id)
+        public Article GetArticleWithCategory(long id)
         {
-            return _blogContext.Articles.Include(x => x.Category).FirstOrDefault(x => x.Id == id);
+            return _blogContext.Articles
+                .Include(x => x.Category)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public List<ArticleViewModel> Search(ArticleSearchModel searchModel)

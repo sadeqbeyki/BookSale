@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20220201231504_AddBlogManagementContext")]
-    partial class AddBlogManagementContext
+    [Migration("20220225063838_Article")]
+    partial class Article
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

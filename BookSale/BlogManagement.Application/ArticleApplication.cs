@@ -2,7 +2,6 @@
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
-using static BlogManagement.Domain.ArticleAgg.Article;
 
 namespace BlogManagement.Application
 {
@@ -37,14 +36,13 @@ namespace BlogManagement.Application
             _articleRepository.Create(article);
             _articleRepository.SaveChanges();
             return operation.Succeeded();
-
         }
 
         public OperationResult Edit(EditArticle command)
         {
             var operation = new OperationResult();
             //Check Command.Id in Specific Category
-            var article = _articleRepository.GetWithCategory(command.Id);
+            var article = _articleRepository.GetArticleWithCategory(command.Id);
 
             if (article == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
