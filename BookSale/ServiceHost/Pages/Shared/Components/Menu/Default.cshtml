@@ -1,4 +1,5 @@
 ﻿@model AppQuery.MenuModel
+@inject AppFramework.Application.IAuthHelper authHelper;
 @{
 }
 
@@ -50,6 +51,17 @@
                                     <li>
                                         <a href="contact.html">تماس با ما</a>
                                     </li>
+                                @if (authHelper.IsAuthenticated())
+                                {
+                                    <li>
+                                        <a asp-page="/Account" asp-page-handler="LogOut">خروج</a>
+                                    </li>                                  
+                                }else{
+                                    <li>
+                                        <a asp-page="/Account">ورود</a>
+                                    </li>  
+                                }
+
                                 </ul>
                             </nav>
                         </div>

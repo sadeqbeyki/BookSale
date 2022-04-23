@@ -1,5 +1,6 @@
 ﻿using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
+using AppFramework;
 using AppFramework.Application;
 
 namespace AccountManagement.Application
@@ -9,12 +10,14 @@ namespace AccountManagement.Application
         private readonly IFileUploader _fileUploader;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IAccountRepository _accountRepository;
+        private readonly IAuthHelper _authHelper;
 
-        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader)
+        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader, IAuthHelper authHelper)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
             _fileUploader = fileUploader;
+            _authHelper = authHelper;
         }
 
         public OperationResult ChangePassword(ChangePassword command)
@@ -58,7 +61,7 @@ namespace AccountManagement.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             var path = $"ProfilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
-            account.Edit(command.FullName, command.UserName, command.Mobile,command.RoleId, picturePath);
+            account.Edit(command.FullName, command.UserName, command.Mobile, command.RoleId, picturePath);
             _accountRepository.SaveChanges();
             return operation.Succeeded();
         }
@@ -66,6 +69,28 @@ namespace AccountManagement.Application
         public EditAccount GetDetails(long id)
         {
             return _accountRepository.GetDetails(id);
+        }
+
+        public OperationResult Login(Login command)
+        {
+            var operation = new OperationResult();
+            var account = _accountRepository.GetBy(command.UserName);
+            if (account == null)
+                return operation.Failed(ApplicationMessages.WrongUserPass);
+
+            (bool Verified, bool NeedsUpgrade) result = _passwordHasher.Check(account.Password, command.Password);
+            if (!result.Verified)
+                return operation.Failed(ApplicationMessages.WrongUserPass);
+
+            var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName, account.UserName,account.Mobile);
+
+            _authHelper.SignIn(authViewModel);
+            return operation.Succeeded();
+        }
+
+        public void LogOut()
+        {
+            _authHelper.SignOut();
         }
 
         public List<AccountViewModel> Search(AccountSearchModel searchModel)

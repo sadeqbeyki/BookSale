@@ -16,6 +16,8 @@ public class AccountMapping : IEntityTypeConfiguration<Account>
         builder.Property(x => x.Password).HasMaxLength(1000);
         builder.Property(x => x.ProfilePhoto).HasMaxLength(500);
         builder.Property(x => x.Mobile).HasMaxLength(20);
+
+        builder.HasOne(x => x.Role).WithMany(x => x.Accounts).HasForeignKey(x => x.RoleId);
     }
 }
 
