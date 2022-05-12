@@ -29,16 +29,16 @@ public class IndexModel : PageModel
     }
     public PartialViewResult OnGetCreate()
     {
-        var command = new RegisterAccount
+        var command = new CreateAccount
         {
             Roles = _roleApplication.List()
         };
         return Partial("./Create", command);
     }
 
-    public JsonResult OnPostCreate(RegisterAccount command)
+    public JsonResult OnPostCreate(CreateAccount command)
     {
-        var result = _accountApplication.Register(command);
+        var result = _accountApplication.Create(command);
         return new JsonResult(result);
     }
 

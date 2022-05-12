@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AccountManagement.Application.Contracts.Account
 {
-    public class RegisterAccount
+    public class CreateAccount
     {
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string FullName { get; set; }
