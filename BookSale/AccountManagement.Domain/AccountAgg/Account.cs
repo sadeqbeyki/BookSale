@@ -20,6 +20,11 @@ namespace AccountManagement.Domain.AccountAgg
             Password = password;
             Mobile = mobile;
             RoleId = roleId;
+
+            //کاربر پیشفرض کاربر سیستم می باشد
+            if (roleId == 0)
+                RoleId = 2;
+
             ProfilePhoto = profilePhoto;
         }
         public void Edit(string fullName, string userName, string mobile, long roleId, string profilePhoto)

@@ -1,5 +1,6 @@
 using AccountManagement.Configuration;
 using AppFramework.Application;
+using AppFramework.Infrastructure;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
@@ -21,7 +22,7 @@ DiscountManagementBootstrapper.Configure(builder.Services, connectionString);
 InventoryManagementBootstrapper.Configure(builder.Services, connectionString);
 CommentManagementBootstrapper.Configure(builder.Services, connectionString);
 BlogManagementBootstrapper.Configure(builder.Services, connectionString);
-AccountManagementBootstrapper.Configure(builder.Services,connectionString);
+AccountManagementBootstrapper.Configure(builder.Services, connectionString);
 
 builder.Services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
@@ -42,7 +43,23 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         o.AccessDeniedPath = new PathString("/AccessDenied");
     });
 
-builder.Services.AddRazorPages();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
+    options.AddPolicy("Shop", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+    options.AddPolicy("Discount", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+    options.AddPolicy("Account", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+});
+
+builder.Services.AddRazorPages()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
+        options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
+        options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
+        options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Account");
+
+    });
 
 var app = builder.Build();
 

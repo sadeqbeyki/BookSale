@@ -1,10 +1,11 @@
 using AppFramework.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.ProductCategory;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories;
-
+//[Authorize(Roles = "1, 3")]
 public class IndexModel : PageModel
 {
     public ProductCategorySearchModel SearchModel;
@@ -40,7 +41,7 @@ public class IndexModel : PageModel
     {
         if (!ModelState.IsValid)
         {
-            return new JsonResult(new {message = "فایل انتخاب شده مجاز نیست"});
+            return new JsonResult(new { message = "فایل انتخاب شده مجاز نیست" });
         }
 
         var result = _productCategoryApplication.Edit(command);

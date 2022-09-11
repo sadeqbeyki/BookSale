@@ -27,7 +27,7 @@ namespace ServiceHost.Pages
                 return RedirectToAction("Index");
 
             LoginMessage = result.Message;
-            return RedirectToPage("/Login");
+            return RedirectToPage("/Account");
         }
         public IActionResult OnGetLogOut()
         {

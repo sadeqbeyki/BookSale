@@ -1,11 +1,13 @@
+using AppFramework.Infrastructure;
 using DiscountManagement.Application.Contract.CustomerDiscount;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Product;
 
 namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts;
-
+//[Authorize(Roles = Roles.Administrator)]
 public class IndexModel : PageModel
 {
     [TempData]
@@ -33,7 +35,7 @@ public class IndexModel : PageModel
         {
             Products = _productApplication.GetProducts()
         };
-        return Partial("./Create",command);
+        return Partial("./Create", command);
     }
 
     public JsonResult OnPostCreate(DefineCustomerDiscount command)

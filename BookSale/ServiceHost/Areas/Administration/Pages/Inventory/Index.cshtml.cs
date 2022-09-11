@@ -1,11 +1,14 @@
+using AppFramework.Infrastructure;
 using InventoryManagement.Application.Contract.Inventory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Product;
 
-namespace ServiceHost.Areas.Administration.Pages.Inventory;
 
+namespace ServiceHost.Areas.Administration.Pages.Inventory;
+[Authorize(Roles = Roles.Administrator)]
 public class IndexModel : PageModel
 {
     [TempData]
@@ -82,6 +85,6 @@ public class IndexModel : PageModel
     public IActionResult OnGetLog(long id)
     {
         var log = _inventoryApplication.GetOperationLog(id);
-        return Partial("OperationLog",log);
+        return Partial("OperationLog", log);
     }
 }
