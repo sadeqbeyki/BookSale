@@ -1,5 +1,7 @@
-﻿using InventoryManagement.Application;
+﻿using AppFramework.Infrastructure;
+using InventoryManagement.Application;
 using InventoryManagement.Application.Contract.Inventory;
+using InventoryManagement.Configuration.Permissions;
 using InventoryManagement.Domain.Inventory.Agg;
 using InventoryManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore.Repositories;
@@ -14,6 +16,9 @@ public class InventoryManagementBootstrapper
     {
         services.AddTransient<IInventoryApplication, InventoryApplication>();
         services.AddTransient<IInventoryRepository, InventoryRepository>();
+
+        services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
+
         services.AddDbContext<InventoryContext>(x => x.UseSqlServer(connectionString));
     }
 }
