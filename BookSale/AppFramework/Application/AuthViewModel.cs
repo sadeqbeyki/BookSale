@@ -12,14 +12,14 @@
 
         public AuthViewModel(){}
 
-        public AuthViewModel(long id, long roleId, string fullName, string userName, string mobile/*, List<int> permissions*/)
+        public AuthViewModel(long id, long roleId, string fullName, string userName, string mobile, List<int> permissions)
         {
             Id = id;
             RoleId = roleId;
             FullName = fullName;
             UserName = userName;
             Mobile = mobile;
-            //Permissions = permissions;
+            Permissions = permissions;
         }
     }
 }
