@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommentManagement.Infrastructure.Configuration
+namespace CommentManagement.Infrastructure.Configuration.Permissions
 {
     public class CommentPermissions
     {

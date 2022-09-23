@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommentManagement.Infrastructure.Configuration
+namespace AccountManagement.Configuration.Permissions
 {
-    public class CommentPermissionExposer
+    public class AccountPermissions
     {
     }
 }
