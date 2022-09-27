@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogManagement.Infrastructure.Configuration
+namespace BlogManagement.Infrastructure.Configuration.Permissions
 {
     public class BlogPermissions
     {
