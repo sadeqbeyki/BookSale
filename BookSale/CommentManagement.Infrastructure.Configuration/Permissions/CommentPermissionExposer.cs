@@ -9,7 +9,7 @@ namespace CommentManagement.Infrastructure.Configuration.Permissions
 {
     public class CommentPermissionExposer
     {
-                public Dictionary<string, List<PermissionDto>> Expose()
+        public Dictionary<string, List<PermissionDto>> Expose()
         {
             return new Dictionary<string, List<PermissionDto>>
             {
