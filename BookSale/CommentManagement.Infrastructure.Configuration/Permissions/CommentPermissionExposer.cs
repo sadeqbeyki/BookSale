@@ -18,8 +18,6 @@ namespace CommentManagement.Infrastructure.Configuration.Permissions
                     {
                     new PermissionDto(CommentPermissions.ListComments,"ListComments"),
                     new PermissionDto(CommentPermissions.SearchComments,"SearchComment"),
-
-
                     }
                 }
             };
