@@ -8,7 +8,7 @@ namespace AccountManagement.Configuration.Permissions
 {
     public class AccountPermissions
     {
-        //Users
+        //User Permissions
         public const int ListUsers = 30;
         public const int SearchUser = 31;
         public const int CreateUser = 32;
