@@ -5,7 +5,7 @@ using ShopManagement.Domain.SlideAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repositories
 {
-    public class SlideRepository : RepositoryBase<long, Slide>, ISlideRepository
+    public class SlideRepository : BaseRepository<long, Slide>, ISlideRepository
     {
         private readonly ShopContext _context;
 

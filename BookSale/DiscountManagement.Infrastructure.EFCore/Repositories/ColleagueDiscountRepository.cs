@@ -6,7 +6,7 @@ using ShopManagement.Infrastructure.EFCore;
 
 namespace DiscountManagement.Infrastructure.EFCore.Repositories
 {
-    public class ColleagueDiscountRepository : RepositoryBase<long, ColleagueDiscount>, IColleagueDiscountRepository
+    public class ColleagueDiscountRepository : BaseRepository<long, ColleagueDiscount>, IColleagueDiscountRepository
     {
         private readonly DiscountContext _discountContext;
         private readonly ShopContext _shopContext;

@@ -6,7 +6,7 @@ using ShopManagement.Infrastructure.EFCore;
 
 namespace InventoryManagement.Infrastructure.EFCore.Repositories
 {
-    public class InventoryRepository : RepositoryBase<long, Inventory>, IInventoryRepository
+    public class InventoryRepository : BaseRepository<long, Inventory>, IInventoryRepository
     {
         private readonly ShopContext _shopContext;
         private readonly InventoryContext _inventoryContext;

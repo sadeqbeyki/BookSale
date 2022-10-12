@@ -3,7 +3,7 @@ using AppFramework.Domain;
 
 namespace AccountManagement.Domain.RoleAgg
 {
-    public interface IRoleRepository : IRepository<long, Role>
+    public interface IRoleRepository : IBaseRepository<long, Role>
     {
         List<RoleViewModel> List();
         EditRole GetDetails(long id);

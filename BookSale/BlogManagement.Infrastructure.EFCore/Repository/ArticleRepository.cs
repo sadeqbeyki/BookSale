@@ -8,7 +8,7 @@ using static BlogManagement.Domain.ArticleAgg.Article;
 
 namespace BlogManagement.Infrastructure.EFCore.Repository
 {
-    public class ArticleRepository : RepositoryBase<long, Article>, IArticleRepository
+    public class ArticleRepository : BaseRepository<long, Article>, IArticleRepository
     {
         private readonly BlogContext _blogContext;
         public ArticleRepository(BlogContext blogContext) : base(blogContext)

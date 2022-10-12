@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository
 {
-    public class AccountRepository : RepositoryBase<long, Account>, IAccountRepository
+    public class AccountRepository : BaseRepository<long, Account>, IAccountRepository
     {
         private readonly AccountContext _accountContext;
 

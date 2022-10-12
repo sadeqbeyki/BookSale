@@ -5,7 +5,7 @@ using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repositories
 {
-    public class ProductCategoryRepository : RepositoryBase<long, ProductCategory>, IProductCategoryRepository
+    public class ProductCategoryRepository : BaseRepository<long, ProductCategory>, IProductCategoryRepository
     {
         private readonly ShopContext _shopContext;
 

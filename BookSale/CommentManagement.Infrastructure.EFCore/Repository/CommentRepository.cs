@@ -5,7 +5,7 @@ using CommentManagement.Domain.CommentAgg;
 
 namespace CommentManagement.Infrastructure.EFCore.Repository
 {
-    public class CommentRepository : RepositoryBase<long, Comment>, ICommentRepository
+    public class CommentRepository : BaseRepository<long, Comment>, ICommentRepository
     {
         private readonly CommentContext _commentContext;
 
