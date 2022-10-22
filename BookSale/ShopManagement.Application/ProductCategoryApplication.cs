@@ -17,9 +17,9 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateProductCategory command)
         {
             var operationResult = new OperationResult();
-            if (_productCategoryRepository.Exists(x=>x.Name==command.Name))
+            if (_productCategoryRepository.Exists(x => x.Name == command.Name))
                 return operationResult.Failed(ApplicationMessages.DuplicatedRecord);
-       
+
             var slug = command.Slug.Slugify();
 
             var picturePath = $"{command.Slug}";
@@ -40,15 +40,18 @@ namespace ShopManagement.Application
             if (productCategory == null)
                 return operationResult.Failed(ApplicationMessages.RecordNotFound);
 
-            if (_productCategoryRepository.Exists(x=>x.Name == command.Name && x.Id != command.Id))
+            if (_productCategoryRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            var picturePath=$"{command.Slug}";
-            var fileName = _fileUploader.Upload(command.Picture,picturePath);
+            var picturePath = $"{command.Slug}";
+
+            var fileName = _fileUploader.Upload(command.Picture, picturePath);
+
             productCategory.Edit(command.Name, command.Description,
                 fileName, command.PictureAlt, command.PictureTitle, command.Keywords,
                 command.MetaDescription, slug);
+
             _productCategoryRepository.SaveChanges();
             return operationResult.Succeeded();
         }

@@ -14,7 +14,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
         {
             _shopContext = context;
         }
-        public EditProduct GetDetails(long id)
+        public EditProduct? GetDetails(long id)
         {
             return _shopContext.Products.Select(p => new EditProduct
             {

@@ -58,7 +58,7 @@ namespace ShopManagement.Application
             return operation.Succeeded();
         }
 
-        public EditProduct GetDetails(long id)
+        public EditProduct? GetDetails(long id)
         {
             return _productRepository.GetDetails(id);
         }
