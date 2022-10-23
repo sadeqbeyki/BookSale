@@ -9,9 +9,10 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
     public class EditModel : PageModel
     {
         public EditRole Command;
+        public List<SelectListItem> Permissions = new();
         private readonly IRoleApplication _roleApplication;
-        public readonly List<SelectListItem> Permissions = new List<SelectListItem>();
         private readonly IEnumerable<IPermissionExposer> _exposers;
+
         public EditModel(IRoleApplication roleApplication, IEnumerable<IPermissionExposer> exposers)
         {
             _roleApplication = roleApplication;
@@ -21,7 +22,6 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         public void OnGet(long id)
         {
             Command = _roleApplication.GetDetails(id);
-            var permissions = new List<PermissionDto>();
             foreach (var exposer in _exposers)
             {
                 var exposedPermissions = exposer.Expose();
@@ -45,7 +45,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         }
         public IActionResult OnPost(EditRole command)
         {
-            var result = _roleApplication.Edit(command);
+            _roleApplication.Edit(command);
             return RedirectToPage("Index");
         }
     }

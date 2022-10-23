@@ -27,7 +27,7 @@ public class IndexModel : PageModel
     {
         return Partial("./Create", new CreateProductCategory());
     }
-    [NeedsPermission(ShopPermissions.CreateProductCategories)]
+    [NeedsPermission(ShopPermissions.CreateProductCategory)]
     public JsonResult OnPostCreate(CreateProductCategory command)
     {
         var result = _productCategoryApplication.Create(command);
@@ -39,7 +39,7 @@ public class IndexModel : PageModel
         var productCategory = _productCategoryApplication.GetDetails(id);
         return Partial("Edit", productCategory);
     }
-    [NeedsPermission(ShopPermissions.EditProductCategories)]
+    [NeedsPermission(ShopPermissions.EditProductCategory)]
     public IActionResult OnPostEdit(EditProductCategory command)
     {
         if (!ModelState.IsValid)

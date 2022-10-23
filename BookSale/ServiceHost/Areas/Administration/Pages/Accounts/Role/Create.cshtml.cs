@@ -20,7 +20,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         }
         public IActionResult OnPost(CreateRole command)
         {
-            var result = _roleApplication.Create(command);
+            _roleApplication.Create(command);
             return RedirectToPage ("Index");
         }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopManagement.Configuration.Permissions
+﻿namespace ShopManagement.Configuration.Permissions
 {
     public class ShopPermissions
     {
@@ -17,7 +11,7 @@ namespace ShopManagement.Configuration.Permissions
         //ProductCategories
         public const int ListProductCategories = 20;
         public const int SearchProductCategories = 21;
-        public const int CreateProductCategories = 22;
-        public const int EditProductCategories = 23;
+        public const int CreateProductCategory = 22;
+        public const int EditProductCategory = 23;
     }
 }

@@ -1,6 +1,4 @@
-﻿using AppFramework.Infrastructure;
-
-namespace AccountManagement.Application.Contracts.Role
+﻿namespace AccountManagement.Application.Contracts.Role
 {
     public class CreateRole
     {

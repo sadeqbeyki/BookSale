@@ -8,9 +8,14 @@ namespace ServiceHost
     public class SecurityPageFilter : IPageFilter
     {
         private readonly IAuthHelper _authHelper;
+
+        public SecurityPageFilter(IAuthHelper authHelper)
+        {
+            _authHelper = authHelper;
+        }
+
         public void OnPageHandlerExecuted(PageHandlerExecutedContext context)
         {
-
         }
 
         public void OnPageHandlerExecuting(PageHandlerExecutingContext context)

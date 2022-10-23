@@ -1,17 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DiscountManagement.Configuration.Permissions
+﻿namespace DiscountManagement.Configuration.Permissions
 {
     public class DiscountPermissions
     {
-        //Product
-        public const int ListDiscounts = 60;
-        public const int SearchDiscount = 61;
-        public const int CreateDiscount = 62;
-        public const int EditDiscount = 63;
+        //CustomerDiscount
+        public const int ListCustomerDiscounts = 60;
+        public const int SearchCustomerDiscounts = 61;
+        public const int DefineCustomerDiscount = 62;
+        public const int EditCustomerDiscount = 63;
+
+        //ColleagueDiscount
+        public const int ListColleagueDiscounts = 64;
+        public const int SearchColleagueDiscounts = 65;
+        public const int DefineColleagueDiscount = 66;
+        public const int EditColleagueDiscount = 67;
+        public const int RemoveColleagueDiscount = 68;
+        public const int RestoreColleagueDiscount = 69;
+
+
+
+
+
     }
 }

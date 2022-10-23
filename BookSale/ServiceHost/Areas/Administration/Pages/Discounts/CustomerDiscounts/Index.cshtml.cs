@@ -1,6 +1,6 @@
 using AppFramework.Infrastructure;
 using DiscountManagement.Application.Contract.CustomerDiscount;
-using Microsoft.AspNetCore.Authorization;
+using DiscountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,7 +23,7 @@ public class IndexModel : PageModel
         _productApplication = productApplication;
         _customerDiscountApplication = customerDiscountApplication;
     }
-
+    [NeedsPermission(DiscountPermissions.ListCustomerDiscounts)]
     public void OnGet(CustomerDiscountSearchModel searchModel)
     {
         Products = new SelectList(_productApplication.GetProducts(), "Id", "Name");
@@ -37,19 +37,19 @@ public class IndexModel : PageModel
         };
         return Partial("./Create", command);
     }
-
+    [NeedsPermission(DiscountPermissions.DefineCustomerDiscount)]
     public JsonResult OnPostCreate(DefineCustomerDiscount command)
     {
         var result = _customerDiscountApplication.Define(command);
         return new JsonResult(result);
     }
-
     public PartialViewResult OnGetEdit(long id)
     {
         var customerDiscount = _customerDiscountApplication.GetDetails(id);
         customerDiscount.Products = _productApplication.GetProducts();
         return Partial("Edit", customerDiscount);
     }
+    [NeedsPermission(DiscountPermissions.EditCustomerDiscount)]
     public JsonResult OnPostEdit(EditCustomerDiscount command)
     {
         var result = _customerDiscountApplication.Edit(command);

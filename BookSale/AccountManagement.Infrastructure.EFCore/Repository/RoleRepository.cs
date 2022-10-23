@@ -10,21 +10,13 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
     {
         private readonly AccountContext _accountContext;
 
-        public RoleRepository(AccountContext accountContext):base(accountContext)
+        public RoleRepository(AccountContext accountContext) : base(accountContext)
         {
             _accountContext = accountContext;
         }
 
         public EditRole GetDetails(long id)
         {
-            //return _accountContext.Roles.Select(r => new EditRole
-            //{
-            //    Id = r.Id,
-            //    Name = r.Name,
-            //    MappedPermissions = MapPermissions(r.Permissions)
-            //}).AsNoTracking()
-            //.FirstOrDefault(r => r.Id == id);
-
             var role = _accountContext.Roles.Select(x => new EditRole
             {
                 Id = x.Id,
