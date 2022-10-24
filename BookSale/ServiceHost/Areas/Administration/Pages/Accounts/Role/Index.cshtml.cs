@@ -1,4 +1,6 @@
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
+using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
  
@@ -15,7 +17,7 @@ public class IndexModel : PageModel
     {
         _roleApplication = roleApplication;
     }
-
+    [NeedsPermission(AccountPermissions.ListRoles)]
     public void OnGet()
     {
         Roles = _roleApplication.List();

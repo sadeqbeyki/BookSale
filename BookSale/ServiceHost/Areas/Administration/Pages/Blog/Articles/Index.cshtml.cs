@@ -1,5 +1,7 @@
+using AppFramework.Infrastructure;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
+using BlogManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,7 +22,7 @@ public class IndexModel : PageModel
         _articleApplication = articleApplication;
         _articleCategoryApplication = articleCategoryApplication;
     }
-
+    [NeedsPermission(BlogPermissions.ListArticles)]
     public void OnGet(ArticleSearchModel searchModel)
     {
         ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(),"Id","Name");

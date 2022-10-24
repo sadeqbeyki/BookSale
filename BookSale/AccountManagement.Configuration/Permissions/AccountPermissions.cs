@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AccountManagement.Configuration.Permissions
+﻿namespace AccountManagement.Configuration.Permissions
 {
     public class AccountPermissions
     {
-        //User Permissions
-        public const int ListUsers = 30;
-        public const int SearchUser = 31;
-        public const int CreateUser = 32;
-        public const int EditUser = 33;
+        //AccountPermissions
+        public const int ListUsers = 100;
+        public const int SearchUser = 101;
+        public const int RegisterUser = 102;
+        public const int EditUser = 103;
+        public const int ChangePassword = 104;
 
         //Roles
-        public const int ListRoles = 40;
-        public const int SearchRole = 41;
-        public const int CreateRole = 42;
-        public const int EditRole = 43;
+        public const int ListRoles = 110;
+        public const int SearchRole = 111;
+        public const int CreateRole = 112;
+        public const int EditRole = 113;
     }
 }

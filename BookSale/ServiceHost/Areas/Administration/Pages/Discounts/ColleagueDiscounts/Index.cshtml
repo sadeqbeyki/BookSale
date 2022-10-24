@@ -1,7 +1,6 @@
 ﻿@page
+@using DiscountManagement.Configuration.Permissions
 @model ServiceHost.Areas.Administration.Pages.Discounts.ColleagueDiscounts.IndexModel
-@{
-}
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -12,12 +11,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف تخفیف همکار</a>
+            <a Permission="@DiscountPermissions.DefineColleagueDiscount" class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف تخفیف همکار</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div Permission="@DiscountPermissions.SearchColleagueDiscounts" class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -39,7 +38,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div Permission="@DiscountPermissions.ListColleagueDiscounts" class="row" id="ProductCategoriesDiv">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -67,17 +66,19 @@
                                         <td>@item.DiscountRate%</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-warning btn-custom waves-effect waves-light m-b-5" 
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                            <a Permission="@DiscountPermissions.EditColleagueDiscount" class="btn btn-warning btn-custom waves-effect waves-light m-b-5"
+                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                             @if (item.IsRemoved)
                                             {
-                                            <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id" 
-                                            class="btn btn-success btn-custom waves-effect waves-light m-b-5">فعالسازی</a>                                                
-                                            }else{
-                                            <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id" 
-                                            class="btn btn-danger btn-custom waves-effect waves-light m-b-5">غیرفعال</a>
+                                                <a Permission="@DiscountPermissions.RestoreColleagueDiscount" asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id"
+                                           class="btn btn-success btn-custom waves-effect waves-light m-b-5">فعالسازی</a>
+                                            }
+                                            else
+                                            {
+                                                <a Permission="@DiscountPermissions.RemoveColleagueDiscount" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id"
+                                           class="btn btn-danger btn-custom waves-effect waves-light m-b-5">غیرفعال</a>
                                             }
                                         </td>
                                     </tr>
@@ -89,7 +90,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 
 @section Scripts {
     <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>

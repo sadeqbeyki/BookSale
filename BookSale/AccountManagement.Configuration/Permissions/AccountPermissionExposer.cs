@@ -1,13 +1,8 @@
 ﻿using AppFramework.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccountManagement.Configuration.Permissions
 {
-    public class AccountPermissionExposer
+    public class AccountPermissionExposer : IPermissionExposer
     {
         public Dictionary<string, List<PermissionDto>> Expose()
         {
@@ -17,13 +12,14 @@ namespace AccountManagement.Configuration.Permissions
                     "User", new List<PermissionDto>
                     {
                         new PermissionDto(AccountPermissions.ListUsers, "ListUsers"),
-                        new PermissionDto(AccountPermissions.SearchUser, "SearchUsers"),
-                        new PermissionDto(AccountPermissions.CreateUser, "CreateUsers"),
-                        new PermissionDto(AccountPermissions.EditUser, "EditUsers"),
+                        new PermissionDto(AccountPermissions.SearchUser, "SearchUser"),
+                        new PermissionDto(AccountPermissions.RegisterUser, "CreateUser"),
+                        new PermissionDto(AccountPermissions.EditUser, "EditUser"),
+                        new PermissionDto(AccountPermissions.ChangePassword, "ChangePassword"),
                     }
                 },
                 {
-                    "UserCategory", new List<PermissionDto>
+                    "Roles", new List<PermissionDto>
                     {
                         new PermissionDto(AccountPermissions.ListRoles, "ListRoles"),
                         new PermissionDto(AccountPermissions.SearchRole, "SearchRole"),

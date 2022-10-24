@@ -46,6 +46,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
+    options.AddPolicy("Comment", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
     options.AddPolicy("Shop", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
     options.AddPolicy("Discount", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
     options.AddPolicy("Account", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
@@ -56,6 +57,7 @@ builder.Services.AddRazorPages()
     .AddRazorPagesOptions(options =>
     {
         options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
+        options.Conventions.AuthorizeAreaFolder("Administration", "/Comments", "Comment");
         options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
         options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
         options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Account");

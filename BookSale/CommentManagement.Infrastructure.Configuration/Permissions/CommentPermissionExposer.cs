@@ -1,13 +1,8 @@
 ﻿using AppFramework.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommentManagement.Infrastructure.Configuration.Permissions
 {
-    public class CommentPermissionExposer
+    public class CommentPermissionExposer : IPermissionExposer
     {
         public Dictionary<string, List<PermissionDto>> Expose()
         {
@@ -16,8 +11,11 @@ namespace CommentManagement.Infrastructure.Configuration.Permissions
                 {
                     "Comment", new List<PermissionDto>
                     {
-                    new PermissionDto(CommentPermissions.ListComments,"ListComments"),
-                    new PermissionDto(CommentPermissions.SearchComments,"SearchComment"),
+                        new PermissionDto(CommentPermissions.ListComments,"ListComments"),
+                        new PermissionDto(CommentPermissions.SearchComments,"SearchComment"),
+                        new PermissionDto(CommentPermissions.AddComment,"AddComment"),
+                        new PermissionDto(CommentPermissions.ConfirmComment,"ConfirmComment"),
+                        new PermissionDto(CommentPermissions.CancelComment,"CancelComment")
                     }
                 }
             };

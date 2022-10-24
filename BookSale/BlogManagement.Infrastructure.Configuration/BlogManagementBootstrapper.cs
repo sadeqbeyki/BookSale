@@ -1,4 +1,5 @@
-﻿using AppQuery.Contracts.Article;
+﻿using AppFramework.Infrastructure;
+using AppQuery.Contracts.Article;
 using AppQuery.Contracts.ArticleCategory;
 using AppQuery.Query;
 using BlogManagement.Application;
@@ -6,6 +7,7 @@ using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
 using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
+using BlogManagement.Infrastructure.Configuration.Permissions;
 using BlogManagement.Infrastructure.EFCore;
 using BlogManagement.Infrastructure.EFCore.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,8 @@ public class BlogManagementBootstrapper
 
         services.AddTransient<IArticleQuery, ArticleQuery>();
         services.AddTransient<IArticleCategoryQuery, ArticleCategoryQuery>();
+
+        services.AddScoped<IPermissionExposer, BlogPermissionExposer>();
 
         services.AddDbContext<BlogContext>(x => x.UseSqlServer(connectionString));
     }

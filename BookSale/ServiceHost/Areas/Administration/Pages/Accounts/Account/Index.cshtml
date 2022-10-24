@@ -1,14 +1,13 @@
 ﻿@page
+@using AccountManagement.Configuration.Permissions
 @model ServiceHost.Areas.Administration.Pages.Accounts.Account.IndexModel
-@{
-}
 
 @{
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت کاربران";
 }
 
-<div class="row">
+<div Permission="@AccountPermissions.RegisterUser" class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
@@ -17,7 +16,7 @@
     </div>
 </div>
 
-<div class="row">
+<div Permission="@AccountPermissions.SearchUser" class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -39,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.RoleId"></label>
-                        <select class="form-control" asp-for="SearchModel.RoleId" asp-items="Model.Roles">
+                        <select class="form-control" asp-for="SearchModel.RoleId" asp-items="Model.RolesSelectList">
                             <option value="0">نقش</option>
                         </select>
                     </div>
@@ -51,7 +50,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div Permission="@AccountPermissions.ListUsers" class="row" id="ProductCategoriesDiv">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -87,12 +86,12 @@
                                         <td>@item.Role</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-warning waves-effect waves-light m-b-5" 
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                            <a Permission="@AccountPermissions.EditUser" class="btn btn-warning waves-effect waves-light m-b-5"
+                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
-                                            <a class="btn btn-primary waves-effect waves-light m-b-5" 
-                                               href="#showmodal=@Url.Page("./Index", "ChangePassword", new { id = item.Id})">
+                                            <a Permission="@AccountPermissions.ChangePassword" class="btn btn-primary waves-effect waves-light m-b-5"
+                                           href="#showmodal=@Url.Page("./Index", "ChangePassword", new { id = item.Id})">
                                                 <i class="fa fa-key"></i> تغییر گذرواژه
                                             </a>
                                         </td>

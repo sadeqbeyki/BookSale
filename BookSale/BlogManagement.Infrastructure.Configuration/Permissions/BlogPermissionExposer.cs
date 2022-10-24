@@ -1,13 +1,8 @@
 ﻿using AppFramework.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogManagement.Infrastructure.Configuration.Permissions
 {
-    public class BlogPermissionExposer
+    public class BlogPermissionExposer : IPermissionExposer
     {
         public Dictionary<string, List<PermissionDto>> Expose()
         {
@@ -18,17 +13,17 @@ namespace BlogManagement.Infrastructure.Configuration.Permissions
                     {
                         new PermissionDto(BlogPermissions.ListArticles, "ListArticles"),
                         new PermissionDto(BlogPermissions.SearchArticles, "SearchArticles"),
-                        new PermissionDto(BlogPermissions.CreateArticle, "CreateArticles"),
-                        new PermissionDto(BlogPermissions.EditArticle, "EditArticles"),
+                        new PermissionDto(BlogPermissions.CreateArticle, "CreateArticle"),
+                        new PermissionDto(BlogPermissions.EditArticle, "EditArticle"),
                     }
                 },
                 {
                     "ArticleCategory", new List<PermissionDto>
                     {
-                        new PermissionDto(BlogPermissions.ListArticles, "ListArticles"),
-                        new PermissionDto(BlogPermissions.SearchArticles, "SearchArticles"),
-                        new PermissionDto(BlogPermissions.CreateArticle, "CreateArticle"),
-                        new PermissionDto(BlogPermissions.EditArticle, "EditArticle"),
+                        new PermissionDto(BlogPermissions.ListArticleCategories, "ListArticleCategories"),
+                        new PermissionDto(BlogPermissions.SearchArticleCategories, "SearchArticleCategories"),
+                        new PermissionDto(BlogPermissions.CreateArticleCategory, "CreateArticleCategory"),
+                        new PermissionDto(BlogPermissions.EditArticleCategory, "EditArticleCategory"),
                     }
                 }
             };
