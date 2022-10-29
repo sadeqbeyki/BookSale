@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AccountManagement.Configuration
 {
-    public class AccountManagementBootstrapper
+    public class AccountConfigureServices
     {
         public static void Configure(IServiceCollection services, string connectionString)
         {

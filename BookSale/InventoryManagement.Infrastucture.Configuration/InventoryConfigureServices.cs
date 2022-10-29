@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace InventoryManagement.Configuration;
 
-public class InventoryManagementBootstrapper
+public class InventoryConfigureServices
 {
     public static void Configure(IServiceCollection services, string connectionString)
     {

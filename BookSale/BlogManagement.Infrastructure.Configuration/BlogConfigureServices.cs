@@ -15,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BlogManagement.Infrastructure.Configuration;
 
-public class BlogManagementBootstrapper
+public class BlogConfigureServices
 {
     public static void Configure(IServiceCollection services, string connectionString)
     {

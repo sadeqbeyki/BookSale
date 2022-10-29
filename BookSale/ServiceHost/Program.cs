@@ -17,12 +17,12 @@ var builder = WebApplication.CreateBuilder(args);
 //add services to the container.
 builder.Services.AddHttpContextAccessor();
 var connectionString = builder.Configuration.GetConnectionString("BookSaleDB");
-ShopManagementBootstraper.Configure(builder.Services, connectionString);
-DiscountManagementBootstrapper.Configure(builder.Services, connectionString);
-InventoryManagementBootstrapper.Configure(builder.Services, connectionString);
-CommentManagementBootstrapper.Configure(builder.Services, connectionString);
-BlogManagementBootstrapper.Configure(builder.Services, connectionString);
-AccountManagementBootstrapper.Configure(builder.Services, connectionString);
+ShopConfigureServices.Configure(builder.Services, connectionString);
+DiscountConfigureServices.Configure(builder.Services, connectionString);
+InventoryConfigureServices.Configure(builder.Services, connectionString);
+CommentConfigureServices.Configure(builder.Services, connectionString);
+BlogConfigureServices.Configure(builder.Services, connectionString);
+AccountConfigureServices.Configure(builder.Services, connectionString);
 
 builder.Services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
