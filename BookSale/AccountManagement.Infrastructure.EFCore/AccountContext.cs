@@ -15,7 +15,7 @@ namespace AccountManagement.Infrastructure.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(AccountMapping).Assembly;
+            var assembly = typeof(AccountConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             base.OnModelCreating(modelBuilder);
         }

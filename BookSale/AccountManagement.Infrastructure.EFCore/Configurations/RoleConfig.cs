@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AccountManagement.Infrastructure.EFCore.Mapping
+namespace AccountManagement.Infrastructure.EFCore.Configurations
 {
-    public class RoleMapping : IEntityTypeConfiguration<Role>
+    public class RoleConfig : IEntityTypeConfiguration<Role>
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {

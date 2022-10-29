@@ -1,6 +1,6 @@
 ﻿using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
-using BlogManagement.Infrastructure.EFCore.Mapping;
+using BlogManagement.Infrastructure.EFCore.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogManagement.Infrastructure.EFCore
@@ -14,7 +14,7 @@ namespace BlogManagement.Infrastructure.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assemply = typeof(ArticleCategoryMapping).Assembly;
+            var assemply = typeof(ArticleCategoryConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assemply);
             base.OnModelCreating(modelBuilder);
         }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CommentManagement.Infrastructure.EFCore.Mapping
 {
-    public class CommentMapping : IEntityTypeConfiguration<Comment>
+    public class CommentConfig : IEntityTypeConfiguration<Comment>
     {
         public void Configure(EntityTypeBuilder<Comment> builder)
         {

@@ -1,5 +1,5 @@
 ﻿using InventoryManagement.Domain.Inventory.Agg;
-using InventoryManagement.Infrastructure.EFCore.Mappings;
+using InventoryManagement.Infrastructure.EFCore.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagement.Infrastructure.EFCore
@@ -13,7 +13,7 @@ namespace InventoryManagement.Infrastructure.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(InventoryMapping).Assembly;
+            var assembly = typeof(InventoryConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             base.OnModelCreating(modelBuilder);
         }

@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BlogManagement.Infrastructure.EFCore.Mapping
+namespace BlogManagement.Infrastructure.EFCore.Configurations
 {
-    public class ArticleCategoryMapping : IEntityTypeConfiguration<ArticleCategory>
+    public class ArticleCategoryConfig : IEntityTypeConfiguration<ArticleCategory>
     {
         public void Configure(EntityTypeBuilder<ArticleCategory> builder)
         {

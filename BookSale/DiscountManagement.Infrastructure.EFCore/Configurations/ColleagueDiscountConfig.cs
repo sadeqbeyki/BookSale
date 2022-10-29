@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DiscountManagement.Infrastructure.EFCore.Mapping
+namespace DiscountManagement.Infrastructure.EFCore.Configurations
 {
-    public class ColleagueDiscountMapping : IEntityTypeConfiguration<ColleagueDiscount>
+    public class ColleagueDiscountConfig : IEntityTypeConfiguration<ColleagueDiscount>
     {
         public void Configure(EntityTypeBuilder<ColleagueDiscount> builder)
         {

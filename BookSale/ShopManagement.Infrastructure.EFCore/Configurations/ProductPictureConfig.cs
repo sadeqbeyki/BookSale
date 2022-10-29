@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ShopManagement.Domain.ProductPictureAgg;
 
-namespace ShopManagement.Infrastructure.EFCore.Mapping
+namespace ShopManagement.Infrastructure.EFCore.Configurations
 {
-    public class ProductPictureMapping : IEntityTypeConfiguration<ProductPicture>
+    public class ProductPictureConfig : IEntityTypeConfiguration<ProductPicture>
     {
         public void Configure(EntityTypeBuilder<ProductPicture> builder)
         {
@@ -12,10 +12,10 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Picture).HasMaxLength(1000).IsRequired();
-            builder.Property(x=>x.PictureAlt).HasMaxLength(500).IsRequired();
-            builder.Property(x=>x.PictureTitle).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.PictureAlt).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.PictureTitle).HasMaxLength(500).IsRequired();
 
-            builder.HasOne(x => x.Product).WithMany(x=>x.ProductPictures).HasForeignKey(x=>x.ProductId);
+            builder.HasOne(x => x.Product).WithMany(x => x.ProductPictures).HasForeignKey(x => x.ProductId);
         }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DiscountManagement.Infrastructure.EFCore.Mapping
+namespace DiscountManagement.Infrastructure.EFCore.Configurations
 {
     public class CustomerDiscountMapping : IEntityTypeConfiguration<CustomerDiscount>
     {
@@ -10,7 +10,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Mapping
         {
             builder.ToTable("DiscountCustomers");
             builder.HasKey(x => x.Id);
-            builder.Property(x=>x.Reason).HasMaxLength(500);
+            builder.Property(x => x.Reason).HasMaxLength(500);
         }
     }
 }

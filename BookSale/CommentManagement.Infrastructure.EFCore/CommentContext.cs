@@ -13,7 +13,7 @@ namespace CommentManagement.Infrastructure.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(CommentMapping).Assembly;
+            var assembly = typeof(CommentConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             base.OnModelCreating(modelBuilder);
         }

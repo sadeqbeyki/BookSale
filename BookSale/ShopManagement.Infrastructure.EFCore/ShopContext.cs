@@ -3,7 +3,7 @@ using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Domain.SlideAgg;
-using ShopManagement.Infrastructure.EFCore.Mapping;
+using ShopManagement.Infrastructure.EFCore.Configurations;
 
 namespace ShopManagement.Infrastructure.EFCore
 {
@@ -19,7 +19,7 @@ namespace ShopManagement.Infrastructure.EFCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(ProductCategoryMapping).Assembly;
+            var assembly = typeof(ProductCategoryConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             base.OnModelCreating(modelBuilder);
         }
