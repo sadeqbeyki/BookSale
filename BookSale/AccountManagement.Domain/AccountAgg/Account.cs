@@ -3,7 +3,8 @@ using AppFramework.Domain;
 
 namespace AccountManagement.Domain.AccountAgg
 {
-    public partial class Account : EntityBase
+    //public partial class Account : EntityBase
+    public class Account : EntityBase
     {
         public string FullName { get; private set; }
         public string UserName { get; private set; }

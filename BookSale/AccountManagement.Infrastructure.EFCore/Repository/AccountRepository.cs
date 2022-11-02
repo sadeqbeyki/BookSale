@@ -8,21 +8,30 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
 {
     public class AccountRepository : BaseRepository<long, Account>, IAccountRepository
     {
-        private readonly AccountContext _accountContext;
+        private readonly AccountContext _context;
 
         public AccountRepository(AccountContext context) : base(context)
         {
-            _accountContext = context;
+            _context = context;
+        }
+
+        public List<AccountViewModel> GetAccounts()
+        {
+            return _context.Accounts.Select(x => new AccountViewModel
+            {
+                Id = x.Id,
+                FullName = x.FullName
+            }).ToList();
         }
 
         public Account GetBy(string username)
         {
-            return _accountContext.Accounts.FirstOrDefault(x => x.UserName == username);
+            return _context.Accounts.FirstOrDefault(x => x.UserName == username);
         }
 
         public EditAccount GetDetails(long id)
         {
-            return _accountContext.Accounts.Select(a => new EditAccount
+            return _context.Accounts.Select(a => new EditAccount
             {
                 Id = a.Id,
                 FullName = a.FullName,
@@ -34,7 +43,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
 
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
         {
-            var query = _accountContext.Accounts.Include(x => x.Role)
+            var query = _context.Accounts.Include(x => x.Role)
                 .Select(x => new AccountViewModel
                 {
                     Id = x.Id,

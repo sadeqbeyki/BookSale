@@ -17,6 +17,7 @@
     <ProjectReference Include="..\AppQuery\AppQuery.csproj" />
     <ProjectReference Include="..\ShopManagement.Application\ShopManagement.Application.csproj" />
     <ProjectReference Include="..\ShopManagement.Infrastructure.EFCore\ShopManagement.Infrastructure.EFCore.csproj" />
+    <ProjectReference Include="..\ShoppManagement.Infrastructure.InventoryACL\ShoppManagement.Infrastructure.InventoryACL.csproj" />
   </ItemGroup>
 
 </Project>

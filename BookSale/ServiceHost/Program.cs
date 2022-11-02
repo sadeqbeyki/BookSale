@@ -1,5 +1,6 @@
 using AccountManagement.Configuration;
 using AppFramework.Application;
+using AppFramework.Application.ZarinPal;
 using AppFramework.Infrastructure;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
@@ -28,6 +29,7 @@ builder.Services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, Unico
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddTransient<IFileUploader, FileUploader>();
 builder.Services.AddTransient<IAuthHelper, AuthHelper>();
+builder.Services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
