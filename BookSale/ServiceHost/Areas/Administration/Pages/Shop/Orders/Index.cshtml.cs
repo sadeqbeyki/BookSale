@@ -25,7 +25,7 @@ public class IndexModel : PageModel
 
     public void OnGet(OrderSearchModel searchModel)
     {
-        Accounts = new SelectList(_accountApplication.GetAccounts(), "Id", "Fullname");
+        Accounts = new SelectList(_accountApplication.GetAccounts(), "Id", "FullName");
         Orders = _orderApplication.Search(searchModel);
     }
 

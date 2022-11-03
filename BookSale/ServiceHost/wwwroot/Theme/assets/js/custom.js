@@ -41,7 +41,7 @@ function updateCart() {
                             </a>
                             <div class="image">
                                 <a href="single-product.html">
-                                    <img src="~/ProductPictures/${x.picture}"
+                                    <img src="/ProductPictures/${x.picture}"
                                          class="img-fluid" alt="">
                                 </a>
                             </div>
