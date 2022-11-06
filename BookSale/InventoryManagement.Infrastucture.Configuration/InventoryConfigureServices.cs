@@ -1,4 +1,6 @@
 ﻿using AppFramework.Infrastructure;
+using AppQuery.Contracts.Inventory;
+using AppQuery.Query;
 using InventoryManagement.Application;
 using InventoryManagement.Application.Contract.Inventory;
 using InventoryManagement.Configuration.Permissions;
@@ -16,6 +18,7 @@ public class InventoryConfigureServices
     {
         services.AddTransient<IInventoryApplication, InventoryApplication>();
         services.AddTransient<IInventoryRepository, InventoryRepository>();
+        services.AddTransient<IInventoryQuery, InventoryQuery>();
 
         services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
 
