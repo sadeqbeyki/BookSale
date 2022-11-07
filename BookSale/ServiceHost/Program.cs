@@ -40,11 +40,11 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
     {
-        o.LoginPath = new PathString("/Account");
-        o.LogoutPath = new PathString("/Account");
-        o.AccessDeniedPath = new PathString("/AccessDenied");
+        options.LoginPath = new PathString("/Account");
+        options.LogoutPath = new PathString("/Account");
+        options.AccessDeniedPath = new PathString("/AccessDenied");
     });
 
 builder.Services.AddAuthorization(options =>
@@ -89,6 +89,9 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-app.MapControllers();
-
+//app.MapControllers();
+app.UseEndpoints(endpoints => 
+{ 
+    endpoints.MapDefaultControllerRoute(); 
+});
 app.Run();

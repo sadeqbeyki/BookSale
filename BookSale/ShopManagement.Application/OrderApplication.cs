@@ -12,6 +12,7 @@ public class OrderApplication : IOrderApplication
     private readonly IConfiguration _configuration;
     private readonly IOrderRepository _orderRepository;
     private readonly IShopInventoryAcl _shopInventoryAcl;
+    //private readonly IShopAccountAcl _shopAccountAcl;
 
     public OrderApplication(IAuthHelper authHelper,
         IConfiguration configuration, IOrderRepository orderRepository, IShopInventoryAcl shopInventoryAcl)

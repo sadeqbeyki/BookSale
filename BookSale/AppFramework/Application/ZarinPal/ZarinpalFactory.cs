@@ -18,8 +18,8 @@ namespace AppFramework.Application.ZarinPal
             MerchantId = _configuration.GetSection("payment")["merchant"];
         }
 
-        public PaymentResponse CreatePaymentRequest(string amount, string mobile, string email, string description,
-             long orderId)
+        public PaymentResponse CreatePaymentRequest(string amount, string mobile, string email,
+            string description, long orderId)
         {
             amount = amount.Replace(",", "");
             var finalAmount = int.Parse(amount);

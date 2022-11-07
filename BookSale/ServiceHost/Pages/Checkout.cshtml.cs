@@ -61,7 +61,7 @@ namespace ServiceHost.Pages
             {
                 var paymentResponse = _zarinPalFactory.CreatePaymentRequest(
                     cart.PayAmount.ToString(CultureInfo.InvariantCulture), "", "",
-                    "خرید از درگاه لوازم خانگی و دکوری", orderId);
+                    "خرید از بوکسل", orderId);
 
                 return Redirect(
                     $"https://{_zarinPalFactory.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
