@@ -1,5 +1,6 @@
 using AccountManagement.Configuration;
 using AppFramework.Application;
+using AppFramework.Application.Sms;
 using AppFramework.Application.ZarinPal;
 using AppFramework.Infrastructure;
 using BlogManagement.Infrastructure.Configuration;
@@ -32,6 +33,8 @@ builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddTransient<IFileUploader, FileUploader>();
 builder.Services.AddTransient<IAuthHelper, AuthHelper>();
 builder.Services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
+builder.Services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
+builder.Services.AddTransient<ISmsService, SmsService>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {

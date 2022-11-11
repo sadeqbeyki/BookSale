@@ -4,6 +4,7 @@ namespace AccountManagement.Application.Contracts.Account
 {
     public interface IAccountApplication
     {
+        AccountViewModel GetAccountBy(long id);
         OperationResult Register(RegisterAccount command);
         OperationResult Edit(EditAccount command);
         OperationResult ChangePassword(ChangePassword command);
@@ -12,5 +13,6 @@ namespace AccountManagement.Application.Contracts.Account
         List<AccountViewModel>Search(AccountSearchModel searchModel);
         void LogOut();
         List<AccountViewModel> GetAccounts();
+
     }
 }

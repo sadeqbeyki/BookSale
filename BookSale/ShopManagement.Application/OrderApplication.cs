@@ -1,4 +1,5 @@
 ﻿using AppFramework.Application;
+using AppFramework.Application.Sms;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Domain.OrderAgg;
@@ -12,15 +13,22 @@ public class OrderApplication : IOrderApplication
     private readonly IConfiguration _configuration;
     private readonly IOrderRepository _orderRepository;
     private readonly IShopInventoryAcl _shopInventoryAcl;
-    //private readonly IShopAccountAcl _shopAccountAcl;
+    private readonly ISmsService _smsService;
+    private readonly IShopAccountAcl _shopAccountAcl;
 
     public OrderApplication(IAuthHelper authHelper,
-        IConfiguration configuration, IOrderRepository orderRepository, IShopInventoryAcl shopInventoryAcl)
+        IConfiguration configuration,
+        IOrderRepository orderRepository,
+        IShopInventoryAcl shopInventoryAcl,
+        ISmsService smsService,
+        IShopAccountAcl shopAccountAcl)
     {
         _authHelper = authHelper;
         _configuration = configuration;
         _orderRepository = orderRepository;
         _shopInventoryAcl = shopInventoryAcl;
+        _smsService = smsService;
+        _shopAccountAcl = shopAccountAcl;
     }
 
     public long PlaceOrder(Cart cart)
@@ -63,10 +71,10 @@ public class OrderApplication : IOrderApplication
 
         _orderRepository.SaveChanges();
 
-        //var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
+        var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
 
-        //_smsService.Send(mobile,
-        //    $"{name} گرامی سفارش شما با شماره پیگیری {issueTrackingNo} با موفقیت پرداخت شد و ارسال خواهد شد.");
+        _smsService.Send(mobile,
+            $"{name} گرامی سفارش شما با شماره پیگیری {issueTrackingNo} با موفقیت پرداخت شد و ارسال خواهد شد.");
         return issueTrackingNo;
     }
 
