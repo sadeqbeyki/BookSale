@@ -1,4 +1,5 @@
-﻿using AppFramework.Infrastructure;
+﻿using AppFramework.Application.Email;
+using AppFramework.Infrastructure;
 using AppQuery.Contracts;
 using AppQuery.Contracts.Product;
 using AppQuery.Contracts.ProductCategory;

@@ -1,20 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AppFramework.Application.Email;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceHost.Pages
+namespace ServiceHost.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly IEmailService _emailService;
+
+    public IndexModel(IEmailService emailService)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _emailService = emailService;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
 
-        public void OnGet()
-        {
-
-        }
+    public void OnGet()
+    {
+        _emailService.SendEmail("title mail", "message body", "to email");
     }
 }
