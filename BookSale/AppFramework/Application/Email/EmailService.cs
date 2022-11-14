@@ -9,7 +9,7 @@ public class EmailService : IEmailService
     {
         var message = new MimeMessage();
 
-        var from = new MailboxAddress("Booksale", "test@Booksale.com");
+        var from = new MailboxAddress("Booksale", "info@Booksale.com");
         message.From.Add(from);
 
         var to = new MailboxAddress("User", destination);
@@ -24,8 +24,8 @@ public class EmailService : IEmailService
         message.Body = bodyBuilder.ToMessageBody();
 
         var client = new SmtpClient();
-        client.Connect("185.88.152.251", 25, false);
-        client.Authenticate("test@Booksale.com", "Booksale.123456");
+        client.Connect("host address", 443, false);//ssl false
+        client.Authenticate("test@Booksale.com", "password");
         client.Send(message);
         client.Disconnect(true);
         client.Dispose();
