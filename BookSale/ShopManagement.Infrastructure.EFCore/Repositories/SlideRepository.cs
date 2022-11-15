@@ -9,7 +9,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
     {
         private readonly ShopContext _context;
 
-        public SlideRepository(ShopContext context):base(context)
+        public SlideRepository(ShopContext context) : base(context)
         {
             _context = context;
         }
@@ -18,7 +18,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
         {
             return _context.Slides.Select(s => new EditSlide
             {
-                Id = id,
+                Id = s.Id,
                 PictureAlt = s.PictureAlt,
                 PictureTitle = s.PictureTitle,
                 Heading = s.Heading,
@@ -26,7 +26,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 Text = s.Text,
                 Link = s.Link,
                 BtnText = s.BtnText
-            }).FirstOrDefault(x=>x.Id==id);
+            }).FirstOrDefault(x => x.Id == id);
         }
 
         public List<SlideViewModel> GetList()
@@ -39,7 +39,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 Title = x.Title,
                 IsRemoved = x.IsRemoved,
                 CreationDate = x.CreationDate.ToFarsi()
-            }).OrderByDescending(x=>x.Id).ToList();
+            }).OrderByDescending(x => x.Id).ToList();
         }
     }
 }
