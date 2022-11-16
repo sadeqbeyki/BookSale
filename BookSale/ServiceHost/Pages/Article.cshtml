@@ -38,21 +38,10 @@
                 <div class="page-wrapper">
                     <div class="page-content-wrapper">
                         <div class="row">
-
                             <div class="col-lg-9 order-1 order-lg-1">
-                                <!--=======  blog page content  =======-->
                                 <div class="blog-page-content">
-                                    <!--=======  blog post container  =======-->
-
                                     <div class="blog-single-post-container">
-
-                                        <!--=======  post title  =======-->
-
-
                                         <h3 class="post-title">@Model.Article.Title</h3>
-
-                                        <!--=======  End of post title  =======-->
-                                        <!--=======  Post meta  =======-->
                                         <div class="post-meta">
                                             <p>
                                                 <span>
@@ -61,27 +50,15 @@
                                                 </span>
                                             </p>
                                         </div>
-
-                                        <!--=======  End of Post meta  =======-->
-                                        <!--=======  Post media  =======-->
-
                                         <div class="single-blog-post-media">
                                             <div class="image">
                                                 <img src="~/ProductPictures/@Model.Article.Picture" 
                                                 class="img-fluid" alt="@Model.Article.PictureAlt" title="@Model.Article.Title">
                                             </div>
                                         </div>
-
-                                        <!--=======  End of Post media  =======-->
-                                        <!--=======  Post content  =======-->
-
                                         <div class="post-content">
                                             @Html.Raw(@Model.Article.Description)
                                         </div>
-
-                                        <!--=======  End of Post content  =======-->
-                                        <!--=======  Tags area  =======-->
-
                                         <div class="tag-area">
                                             <span>تگ ها: </span>
                                             <ul>
@@ -93,10 +70,6 @@
                                                 }
                                             </ul>
                                         </div>
-
-                                        <!--=======  End of Tags area  =======-->
-                                        <!--=======  Share post area  =======-->
-
                                         <div class="social-share-buttons">
                                             <h3>share this post</h3>
                                             <ul>
@@ -123,14 +96,8 @@
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <!--=======  End of blog post container  =======-->
-                                    <!--=============================================
-                                    =            Comment section         =
-                                    =============================================-->
                                     <div class="comment-section">
                                         <h3 class="comment-counter">نظرات (@Model.Article.Comments.Count)</h3>
-                                        <!--=======  Comment container  =======-->
                                         <div class="comment-container">
                                             @foreach (var comment in Model.Article.Comments)
                                             {
@@ -161,17 +128,11 @@
                                             </div>
                                             }
                                         </div>
-                                        <!--=======  End of comment container  =======-->
-                                        <!--=======  comment form container  =======-->
-
                                         <div class="comment-form-container">
                                             <h3 class="comment-form-title">نظر خود را با ما به اشتراک بگذارید</h3>
                                             <p>
                                                 ایمیل شما محرمانه است و به کسی نمایش داده نمی شود.
                                             </p>
-
-                                            <!--=======  comment form  =======-->
-
                                             <div class="comment-form" id="postComment">
                                                 <form method="post">
                                                     <div class="row">
@@ -210,23 +171,12 @@
                                                     </div>
                                                 </form>
                                             </div>
-
-                                            <!--=======  End of comment form  =======-->
                                         </div>
-
-                                        <!--=======  End of comment form container  =======-->
-
                                     </div>
-
-
-                                    <!--=====  End of Comment section  ======-->
                                 </div>
-                                <!--=======  End of blog page content  =======-->
                             </div>
                             <div class="col-lg-3 order-2 order-lg-2">
-                                <!--=======  page sidebar wrapper =======-->
                                 <div class="page-sidebar-wrapper">
-                                    <!--=======  single sidebar widget  =======-->
                                     <div class="single-sidebar-widget">
 
                                         <h4 class="single-sidebar-widget__title">گروه مقالات</h4>
@@ -265,13 +215,8 @@
                                                 </div>
                                             </div> 
                                             }
-                                            <!--=======  End of single block  =======-->
                                         </div>
-                                        <!--=======  End of block container  =======-->
                                     </div>
-                                    <!--=======  End of single sidebar widget  =======-->
-
-                                    <!--=======  single sidebar widget  =======-->
                                     <div class="single-sidebar-widget">
                                         <h4 class="single-sidebar-widget__title">تگ ها</h4>
                                         <ul class="single-sidebar-widget__tag-list">
@@ -283,14 +228,11 @@
                                                 }
                                         </ul>
                                     </div>
-                                    <!--=======  End of single sidebar widget  =======-->
                                 </div>
-                                <!--=======  End of page sidebar wrapper  =======-->
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--=======  End of page wrapper  =======-->
             </div>
         </div>
     </div>

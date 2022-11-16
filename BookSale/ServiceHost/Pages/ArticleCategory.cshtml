@@ -30,16 +30,12 @@
                     <div class="page-wrapper">
                         <div class="page-content-wrapper">
                             <div class="row">
-
-
                                 <div class="col-lg-9 order-1 order-lg-1">
-                                    <!--=======  blog page content  =======-->
                                     <div class="blog-page-content">
                                         <div class="row">
                                         @foreach(var article in Model.ArticleCategory.Articles)
                                         {
                                         <div class="col-md-6">
-                                                <!--=======  single blog post  =======-->
                                                 <div class="single-blog-post">
                                                     <div class="single-blog-post__image">
                                                         <a asp-page="./Article" asp-route-id="@article.Slug">
@@ -64,7 +60,6 @@
                                                             class="blog-post-link">ادامه مطلب ...</a>
                                                     </div>
                                                 </div>
-                                                <!--=======  End of single blog post  =======-->
                                             </div>
                                         }
                                         </div>
@@ -137,8 +132,6 @@
 
                                             </div>
                                         </div>
-                                        <!--=======  End of single sidebar widget  =======-->
-                                        <!--=======  single sidebar widget  =======-->
                                         <div class="single-sidebar-widget">
                                             <h4 class="single-sidebar-widget__title">تگ ها</h4>
                                             <ul class="single-sidebar-widget__tag-list">
@@ -150,9 +143,7 @@
                                                     }
                                             </ul>
                                         </div>
-                                        <!--=======  End of single sidebar widget  =======-->
                                     </div>
-                                    <!--=======  End of page sidebar wrapper  =======-->
                                 </div>
                             </div>
                         </div>

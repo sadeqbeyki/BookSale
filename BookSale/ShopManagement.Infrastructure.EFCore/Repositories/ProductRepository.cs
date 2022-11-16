@@ -73,6 +73,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
                 query = query.Where(x => x.CategoryId == searchModel.CategoryId);
 
             return query.OrderByDescending(x => x.Id).ToList();
+
+
         }
     }
 }
