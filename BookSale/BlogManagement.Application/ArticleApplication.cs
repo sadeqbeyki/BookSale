@@ -41,7 +41,6 @@ namespace BlogManagement.Application
         public OperationResult Edit(EditArticle command)
         {
             var operation = new OperationResult();
-            //Check Command.Id in Specific Category
             var article = _articleRepository.GetArticleWithCategory(command.Id);
 
             if (article == null)

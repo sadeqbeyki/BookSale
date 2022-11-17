@@ -17,8 +17,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label asp-for="Command.Title" class="control-label">عنوان مقاله</label>
-                                <input type="text" class="form-control" 
-                                    asp-for="Command.Title" onchange="makeSlug('Name', 'Slug')">
+                                <input type="text" class="form-control"
+                                       asp-for="Command.Title" onchange="makeSlug('Name', 'Slug')">
                                 <span asp-validation-for="Command.Title" class="error"></span>
                             </div>
                         </div>
@@ -45,14 +45,29 @@
                                 <span asp-validation-for="Command.Picture" class="error"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label asp-for="Command.CategoryId">گروه مقالات</label>
-                                <select class="form-control" asp-for="Command.CategoryId" asp-items="@Model.ArticleCategories">
-                                    <option value="0">گروه مقاله...</option>
-                                </select>
+                        @*                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label asp-for="Command.CategoryId">گروه مقالات</label>
+                        <select class="form-control" asp-for="Command.CategoryId" asp-items="@Model.ArticleCategories">
+                        <option value="0">گروه مقاله...</option>
+                        </select>
+                        </div>
+                        </div>*@
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Command.CategoryId" class="control-label">دسته بندی</label>
+                                    <select class="form-control" asp-for="Command.CategoryId"
+                                            asp-items='new SelectList(Model.Command.Categories, "Id", "Name")'>
+                                        <option value="">دسته بندی</option>
+                                    </select>
+                                    <span asp-validation-for="Command.CategoryId" class="error"></span>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -117,10 +132,10 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" asp-for="Command.Id" value="Command.Id"/>
+                    <input type="hidden" asp-for="Command.Id" value="Command.Id" />
                     <button type="submit" class="btn btn-success waves-effect waves-light m-b-5">ویرایش</button>
                     <a asp-page="./Index" class="btn btn-dark waves-effect waves-light m-b-5">بازگشت</a>
-                </form>   
+                </form>
             </div>
         </div>
     </div>

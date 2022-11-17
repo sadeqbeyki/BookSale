@@ -27,6 +27,7 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 PictureTitle = x.PictureTitle,
                 PublishDate = x.PublishDate.ToFarsi(),
                 Slug = x.Slug,
+                CategoryId = x.CategoryId,
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
                 CanonicalAddress = x.CanonicalAddress

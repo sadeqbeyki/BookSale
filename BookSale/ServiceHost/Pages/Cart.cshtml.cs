@@ -17,7 +17,6 @@ public class CartModel : PageModel
         CartItems = new List<CartItem>();
         _productQuery = productQuery;
     }
-
     public void OnGet()
     {
         var serializer = new JavaScriptSerializer();
@@ -31,11 +30,8 @@ public class CartModel : PageModel
         }
         else
         {
-
              RedirectToAction("/Cart");
         }
-
-
     }
 
     public IActionResult OnGetRemoveFromCart(long id)

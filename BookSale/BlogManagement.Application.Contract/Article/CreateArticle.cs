@@ -1,4 +1,5 @@
 ﻿using AppFramework.Application;
+using BlogManagement.Application.Contract.ArticleCategory;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,5 +28,7 @@ namespace BlogManagement.Application.Contract.Article
         public string CanonicalAddress { get; set; }
         [Range(1, long.MaxValue, ErrorMessage = ValidationMessages.IsRequired)]
         public long CategoryId { get; set; }
+        public List<ArticleCategoryViewModel> Categories { get; set; }
+
     }
 }
