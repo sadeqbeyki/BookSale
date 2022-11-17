@@ -4,9 +4,6 @@ using BlogManagement.Application.Contract.ArticleCategory;
 using BlogManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Nest;
 
 namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
 {
@@ -31,15 +28,19 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         public IActionResult OnGet(int id)
         {
             Command = _articleApplication.GetDetails(id);
-            Command.Categories = _articleCategoryApplication.GetArticleCategories().ToList();
-            
+            Command.Categories = _articleCategoryApplication.GetArticleCategories();
+
             return Page();
         }
         [NeedsPermission(BlogPermissions.EditArticle)]
         public IActionResult OnPost(int id, EditArticle command)
         {
-            _articleApplication.Edit(command);
-            return RedirectToPage("./Index");
+            //var article = _articleApplication.GetDetails(id);
+            //article.Categories = _articleCategoryApplication.GetArticleCategories();
+            command.Id = id;
+
+            var result = _articleApplication.Edit(command);
+            return RedirectToPage("./Index", result);
         }
     }
 }
