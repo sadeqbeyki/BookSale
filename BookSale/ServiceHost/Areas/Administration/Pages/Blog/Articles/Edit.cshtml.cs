@@ -35,8 +35,6 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         [NeedsPermission(BlogPermissions.EditArticle)]
         public IActionResult OnPost(int id, EditArticle command)
         {
-            //var article = _articleApplication.GetDetails(id);
-            //article.Categories = _articleCategoryApplication.GetArticleCategories();
             command.Id = id;
 
             var result = _articleApplication.Edit(command);
