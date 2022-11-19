@@ -85,7 +85,7 @@
             <div class="col-md-12">
                 <div class="form-group no-margin">
                     <label asp-for="MetaDescription" class="control-label">توضیحات متا</label>
-                    <textarea class="form-control autogrow" asp-for="MetaDescription"
+                    <textarea maxlength="150" class="form-control autogrow" asp-for="MetaDescription"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                     <span asp-validation-for="MetaDescription" class="error"></span>
                 </div>

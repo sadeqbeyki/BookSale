@@ -76,7 +76,9 @@
                                         <td>@item.ShortDescription</td>
                                         <td>@item.PublishDate</td>
                                         <td>
-                                            <a permission="BlogPermissions.EditArticle" class="btn btn-warning pull-right m-rl-5" asp-page="./Edit" asp-route-id="@item.Id">
+                                            <a permission="BlogPermissions.EditArticle" 
+                                            class="btn btn-warning pull-right m-rl-5" 
+                                            asp-page="./Edit" asp-route-id="@item.Id">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>
@@ -92,12 +94,12 @@
 </div>
 
 @section Scripts {
-<script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>
-<script src="~/adminTheme/assets/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/adminTheme/assets/datatables/dataTables.bootstrap.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#datatable').dataTable();
-    });
-</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
+    </script>
 }

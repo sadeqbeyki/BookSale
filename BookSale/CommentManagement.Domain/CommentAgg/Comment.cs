@@ -31,6 +31,7 @@ public class Comment:EntityBase
     public void Confirm()
     {
         IsConfirmed = true;
+        IsCanceled = false;
     }
     public void Cancel()
     {
