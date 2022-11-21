@@ -26,6 +26,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPictures
         {
             Products = new SelectList(_productApplication.GetProducts(), "Id", "Name");
             ProductPictures = _productPictureApplication.Search(searchModel);
+
         }
         public PartialViewResult OnGetCreate()
         {

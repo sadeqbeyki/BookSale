@@ -1,6 +1,6 @@
 using AccountManagement.Configuration;
 using AppFramework.Application;
-using AppFramework.Application.Email;
+//using AppFramework.Application.Email;
 using AppFramework.Application.Sms;
 using AppFramework.Application.ZarinPal;
 using AppFramework.Infrastructure;
@@ -84,6 +84,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -94,8 +95,9 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 //app.MapControllers();
-app.UseEndpoints(endpoints => 
-{ 
-    endpoints.MapDefaultControllerRoute(); 
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
 });
 app.Run();
