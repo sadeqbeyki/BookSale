@@ -55,11 +55,9 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                     Role = x.Role.Name,
                     CreationDate = x.CreationDate.ToFarsi()
                 });
+
             if (!string.IsNullOrWhiteSpace(searchModel.FullName))
                 query = query.Where(x => x.FullName.Contains(searchModel.FullName));
-
-            if (!string.IsNullOrWhiteSpace(searchModel.UserName))
-                query = query.Where(x => x.UserName.Contains(searchModel.UserName));
 
             if (!string.IsNullOrWhiteSpace(searchModel.Mobile))
                 query = query.Where(x => x.Mobile.Contains(searchModel.Mobile));
@@ -67,6 +65,10 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             if (searchModel.RoleId > 0)
                 query = query.Where(x => x.RoleId == searchModel.RoleId);
 
+            return query.OrderByDescending(x => x.Id).ToList();
+
+            if (!string.IsNullOrWhiteSpace(searchModel.UserName))
+                query = query.Where(x => x.UserName.Contains(searchModel.UserName));
             return query.OrderByDescending(x => x.Id).ToList();
         }
     }
