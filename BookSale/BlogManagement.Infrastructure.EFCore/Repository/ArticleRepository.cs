@@ -2,9 +2,7 @@
 using AppFramework.Infrastructure;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Domain.ArticleAgg;
-using CommentManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
-using static BlogManagement.Domain.ArticleAgg.Article;
 
 namespace BlogManagement.Infrastructure.EFCore.Repository
 {

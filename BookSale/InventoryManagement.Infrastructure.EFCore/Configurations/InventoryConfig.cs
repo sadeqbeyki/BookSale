@@ -19,7 +19,5 @@ namespace InventoryManagement.Infrastructure.EFCore.Configurations
                 modelBuilder.WithOwner(x => x.Inventory).HasForeignKey(x => x.InventoryId);
             });
         }
-
-
     }
 }

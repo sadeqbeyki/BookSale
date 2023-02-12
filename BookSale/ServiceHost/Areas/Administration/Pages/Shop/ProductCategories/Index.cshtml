@@ -1,6 +1,6 @@
 ﻿@page
 @using ShopManagement.Configuration.Permissions
-@model  ServiceHost.Areas.Administration.Pages.Shop.ProductCategories.IndexModel
+@model ServiceHost.Areas.Administration.Pages.Shop.ProductCategories.IndexModel
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -66,7 +66,8 @@
                                         <td>@item.Name</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a Permission="@ShopPermissions.EditProductCategory" class="btn btn-warning pull-right m-rl-5"
+                                            <a Permission="@ShopPermissions.EditProductCategory"
+                                           class="btn btn-warning pull-right m-rl-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
@@ -80,7 +81,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 
 @section Scripts {
     <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>

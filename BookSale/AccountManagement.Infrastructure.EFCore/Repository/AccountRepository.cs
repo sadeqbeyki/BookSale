@@ -56,6 +56,9 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                     CreationDate = x.CreationDate.ToFarsi()
                 });
 
+            if (!string.IsNullOrWhiteSpace(searchModel.UserName))
+                query = query.Where(x => x.UserName.Contains(searchModel.UserName));
+
             if (!string.IsNullOrWhiteSpace(searchModel.FullName))
                 query = query.Where(x => x.FullName.Contains(searchModel.FullName));
 
@@ -65,10 +68,6 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             if (searchModel.RoleId > 0)
                 query = query.Where(x => x.RoleId == searchModel.RoleId);
 
-            return query.OrderByDescending(x => x.Id).ToList();
-
-            if (!string.IsNullOrWhiteSpace(searchModel.UserName))
-                query = query.Where(x => x.UserName.Contains(searchModel.UserName));
             return query.OrderByDescending(x => x.Id).ToList();
         }
     }
