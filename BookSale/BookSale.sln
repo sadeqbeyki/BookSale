@@ -122,7 +122,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManagement.Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManagement.Configuration", "AccountManagement.Configuration\AccountManagement.Configuration.csproj", "{AB3B13F8-CC5B-42A6-9A99-A34FE643A1A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppManagement.Infrastructure.InventoryACL", "ShoppManagement.Infrastructure.InventoryACL\ShoppManagement.Infrastructure.InventoryACL.csproj", "{F534E489-0188-4577-BA77-5A843AA18E62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.InventoryACL", "ShoppManagement.Infrastructure.InventoryACL\ShopManagement.Infrastructure.InventoryACL.csproj", "{F534E489-0188-4577-BA77-5A843AA18E62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Presentation", "SM.Presentation", "{43DD97FF-502C-4913-AE79-680143D0AE88}"
 EndProject
@@ -136,7 +136,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BM.Presentation", "BM.Prese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogManagement.Presentation.Api", "BlogManagement.Presentation.Api\BlogManagement.Presentation.Api.csproj", "{4EB7CA92-92C4-4004-821E-BCCCF7714FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.AccountAcl", "ShopManagement.Infrastructure.AccountAcl\ShopManagement.Infrastructure.AccountAcl.csproj", "{9A43A83B-2C99-4246-AA07-AEA480F616FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.AccountAcl", "ShopManagement.Infrastructure.AccountAcl\ShopManagement.Infrastructure.AccountAcl.csproj", "{9A43A83B-2C99-4246-AA07-AEA480F616FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

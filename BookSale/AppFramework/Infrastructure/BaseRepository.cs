@@ -23,7 +23,7 @@ namespace AppFramework.Infrastructure
             return _context.Set<TEntity>().Any(expression);
         }
 
-        public TEntity? Get(TKey id)
+        public TEntity Get(TKey id)
         {
             return _context.Find<TEntity>(id);
         }
