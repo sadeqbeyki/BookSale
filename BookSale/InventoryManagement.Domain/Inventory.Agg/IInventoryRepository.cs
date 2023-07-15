@@ -3,7 +3,7 @@ using InventoryManagement.Application.Contract.Inventory;
 
 namespace InventoryManagement.Domain.Inventory.Agg
 {
-    public interface IInventoryRepository:IBaseRepository<long, Inventory>
+    public interface IInventoryRepository : IBaseRepository<long, Inventory>
     {
         EditInventory GetDetails(long id);
         Inventory GetBy(long productId);
