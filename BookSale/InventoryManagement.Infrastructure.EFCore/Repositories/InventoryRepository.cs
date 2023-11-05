@@ -47,7 +47,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Repositories
                 Descriotion = x.Descriotion,
                 Operation = x.Operation,
                 OperationDate = x.OperationDate.ToFarsi(),
-                OperatorId = x.OrderId,
+                OperatorId = x.OperatorId,
                 OrderId = x.OrderId
             }).OrderByDescending(x => x.Id).ToList();
 
