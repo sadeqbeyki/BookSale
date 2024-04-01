@@ -1,15 +1,13 @@
 ﻿using AccountManagement.Domain.RoleAgg;
-using AppFramework.Domain;
+using Microsoft.AspNetCore.Identity;
 
 namespace AccountManagement.Domain.AccountAgg
 {
     //public partial class Account : EntityBase
-    public class Account : EntityBase
+    public class Account : IdentityUser<long>
     {
         public string FullName { get; private set; }
-        public string UserName { get; private set; }
         public string Password { get; private set; }
-        public string Mobile { get; private set; }
         public long RoleId { get; private set; }
         public Role Role { get; set; }
         public string ProfilePhoto { get; private set; }
@@ -19,7 +17,7 @@ namespace AccountManagement.Domain.AccountAgg
             FullName = fullName;
             UserName = userName;
             Password = password;
-            Mobile = mobile;
+            PhoneNumber = mobile;
             RoleId = roleId;
 
             //کاربر پیشفرض کاربر سیستم می باشد
@@ -32,9 +30,9 @@ namespace AccountManagement.Domain.AccountAgg
         {
             FullName = fullName;
             UserName = userName;
-            Mobile = mobile;
+            PhoneNumber = mobile;
             RoleId = roleId;
-            if(!string.IsNullOrEmpty(profilePhoto))
+            if (!string.IsNullOrEmpty(profilePhoto))
                 ProfilePhoto = profilePhoto;
         }
 

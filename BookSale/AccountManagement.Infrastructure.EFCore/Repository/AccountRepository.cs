@@ -36,7 +36,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 Id = a.Id,
                 FullName = a.FullName,
                 UserName = a.UserName,
-                Mobile = a.Mobile,
+                Mobile = a.PhoneNumber,
                 RoleId = a.RoleId
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -49,7 +49,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                     Id = x.Id,
                     FullName = x.FullName,
                     UserName = x.UserName,
-                    Mobile = x.Mobile,
+                    Mobile = x.PhoneNumber,
                     ProfilePhoto = x.ProfilePhoto,
                     RoleId = x.RoleId,
                     Role = x.Role.Name,

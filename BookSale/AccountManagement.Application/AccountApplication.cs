@@ -41,7 +41,7 @@ namespace AccountManagement.Application
         public OperationResult Register(RegisterAccount command)
         {
             var operation = new OperationResult();
-            if (_accountRepository.Exists(x => x.UserName == command.UserName || x.Mobile == command.Mobile))
+            if (_accountRepository.Exists(x => x.UserName == command.UserName || x.PhoneNumber == command.Mobile))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var password = _passwordHasher.Hash(command.Password);
@@ -60,7 +60,7 @@ namespace AccountManagement.Application
             if (account == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             if (_accountRepository.Exists(x => (x.UserName == command.UserName ||
-                                                x.Mobile == command.Mobile) && x.Id != command.Id))
+                                                x.PhoneNumber == command.Mobile) && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             var path = $"ProfilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
@@ -88,7 +88,7 @@ namespace AccountManagement.Application
             var permissions = _roleRepository.Get(account.RoleId)
                 .Permissions.Select(x => x.Code).ToList();
 
-            var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName, account.UserName, account.Mobile, permissions);
+            var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName, account.UserName, account.PhoneNumber, permissions);
 
             _authHelper.SignIn(authViewModel);
             return operation.Succeeded();
@@ -115,7 +115,7 @@ namespace AccountManagement.Application
             return new AccountViewModel()
             {
                 FullName = account.FullName,
-                Mobile = account.Mobile
+                Mobile = account.PhoneNumber
             };
         }
     }
