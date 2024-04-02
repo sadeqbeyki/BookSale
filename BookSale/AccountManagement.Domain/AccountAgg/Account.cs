@@ -11,6 +11,7 @@ namespace AccountManagement.Domain.AccountAgg
         public long RoleId { get; private set; }
         public Role Role { get; set; }
         public string ProfilePhoto { get; private set; }
+        public DateTime CreationDate { get; set; }
 
         public Account(string fullName, string userName, string password, string mobile, long roleId, string profilePhoto)
         {
@@ -25,6 +26,7 @@ namespace AccountManagement.Domain.AccountAgg
                 RoleId = 2;
 
             ProfilePhoto = profilePhoto;
+            CreationDate = DateTime.Now;
         }
         public void Edit(string fullName, string userName, string mobile, long roleId, string profilePhoto)
         {
