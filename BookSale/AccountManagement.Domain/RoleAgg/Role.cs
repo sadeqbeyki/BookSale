@@ -1,11 +1,11 @@
 ﻿using AccountManagement.Domain.AccountAgg;
-using AppFramework.Domain;
+using Microsoft.AspNetCore.Identity;
 
 namespace AccountManagement.Domain.RoleAgg
 {
-    public class Role : EntityBase
+    public class Role : IdentityRole<long>
     {
-        public string Name { get; private set; }
+        public DateTime CreationDate { get; private set; }
         public List<Permission> Permissions { get; private set; }
         public List<Account> Accounts { get; private set; }
 
