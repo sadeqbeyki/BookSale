@@ -3,7 +3,7 @@ using BlogManagement.Domain.ArticleCategoryAgg;
 
 namespace BlogManagement.Domain.ArticleAgg
 {
-    public class Article : EntityBase
+    public class Article : EntityBase<long>
     {
         public string Title { get; private set; }
         public string ShortDescription { get; private set; }

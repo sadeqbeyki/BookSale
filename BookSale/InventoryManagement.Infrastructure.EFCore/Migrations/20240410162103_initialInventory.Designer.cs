@@ -12,17 +12,18 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventoryManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(InventoryContext))]
-    [Migration("20220201214559_AddInventoryManagementContext")]
-    partial class AddInventoryManagementContext
+    [Migration("20240410162103_initialInventory")]
+    partial class initialInventory
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("InventoryManagement.Domain.Inventory.Agg.Inventory", b =>
                 {
@@ -30,7 +31,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -57,10 +58,13 @@ namespace InventoryManagement.Infrastructure.EFCore.Migrations
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("bigint");
 
-                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<long>("Id"), 1L, 1);
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<long>("Id"));
 
                             b1.Property<long>("Count")
                                 .HasColumnType("bigint");
+
+                            b1.Property<DateTime>("CreationDate")
+                                .HasColumnType("datetime2");
 
                             b1.Property<long>("CurrentCount")
                                 .HasColumnType("bigint");

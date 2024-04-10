@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InventoryManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class AddInventoryManagementContext : Migration
+    /// <inheritdoc />
+    public partial class initialInventory : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -38,7 +40,8 @@ namespace InventoryManagement.Infrastructure.EFCore.Migrations
                     CurrentCount = table.Column<long>(type: "bigint", nullable: false),
                     Descriotion = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     OrderId = table.Column<long>(type: "bigint", nullable: false),
-                    InventoryId = table.Column<long>(type: "bigint", nullable: false)
+                    InventoryId = table.Column<long>(type: "bigint", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,6 +60,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Migrations
                 column: "InventoryId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

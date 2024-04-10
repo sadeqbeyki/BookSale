@@ -2,7 +2,7 @@
 
 namespace DiscountManagement.Domain.ColleagueDiscountAgg
 {
-    public class ColleagueDiscount : EntityBase
+    public class ColleagueDiscount : EntityBase<long>
     {
         public long ProductId { get; private set; }
         public int DiscountRate { get; private set; }

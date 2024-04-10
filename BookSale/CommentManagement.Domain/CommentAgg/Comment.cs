@@ -1,9 +1,8 @@
 ﻿using AppFramework.Domain;
-using ShopManagement.Domain.ProductAgg;
 
 namespace CommentManagement.Domain.CommentAgg;
 
-public class Comment:EntityBase
+public class Comment : EntityBase<long>
 {
     public string Name { get; private set; }
     public string Email { get; private set; }

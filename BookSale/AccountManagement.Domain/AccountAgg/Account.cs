@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AccountManagement.Domain.AccountAgg
 {
-    //public partial class Account : EntityBase
     public class Account : IdentityUser<long>
     {
         public string FullName { get; private set; }

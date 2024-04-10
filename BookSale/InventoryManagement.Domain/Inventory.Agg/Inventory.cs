@@ -2,7 +2,7 @@
 
 namespace InventoryManagement.Domain.Inventory.Agg
 {
-    public class Inventory : EntityBase
+    public class Inventory : EntityBase<long>
     {
         public long ProductId { get; private set; }
         public double UnitPrice { get; private set; }

@@ -1,8 +1,9 @@
-﻿namespace InventoryManagement.Domain.Inventory.Agg
+﻿using AppFramework.Domain;
+
+namespace InventoryManagement.Domain.Inventory.Agg
 {
-    public class InventoryOperation
+    public class InventoryOperation : EntityBase<long>
     {
-        public long Id { get; private set; }
         public bool Operation { get; private set; }
         public long Count { get; private set; }
         public long OperatorId { get; private set; }

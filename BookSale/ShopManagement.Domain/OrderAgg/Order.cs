@@ -2,7 +2,7 @@
 
 namespace ShopManagement.Domain.OrderAgg
 {
-    public class Order : EntityBase
+    public class Order : EntityBase<long>
     {
         public long AccountId { get; private set; }
         public int PaymentMethod { get; private set; }
