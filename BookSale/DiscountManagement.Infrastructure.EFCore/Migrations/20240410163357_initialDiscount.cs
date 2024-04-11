@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DiscountManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class AddDiscountManagementContext : Migration
+    /// <inheritdoc />
+    public partial class initialDiscount : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -44,6 +46,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
                 });
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

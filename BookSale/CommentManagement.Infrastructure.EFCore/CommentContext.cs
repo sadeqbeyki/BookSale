@@ -1,5 +1,5 @@
 ﻿using CommentManagement.Domain.CommentAgg;
-using CommentManagement.Infrastructure.EFCore.Mapping;
+using CommentManagement.Infrastructure.EFCore.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommentManagement.Infrastructure.EFCore
