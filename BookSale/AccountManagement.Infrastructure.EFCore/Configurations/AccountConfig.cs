@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AccountManagement.Infrastructure.EFCore.Mapping;
+namespace AccountManagement.Infrastructure.EFCore.Configurations;
 
 public class AccountConfig : IEntityTypeConfiguration<Account>
 {

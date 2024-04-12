@@ -12,12 +12,12 @@ namespace AccountManagement.Domain.AccountAgg
         public string ProfilePhoto { get; private set; }
         public DateTime CreationDate { get; set; }
 
-        public Account(string fullName, string userName, string password, string mobile, long roleId, string profilePhoto)
+        public Account(string fullName, string userName, string password, string phoneNumber, long roleId, string profilePhoto)
         {
             FullName = fullName;
             UserName = userName;
             Password = password;
-            PhoneNumber = mobile;
+            PhoneNumber = phoneNumber;
             RoleId = roleId;
 
             //کاربر پیشفرض کاربر سیستم می باشد
@@ -27,11 +27,11 @@ namespace AccountManagement.Domain.AccountAgg
             ProfilePhoto = profilePhoto;
             CreationDate = DateTime.Now;
         }
-        public void Edit(string fullName, string userName, string mobile, long roleId, string profilePhoto)
+        public void Edit(string fullName, string userName, string phoneNumber, long roleId, string profilePhoto)
         {
             FullName = fullName;
             UserName = userName;
-            PhoneNumber = mobile;
+            PhoneNumber = phoneNumber;
             RoleId = roleId;
             if (!string.IsNullOrEmpty(profilePhoto))
                 ProfilePhoto = profilePhoto;

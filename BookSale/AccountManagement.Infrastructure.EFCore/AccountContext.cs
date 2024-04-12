@@ -1,6 +1,6 @@
 ﻿using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
-using AccountManagement.Infrastructure.EFCore.Mapping;
+using AccountManagement.Infrastructure.EFCore.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore
