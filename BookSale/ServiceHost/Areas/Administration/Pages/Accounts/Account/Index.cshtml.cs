@@ -64,6 +64,7 @@ public class IndexModel : PageModel
         return Partial("ChangePassword", command);
     }
     [NeedsPermission(AccountPermissions.ChangePassword)]
+
     public JsonResult OnPostChangePassword(ChangePassword command)
     {
         var result = _accountApplication.ChangePassword(command);

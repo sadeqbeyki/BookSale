@@ -1,15 +1,17 @@
 using AccountManagement.Application.Contracts.Role;
 using AccountManagement.Configuration.Permissions;
 using AppFramework.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
  
 namespace ServiceHost.Areas.Administration.Pages.Accounts.Role;
+
 public class IndexModel : PageModel
 {
     [TempData] 
     public string Message { get; set; }
-    public List<RoleViewModel> Roles;
+    public List<RoleViewModel> RolesList;
 
     private readonly IRoleApplication _roleApplication;
 
@@ -20,7 +22,7 @@ public class IndexModel : PageModel
     [NeedsPermission(AccountPermissions.ListRoles)]
     public void OnGet()
     {
-        Roles = _roleApplication.List();
+        RolesList = _roleApplication.List();
     }
 
 }
