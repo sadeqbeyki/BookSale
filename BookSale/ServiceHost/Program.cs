@@ -51,14 +51,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = new PathString("/AccessDenied");
     });
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
-    options.AddPolicy("Comment", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
-    options.AddPolicy("Shop", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
-    options.AddPolicy("Discount", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
-    options.AddPolicy("Account", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
-});
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }))
+    .AddPolicy("Comment", builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }))
+    .AddPolicy("Shop", builder => builder.RequireRole(new List<string> { Roles.Administrator }))
+    .AddPolicy("Discount", builder => builder.RequireRole(new List<string> { Roles.Administrator }))
+    .AddPolicy("Account", builder => builder.RequireRole(new List<string> { Roles.Administrator }));
 
 builder.Services.AddRazorPages()
     .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
