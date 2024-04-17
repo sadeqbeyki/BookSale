@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using RestSharp;
-using RestSharp.Serialization.Json;
+using RestSharp.Serializers.Json;
 
 namespace AppFramework.Application.ZarinPal
 {
@@ -26,7 +27,8 @@ namespace AppFramework.Application.ZarinPal
             var siteUrl = _configuration.GetSection("payment")["siteUrl"];
 
             var client = new RestClient($"https://{Prefix}.zarinpal.com/pg/rest/WebGate/PaymentRequest.json");
-            var request = new RestRequest(Method.POST);
+            
+            var request = new RestRequest(RestSharp.Method.Post.ToString());
             request.AddHeader("Content-Type", "application/json");
             var body = new PaymentRequest
             {
@@ -38,15 +40,20 @@ namespace AppFramework.Application.ZarinPal
                 MerchantID = MerchantId
             };
             request.AddJsonBody(body);
-            var response = client.Execute(request);
-            var jsonSerializer = new JsonSerializer();
-            return jsonSerializer.Deserialize<PaymentResponse>(response);
+
+            //
+            var response = client.Execute<PaymentResponse>(request); // Using RestSharp's built-in deserialization
+            return response.Data;
+
+            //var response = client.Execute(request);
+            //var jsonSerializer = new JsonSerializer();
+            //return jsonSerializer.Deserialize<PaymentResponse>(response);
         }
 
         public VerificationResponse CreateVerificationRequest(string authority, string amount)
         {
             var client = new RestClient($"https://{Prefix}.zarinpal.com/pg/rest/WebGate/PaymentVerification.json");
-            var request = new RestRequest(Method.POST);
+            var request = new RestRequest(Method.Post.ToString());
             request.AddHeader("Content-Type", "application/json");
 
             amount = amount.Replace(",", "");
@@ -58,9 +65,13 @@ namespace AppFramework.Application.ZarinPal
                 MerchantID = MerchantId,
                 Authority = authority
             });
-            var response = client.Execute(request);
-            var jsonSerializer = new JsonSerializer();
-            return jsonSerializer.Deserialize<VerificationResponse>(response);
+
+            var response = client.Execute<VerificationResponse>(request);
+            return response.Data;
+
+            //var response = client.Execute(request);
+            //var jsonSerializer = new JsonSerializer();
+            //return jsonSerializer.Deserialize<VerificationResponse>(response);
         }
     }
 }
