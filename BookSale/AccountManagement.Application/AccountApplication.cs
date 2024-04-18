@@ -1,4 +1,5 @@
 ﻿using AccountManagement.Application.Contracts.Account;
+using AccountManagement.Application.Contracts.Role;
 using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
 using AppFramework;
@@ -13,15 +14,17 @@ namespace AccountManagement.Application
         private readonly IAccountRepository _accountRepository;
         private readonly IAuthHelper _authHelper;
         private readonly IRoleRepository _roleRepository;
+        private readonly IRoleApplication _roleApplication;
 
         public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher,
-            IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository)
+            IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository, IRoleApplication roleApplication)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
             _fileUploader = fileUploader;
             _authHelper = authHelper;
             _roleRepository = roleRepository;
+            _roleApplication = roleApplication;
         }
 
         public OperationResult ChangePassword(ChangePassword command)
@@ -41,6 +44,21 @@ namespace AccountManagement.Application
 
         public OperationResult Register(RegisterAccount command)
         {
+            var roles = _roleRepository.List();
+            if (roles == null)
+            {
+                var addRoles = new List<Role>
+                    {
+                        new("Administrator", new List<Permission>()),
+                        new("SystemUser", new List<Permission>()),
+                        new("ContentUploader", new List<Permission>()),
+                        new("ColleagueUser", new List<Permission>())
+                    };
+                foreach (var item in addRoles)
+                {
+                    _roleRepository.Create(item);
+                }
+            };
             var operation = new OperationResult();
             if (_accountRepository.Exists(x => x.UserName == command.UserName || x.PhoneNumber == command.Mobile))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
@@ -107,12 +125,12 @@ namespace AccountManagement.Application
 
         public List<AccountViewModel> GetAccounts()
         {
-                return _accountRepository.GetAccounts();
+            return _accountRepository.GetAccounts();
         }
 
         public AccountViewModel GetAccountBy(long id)
         {
-            var account =_accountRepository.Get(id);
+            var account = _accountRepository.Get(id);
             return new AccountViewModel()
             {
                 FullName = account.FullName,
