@@ -14,17 +14,15 @@ namespace AccountManagement.Application
         private readonly IAccountRepository _accountRepository;
         private readonly IAuthHelper _authHelper;
         private readonly IRoleRepository _roleRepository;
-        private readonly IRoleApplication _roleApplication;
 
         public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher,
-            IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository, IRoleApplication roleApplication)
+            IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
             _fileUploader = fileUploader;
             _authHelper = authHelper;
             _roleRepository = roleRepository;
-            _roleApplication = roleApplication;
         }
 
         public OperationResult ChangePassword(ChangePassword command)
@@ -44,6 +42,22 @@ namespace AccountManagement.Application
 
         public OperationResult Register(RegisterAccount command)
         {
+            InitialUserData();
+            var operation = new OperationResult();
+            if (_accountRepository.Exists(x => x.UserName == command.UserName || x.PhoneNumber == command.Mobile))
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
+
+            var password = _passwordHasher.Hash(command.Password);
+            var path = $"ProfilePhotos";
+            var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
+            var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
+            _accountRepository.Create(account);
+            _accountRepository.SaveChanges();
+            return operation.Succeeded();
+        }
+
+        private void InitialUserData()
+        {
             var roles = _roleRepository.List();
             if (roles == null)
             {
@@ -58,18 +72,10 @@ namespace AccountManagement.Application
                 {
                     _roleRepository.Create(item);
                 }
+                var user = new Account("admin", "administrator", "74107410", "09101112233", 1, "");
+                _accountRepository.Create(user);
+                _accountRepository.SaveChanges();
             };
-            var operation = new OperationResult();
-            if (_accountRepository.Exists(x => x.UserName == command.UserName || x.PhoneNumber == command.Mobile))
-                return operation.Failed(ApplicationMessages.DuplicatedRecord);
-
-            var password = _passwordHasher.Hash(command.Password);
-            var path = $"ProfilePhotos";
-            var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
-            var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
-            _accountRepository.Create(account);
-            _accountRepository.SaveChanges();
-            return operation.Succeeded();
         }
 
         public OperationResult Edit(EditAccount command)
