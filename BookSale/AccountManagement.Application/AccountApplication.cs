@@ -1,5 +1,4 @@
 ﻿using AccountManagement.Application.Contracts.Account;
-using AccountManagement.Application.Contracts.Role;
 using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
 using AppFramework;
@@ -50,6 +49,7 @@ namespace AccountManagement.Application
             var password = _passwordHasher.Hash(command.Password);
             var path = $"ProfilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
+
             var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
             _accountRepository.Create(account);
             _accountRepository.SaveChanges();

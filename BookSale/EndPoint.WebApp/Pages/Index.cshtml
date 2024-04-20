@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    @await Component.InvokeAsync("Slide")
+
+    @await Component.InvokeAsync("ProductCategory")
+    
+    @await Component.InvokeAsync("ProductCategoryWithProduct")
+
+    @await Component.InvokeAsync("LatestArrivals")
+
+    <partial name="Partial/_BannerHover" />
+
+    <partial name="Partial/_Feature" />
+
+    @await Component.InvokeAsync("LatestArticles")
+
+    <partial name="Partial/_Newsletter" />
+
