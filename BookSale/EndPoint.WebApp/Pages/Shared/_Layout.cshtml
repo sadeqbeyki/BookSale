@@ -41,22 +41,54 @@
                 </div>
             </div>
         </nav>
+        @await Component.InvokeAsync("Menu")
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+
             @RenderBody()
+
+
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - EndPoint.WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    @await Component.InvokeAsync("Footer")
+
+    <div class="search-overlay" id="search-overlay">
+        <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
+            <i class="ion-ios-close-empty"></i>
+        </a>
+
+        <div class="search-form">
+            <form method="get" asp-page="/Search">
+                <input type="search" name="value" id="value" placeholder="هر چه میخواهی بجوی ...">
+                <button type="submit">
+                    <i class="ion-android-search"></i>
+                </button>
+            </form>
         </div>
-    </footer>
+
+    </div>
+
+    <div id="scroll-top">
+        <span>برو بالا</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+@*     <script src="~/Theme/assets/js/vendors.js"></script>
+    <script src="~/Theme/assets/js/active.js"></script>
+    <script src="~/Theme/assets/js/plugins.js"></script>
+    <script src="~/Theme/assets/js/custom.js"></script> *@
+
+    <script>
+        $(document).ready(function () {
+            updateCart();
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
