@@ -6,11 +6,11 @@
 
     @if (ViewData["Title"] != null)
     {
-        <title>@ViewData["Title"] - فروش آنلاین کتاب</title>
+        <title>@ViewData["Title"] - bookSale</title>
     }
     else
     {
-        <title>فروش آنلاین کتاب</title>
+        <title>bookSale</title>
     }
 
     <meta name="keywords" content="@ViewData["keywords"]" />
@@ -18,7 +18,10 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/EndPoint.WebApp.styles.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/EndPoint.WebApp.styles.css" asp-append-version="true" /> *@
+@*     <link href="~/theme/css/vendors.css" rel="stylesheet">
+    <link href="~/theme/css/style.css" rel="stylesheet">
+    <link href="~/theme/css/Custom.css" rel="stylesheet"> *@
 </head>
 <body>
     <header>
@@ -57,14 +60,16 @@
         <span>برو بالا</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
     </div>
 
+    @* @await RenderSectionAsync("Scripts", required: false) *@
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-@*     <script src="~/Theme/assets/js/vendors.js"></script>
-    <script src="~/Theme/assets/js/active.js"></script>
-    <script src="~/Theme/assets/js/plugins.js"></script>
-    <script src="~/Theme/assets/js/custom.js"></script> *@
+    <script src="~/theme/js/vendors.js"></script>
+    <script src="~/theme/js/active.js"></script>
+    <script src="~/theme/js/plugins.js"></script>
+    <script src="~/theme/js/custom.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -72,6 +77,5 @@
         });
     </script>
 
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
