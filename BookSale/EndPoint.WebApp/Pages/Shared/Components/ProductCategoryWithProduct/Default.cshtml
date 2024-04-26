@@ -24,19 +24,16 @@
 
         </div>
 
-
         <div class="row m-2">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                     @foreach (var category in Model)
                     {
-                        <button class="nav-item">
-                            <a class="nav-link @(Model.First() == category ? "active" : "")" id="product-tab-@category.Id"
-                               data-bs-toggle="tab" data-bs-target="#product-series-@category.Id" type="button"
-                               role="tab" aria-controls="#nav-home-@category.Name" aria-selected="true">
-                                @category.Name
-                            </a>
+                        <button class="nav-link @(Model.First() == category ? "active" : "")" id="product-tab-@category.Id"
+                                data-bs-toggle="tab" data-bs-target="#product-series-@category.Id" type="button"
+                                role="tab" aria-controls="#nav-cat-tab-@category.Name" aria-selected="true">
+                            @category.Name
                         </button>
                     }
                 </div>
@@ -50,44 +47,46 @@
                     @foreach (var category in Model)
                     {
                         <div class="tab-pane fade show @(Model.First() == category ? "active" : "")"
-                             id="product-series-@category.Id" role="tabpanel" aria-labelledby="product-tab-@category.Id">
+                             id="product-series-@category.Id" role="tabpanel" aria-labelledby="product-tab-@category.Id"
+                             aria-labelledby="nav-cat-tab-@category.Name" tabindex="0">
 
                             @foreach (var product in category.Products)
                             {
                                 <div class="col-12 col-sm-4 col-lg-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <ul class="list-group list-group-flush">
+                                            <div class="list-group list-group-flush">
 
-                                                <li class="list-group-item">
-                                                    <div class="card-header">
-                                                        <a asp-page="/ProductCategory" asp-route-id="@category.Slug">
-                                                            @product.Category
-                                                        </a>
-                                                    </div>
-                                                </li>
+                                                <div class="list-group-item">
+                                                    @* <div class="card-header"> *@
+                                                    <a asp-page="/ProductCategory" asp-route-id="@category.Slug">
+                                                        @product.Category
+                                                    </a>
+                                                    @* </div> *@
+                                                </div>
 
-                                                <li class="list-group-item">
+                                                <div class="list-group-item">
 
                                                     @if (product.HasDiscount)
                                                     {
                                                         <span class="sale">@product.DiscountRate%</span>
                                                     }
                                                     <a asp-page="/Product" asp-route-id="@product.Slug">
-                                                        <img src="~/ProductPictures/@product.Picture" title="@product.PictureTitle"
-                                                             class="img-fluid" alt="@product.PictureAlt">
+                                                        <img src="~/ProductPictures/@product.Picture"
+                                                             title="@product.PictureTitle"
+                                                             class="img-fluid card-img-top" alt="@product.PictureAlt">
                                                     </a>
-                                                </li>
+                                                </div>
 
-                                                <li class="list-group-item">
+                                                <div class="list-group-item">
                                                     <h5 class="card-title">
                                                         <a asp-page="/Product" asp-route-id="@product.Slug">
                                                             @product.Name
                                                         </a>
                                                     </h5>
-                                                </li>
+                                                </div>
 
-                                                <li class="list-group-item">
+                                                <div class="list-group-item">
                                                     <p>
                                                         @if (product.HasDiscount)
                                                         {
@@ -99,11 +98,12 @@
                                                             <span class="main-price">@product.Price تومان</span>
                                                         }
                                                     </p>
-                                                </li>
-                                            </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             }
                         </div>
                     }
