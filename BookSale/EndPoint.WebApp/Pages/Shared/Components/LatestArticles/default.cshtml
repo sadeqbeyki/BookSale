@@ -1,32 +1,45 @@
 ﻿@model List<AppQuery.Contracts.Article.ArticleQueryModel>
 
-<div class="row m-2 text-end">
-    <h2 class="section-title">آخرین مقالات سایت</h2>
+<div class="card">
 
-    <div class="card">
-        @foreach (var article in Model)
-        {
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a asp-page="./Article" asp-route-id="@article.Slug">
-                        @article.Title
-                    </a>
-                </h5>
+    <h2 class="card-header text-center">آخرین مقالات سایت</h2>
 
-                <p class="card-text">
-                    @article.ShortDescription
-                </p>
-                <a asp-page="./Article" asp-route-id="@article.Slug" class="link">
-                    ادامه مطلب
-                </a>
-                <p class="card-text"><small class="text-body-secondary">@article.PublishDate</small></p>
+    <div class="card-body">
+        <div class="card-group m-2 text-end">
+            <div class="row">
+
+                @foreach (var article in Model)
+                {
+                    <div class="col-12 col-sm-4 col-lg-4">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a asp-page="./Article" asp-route-id="@article.Slug">
+                                        @article.Title
+                                    </a>
+                                </h5>
+
+                                <p class="card-text">
+                                    @article.ShortDescription
+                                </p>
+                                <a asp-page="./Article" asp-route-id="@article.Slug" class="link">
+                                    ادامه مطلب
+                                </a>
+                                <p class="card-text"><small class="text-body-secondary">@article.PublishDate</small></p>
+                            </div>
+
+                            <a asp-page="./Article" asp-route-id="@article.Slug">
+                                <img src="~/ProductPictures/@article.Picture"
+                                     class="card-img-bottom img-fluid" alt="@article.PictureAlt"
+                                     title="@article.PictureTitle">
+                            </a>
+
+                        </div>
+                    </div>
+                }
             </div>
-
-            <a asp-page="./Article" asp-route-id="@article.Slug">
-                <img src="~/ProductPictures/@article.Picture"
-                     class="card-img-bottom img-fluid" alt="@article.PictureAlt"
-                     title="@article.PictureTitle">
-            </a>
-        }
+        </div>
     </div>
+
 </div>

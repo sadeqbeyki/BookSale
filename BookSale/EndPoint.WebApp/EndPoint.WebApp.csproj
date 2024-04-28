@@ -92,6 +92,7 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\testimonial\testimor1-72x72.png" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\testimonial\testimor2-72x72.png" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\testimonial\testimor3-72x72.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\ProductPictures\جغرافیا\جغرافیای-ایران-و-جهان\2024-04-28-10-25-38-pngtree-photo-coming-soon-abstract-admin-banner-image_1262901.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -121,6 +122,46 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\lib\img\logo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\ادبیات\2024-04-28-10-20-44-missing_image.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\ادبیات\تاریخچه-ای-بر-شاهکارهای-ادبیات-پارسی\2024-04-28-10-26-52-pngtree-photo-coming-soon-abstract-admin-banner-image_1262901.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\2024-04-18-18-55-21-hq3pt.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\2024-04-28-10-20-59-missing_image.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\تاریخ-ایران-پرویز-بابایی\2024-04-18-18-58-34-74a16d7677bf4f6ea48e45b42797527f.webp">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\تاریخ-ایران-پرویز-بابایی\2024-04-28-10-23-50-df.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\تاریخ-ایران-پرویز-بابایی\2024-04-28-10-25-46-pngtree-photo-coming-soon-abstract-admin-banner-image_1262901.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\تاریخ\تاریخ-ایران-پرویز-بابایی\2024-04-28-10-27-07-pngtree-photo-coming-soon-abstract-admin-banner-image_1262901.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\جغرافیا\2024-04-18-18-56-58-67374.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\ProductPictures\جغرافیا\2024-04-28-10-20-52-missing_image.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

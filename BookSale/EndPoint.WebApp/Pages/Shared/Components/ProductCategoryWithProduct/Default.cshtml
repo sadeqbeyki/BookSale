@@ -1,113 +1,99 @@
 ﻿@model List<AppQuery.Contracts.ProductCategory.ProductCategoryQueryModel>
 
 
-<div class="row">
-    <div class="container">
-
-        <div class="row m-2">
-
-            <div class="card text-center">
-                <div class="card-header">
-                    محصولات
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">درباره محصولات ما</h5>
-                    <p class="card-text">برای اینکه بیشتر درباره مصولات ما بدانید، با مراجعه به لینک زیر میتوانید اطلاعات بیشتری کسب کنید</p>
-                    <a href="#" class="btn btn-primary">Go Information Page</a>
-                </div>
-                <div class="card-footer text-body-secondary">
-                    2 days ago
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row m-2">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-                    @foreach (var category in Model)
-                    {
-                        <button class="nav-link @(Model.First() == category ? "active" : "")" id="product-tab-@category.Id"
-                                data-bs-toggle="tab" data-bs-target="#product-series-@category.Id" type="button"
-                                role="tab" aria-controls="#nav-cat-tab-@category.Name" aria-selected="true">
-                            @category.Name
-                        </button>
-                    }
-                </div>
-            </nav>
-        </div>
-
-        <div class="tab-content" id="nav-tabContent">
-
-            <div class="row m-2">
-                <div class="card-group">
-                    @foreach (var category in Model)
-                    {
-                        <div class="tab-pane fade show @(Model.First() == category ? "active" : "")"
-                             id="product-series-@category.Id" role="tabpanel" aria-labelledby="product-tab-@category.Id"
-                             aria-labelledby="nav-cat-tab-@category.Name" tabindex="0">
-
-                            @foreach (var product in category.Products)
-                            {
-                                <div class="col-12 col-sm-4 col-lg-4">
-                                    <div class="card text-center">
-                                        <div class="card-body">
-                                            <div class="list-group list-group-flush">
-
-                                                <div class="list-group-item">
-                                                    @* <div class="card-header"> *@
-                                                    <a asp-page="/ProductCategory" asp-route-id="@category.Slug">
-                                                        @product.Category
-                                                    </a>
-                                                    @* </div> *@
-                                                </div>
-
-                                                <div class="list-group-item">
-
-                                                    @if (product.HasDiscount)
-                                                    {
-                                                        <span class="sale">@product.DiscountRate%</span>
-                                                    }
-                                                    <a asp-page="/Product" asp-route-id="@product.Slug">
-                                                        <img src="~/ProductPictures/@product.Picture"
-                                                             title="@product.PictureTitle"
-                                                             class="img-fluid card-img-top" alt="@product.PictureAlt">
-                                                    </a>
-                                                </div>
-
-                                                <div class="list-group-item">
-                                                    <h5 class="card-title">
-                                                        <a asp-page="/Product" asp-route-id="@product.Slug">
-                                                            @product.Name
-                                                        </a>
-                                                    </h5>
-                                                </div>
-
-                                                <div class="list-group-item">
-                                                    <p>
-                                                        @if (product.HasDiscount)
-                                                        {
-                                                            <span class="discounted-price">@product.PriceWithDiscount تومان</span>
-                                                            <span class="main-price discounted">@product.Price تومان</span>
-                                                        }
-                                                        else
-                                                        {
-                                                            <span class="main-price">@product.Price تومان</span>
-                                                        }
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            }
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
+<div class="card text-center m-2">
+    <div class="card-header">
+        محصولات
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">درباره محصولات ما</h5>
+        <p class="card-text">برای اینکه بیشتر درباره مصولات ما بدانید، با مراجعه به لینک زیر میتوانید اطلاعات بیشتری کسب کنید</p>
+        <a href="#" class="btn btn-primary">Go Information Page</a>
+    </div>
+    <div class="card-footer text-body-secondary">
+        2 days ago
     </div>
 </div>
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+        @foreach (var category in Model)
+        {
+            <button class="nav-link @(Model.First() == category ? "active" : "")" id="product-tab-@category.Id"
+                    data-bs-toggle="tab" data-bs-target="#product-series-@category.Id" type="button"
+                    role="tab" aria-controls="#nav-cat-tab-@category.Name" aria-selected="true">
+                @category.Name
+            </button>
+        }
+    </div>
+</nav>
+
+<div class="card-group m-2">
+
+    @foreach (var category in Model)
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show @(Model.First() == category ? "active" : "")"
+                         id="product-series-@category.Id" role="tabpanel" aria-labelledby="product-tab-@category.Id"
+                         aria-labelledby="nav-cat-tab-@category.Name" tabindex="0">
+                        @foreach (var product in category.Products)
+                        {
+                            <div class="card text-center">
+
+                                <div class="card-header">
+                                    <a asp-page="/ProductCategory" asp-route-id="@category.Slug">
+                                        @product.Category
+                                    </a>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <a asp-page="/Product" asp-route-id="@product.Slug">
+                                        <img src="~/ProductPictures/@product.Picture"
+                                             title="@product.PictureTitle"
+                                             class="img-fluid card-img-top" alt="@product.PictureAlt">
+                                    </a>
+
+
+                                    <h5 class="card-title">
+                                        <a asp-page="/Product" asp-route-id="@product.Slug">
+                                            @product.Name
+                                        </a>
+                                    </h5>
+
+                                    <p class="card-text">
+
+                                        @if (product.HasDiscount)
+                                        {
+                                            <span class="sale">@product.DiscountRate%</span>
+                                        }
+
+                                    </p>
+
+                                    <p class="card-text">
+                                        @if (product.HasDiscount)
+                                        {
+                                            <span class="discounted-price">@product.PriceWithDiscount تومان</span>
+                                            <span class="main-price discounted">@product.Price تومان</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="main-price">@product.Price تومان</span>
+                                        }
+                                    </p>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
 
