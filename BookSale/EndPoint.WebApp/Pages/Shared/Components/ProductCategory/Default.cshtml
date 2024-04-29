@@ -1,27 +1,35 @@
 ﻿@using AppQuery.Contracts.ProductCategory
 @model List<ProductCategoryQueryModel>
 
-<div class="card-group text-center">
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-12 col-sm-4 col-lg-4">
-                <div class="card">
-                    <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
-                        <img class="card-img-top" src="~/ProductPictures/@item.Picture" class="img-fluid" alt="@item.PictureAlt" title="@item.PictureTitle">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
-                            <i class="ion-android-arrow-dropleft-circle"></i> BUY
-                        </a>
-                        <p class="card-text">@item.Description</p>
+<div class="card-group text-center m-2">
+    <div class="card">
+
+        <h5 class="card-header">دسته بندی محصولات </h5>
+
+        <div class="card-body">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-12 col-sm-4 col-lg-4">
+                        <div class="card">
+                            <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
+                                <img class="card-img-top" src="~/ProductPictures/@item.Picture" class="img-fluid" alt="@item.PictureAlt" title="@item.PictureTitle">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
+                                    <i class="ion-android-arrow-dropleft-circle"></i> BUY
+                                </a>
+                                <p class="card-text">@item.Description</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+                }
             </div>
-        }
+
+        </div>
     </div>
 </div>

@@ -5,36 +5,34 @@
     ViewData["Title"] = "سبد خرید";
 }
 
-<div class="breadcrumb-area section-space--half">
-    <div class="container wide">
+<div class="card-group text-end m-2">
+    <div class="card">
         <div class="row">
             <div class="col-lg-12">
-                <div class="breadcrumb-wrapper breadcrumb-bg">
-                    <div class="breadcrumb-content">
-                        <h2 class="breadcrumb-content__title">سبد خرید شما</h2>
-                        <ul class="breadcrumb-content__page-map">
-                            <li>
-                                <a asp-page="./Index">صفحه اصلی</a>
-                            </li>
-                            <li class="active">سبد خرید</li>
-                        </ul>
-                    </div>
+                <h2 class="card-header">سبد خرید شما</h2>
+                <div>
+                    <small class="small">
+                        <a asp-page="./Index">صفحه اصلی</a>
+                    </small>
+                </div>
+                <div>
+                    <span class="card-title">سبد خرید</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="page-content-area">
-    <div class="container">
+<div class="card-group text-end m-2">
+    <div class="card">
         <div class="row">
             <div class="col-lg-12">
-                <div class="page-wrapper">
+                <div class="card-body">
 
-                    <div id="productStockWarnings">
+                    <div>
                         @foreach (var item in Model.CartItems.Where(x => !x.IsInStock))
                         {
-                            <div class="alert alert-warning" id="@item.Id">
+                            <div id="@item.Id">
                                 <i class="fa fa-warning"></i> کالای
                                 <strong>@item.Name</strong>
                                 در انبار کمتر از تعداد درخواستی موجود است.
@@ -42,57 +40,59 @@
                         }
                     </div>
 
-                    <div class="page-content-wrapper">
-                        <div class="cart-table table-responsive">
-                            <table class="table">
+                    <div>
+                        <div>
+                            <table class="table table-hover">
                                 <thead>
-                                <tr>
-                                    <th class="pro-thumbnail">عکس</th>
-                                    <th class="pro-title">محصول</th>
-                                    <th class="pro-price">قیمت واحد</th>
-                                    <th class="pro-quantity">تعداد</th>
-                                    <th class="pro-subtotal">قیمت کل</th>
-                                    <th class="pro-remove">حذف</th>
-                                </tr>
+                                    <tr>
+                                        <th>عکس</th>
+                                        <th>محصول</th>
+                                        <th>قیمت واحد</th>
+                                        <th>تعداد</th>
+                                        <th>قیمت کل</th>
+                                        <th>حذف</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach (var item in Model.CartItems)
-                                {
-                                    <tr>
-                                        <td class="pro-thumbnail">
-                                            <a href="single-product.html">
-                                                <img src="~/ProductPictures/@item.Picture" class="img-fluid" alt="@item.Name">
-                                            </a>
-                                        </td>
-                                        <td class="pro-title">
-                                            <a href="single-product.html">@item.Name</a>
-                                        </td>
-                                        <td class="pro-price">
-                                            <span>@item.UnitPrice.ToMoney()</span>
-                                        </td>
-                                        <td class="pro-quantity">
-                                            <div class="quantity-selection">
-                                                <input type="number" value="@item.Count" min="1" onchange="changeCartItemCount('@item.Id', 'totalItemPrice-@item.Id', this.value)">
-                                            </div>
-                                        </td>
-                                        <td class="pro-subtotal">
-                                            <span id="totalItemPrice-@item.Id">@item.TotalItemPrice.ToMoney()</span>
-                                        </td>
-                                        <td class="pro-remove">
-                                            <a asp-page-handler="RemoveFromCart" asp-route-id="@item.Id">
-                                                <i class="fa fa-trash-o"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                }
+                                    @foreach (var item in Model.CartItems)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <a href="#">
+                                                    <img src="~/ProductPictures/@item.Picture" class="img-fluid" alt="@item.Name">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#">@item.Name</a>
+                                            </td>
+                                            <td>
+                                                <span>@item.UnitPrice.ToMoney()</span>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <input type="number" value="@item.Count" min="1" onchange="changeCartItemCount('@item.Id', 'totalItemPrice-@item.Id', this.value)">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span id="totalItemPrice-@item.Id">@item.TotalItemPrice.ToMoney()</span>
+                                            </td>
+                                            <td>
+                                                <a asp-page-handler="RemoveFromCart" asp-route-id="@item.Id">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="cart-summary">
-                                    <div class="cart-summary-button">
-                                        <a class="checkout-btn" asp-page-handler="GoToCheckOut">تکمیل فرایند خرید</a>
+                            <div>
+                                <div>
+                                    <div>
+                                        <a class="btn btn-primary btn-sm" asp-page-handler="GoToCheckOut">
+                                            تکمیل فرایند خرید
+                                        </a>
                                     </div>
                                 </div>
                             </div>

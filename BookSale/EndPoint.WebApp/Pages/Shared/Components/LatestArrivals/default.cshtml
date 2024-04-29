@@ -1,60 +1,60 @@
 ﻿@model List<AppQuery.Contracts.Product.ProductQueryModel>
 
+<div class="card-group text-center m-2">
+    <div class="card">
+        <h5 class="card-header">آخرین محصولات</h5>
 
-<div class="row text-center">
-    <div class="col-lg-12">
-        <h2>آخرین محصولات</h2>
-        <p>
-            آخرین کتاب هایی که در فروشگاه به ثبت رسیده اند
+        <div class="card-body">
 
-        </p>
-    </div>
-</div>
-<div class="card-group text-end">
-    <div class="row">
-        @foreach (var product in Model)
-        {
-            <div class="col-12 col-sm-4 col-lg-4">
-                <div class="card">
-                    <a asp-page="/Product" asp-route-id="@product.Slug">
-                        <img src="~/ProductPictures/@product.Picture" class="card-img-top img-fluid" title="@product.PictureTitle" alt="@product.PictureAlt">
-                    </a>
-                    <div class="card-body">
+        <div class="card-group text-center">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    <div class="col-12 col-sm-4 col-lg-4">
+                        <div class="card">
+                            <a asp-page="/Product" asp-route-id="@product.Slug">
+                                <img src="~/ProductPictures/@product.Picture" class="card-img-top img-fluid" title="@product.PictureTitle" alt="@product.PictureAlt">
+                            </a>
+                            <div class="card-body">
 
-                        <h5 class="card-title">
-                            <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
-                        </h5>
+                                <h5 class="card-title">
+                                    <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
+                                </h5>
 
-                        <span class="card-text">
-                            <a asp-page="/ProductCategory" asp-route-id="@product.CategorySlug">@product.Category</a>
-                        </span>
+                                <span class="card-text">
+                                    <a asp-page="/ProductCategory" asp-route-id="@product.CategorySlug">@product.Category</a>
+                                </span>
 
-                        <p class="card-text">
-                            @if (product.HasDiscount)
-                            {
-                                <span class="sale">@product.DiscountRate%</span>
-                                <span class="new">جدید</span>
-                            }
-                        </p>
+                                <p class="card-text">
+                                    @if (product.HasDiscount)
+                                    {
+                                        <span class="sale">@product.DiscountRate%</span>
+                                        <span class="new">جدید</span>
+                                    }
+                                </p>
 
-                        <p class="card-text">
-                            @if (product.HasDiscount)
-                            {
-                                <span class="discounted-price">@product.PriceWithDiscount تومان</span>
-                                <span class="main-price discounted">@product.Price تومان</span>
-                            }
-                            else
-                            {
-                                <span class="main-price">@product.Price تومان</span>
-                            }
-                        </p>
+                                <p class="card-text">
+                                    @if (product.HasDiscount)
+                                    {
+                                        <span class="discounted-price">@product.PriceWithDiscount تومان</span>
+                                        <span class="main-price discounted">@product.Price تومان</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="main-price">@product.Price تومان</span>
+                                    }
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <small class="text-muted">last update time 00-00-00</small>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="card-footer">
-                        <small class="text-muted">@product.DiscountExpireDate</small>
-                    </div>
-                </div>
+                }
             </div>
-        }
+        </div>
+
+        </div>
     </div>
 </div>
