@@ -6,6 +6,10 @@
     ViewData["metaDescription"] = Model.Product.MetaDescription;
 }
 
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z" />
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+</svg>
 
 <div class="border border-1">
 
@@ -129,8 +133,9 @@
                                 <input type="number" value="1" min="1" id="productCount">
                             </div>
                             <div class="product-buttons">
+
                                 <a class="cart-btn" onclick="addToCart('@Model.Product.Id', '@Model.Product.Name', '@Model.Product.DoublePrice', '@Model.Product.Picture')">
-                                    <i class="ion-bag"></i> افزودن به سبد خرید
+                                    <i class="bi bi-cart-plus"></i> افزودن به سبد خرید
                                 </a>
                             </div>
                         </div>
@@ -141,81 +146,84 @@
                 </div>
             </div>
 
+
+
+
             <div class="card-group">
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <div class="tab-slider-wrapper product-description-review-container  section-space--inner">
-                            <nav>
-                                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="description-tab"
-                                       data-toggle="tab" href="#product-description" role="tab"
-                                       aria-selected="true">توضیحات</a>
-                                    <a class="nav-item nav-link" id="review-tab" data-toggle="tab"
-                                       href="#review" role="tab" aria-selected="false">نظرات (@Model.Product.Comments.Count)</a>
-                                </div>
-                            </nav>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="product-description"
-                                     role="tabpanel" aria-labelledby="description-tab">
-                                    <div class="product-description">
-                                        @Model.Product.Description
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                    <div class="product-rating-wrap">
-                                        @foreach (var comment in Model.Product.Comments)
-                                        {
-                                            <div class="ratings-wrapper">
-                                                <div class="sin-ratings">
-                                                    <div class="rating-author">
-                                                        <h3>@comment.Name</h3>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    @comment.Message
-                                                </p>
-                                            </div>
-                                        }
-                                    </div>
-                                    <div class="rating-form-wrapper fix">
-                                        <h3>نظر خود را با ما به اشتراک بگذارید</h3>
-                                        <form method="post">
-                                            <div class="rating-form row">
-                                                <div class="col-md-6 col-12 form-group">
-                                                    <label for="name">نام:</label>
-                                                    <input id="name" placeholder="مثال: محمد بیگی" name="name" type="text" />
-                                                </div>
-                                                <div class="col-md-6 col-12 form-group">
-                                                    <label for="email">ایمیل:</label>
-                                                    <input id="email" placeholder="مثال: info@google.com" name="email" type="text" />
-                                                </div>
-                                                <div class="col-md-6 col-12 form-group">
-                                                    <label for="website">وبسایت:</label>
-                                                    <input id="website" placeholder="مثال: www.google.com" name="website" type="text" />
-                                                </div>
-                                                <div class="col-12 form-group">
-                                                    <label for="your-review">تی نظر:</label>
-                                                    <textarea name="message" id="message" placeholder="نظر خود را بنویسید . . . "></textarea>
-                                                </div>
-                                                <input type="hidden" name="ownerRecordId" value="@Model.Product.Id" />
-                                                <input type="hidden" name="productSlug" value="@Model.Product.Slug" />
-                                                <div class="col-12">
-                                                    <input value="ارسال" type="submit">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">Description</button>
+                                <button class="nav-link" id="nav-comment-tab" data-bs-toggle="tab" data-bs-target="#nav-comment" type="button" role="tab" aria-controls="nav-comment" aria-selected="false">Comment (@Model.Product.Comments.Count)</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
+                                <div class="card-text">
+                                    @Model.Product.Description
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="nav-comment" role="tabpanel" aria-labelledby="nav-comment-tab" tabindex="0">
+
+                                <div class="product-rating">
+                                    @foreach (var comment in Model.Product.Comments)
+                                    {
+                                        <div class="">
+                                            <div class="">
+                                                <div class="">
+                                                    <h3>@comment.Name</h3>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                @comment.Message
+                                            </p>
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="rating fix">
+                                    <h3>نظر خود را با ما به اشتراک بگذارید</h3>
+                                    <form method="post">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 form-group m-3">
+                                                <label class="form-label" for="name">نام:</label>
+                                                <input id="name" placeholder="Your Name" name="name" type="text"
+                                                       class="form-control" aria-label="Name" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div class="col-md-6 col-12 form-group m-3">
+                                                <label class="form-label" for="email">Email:</label>
+                                                <input placeholder="eg: info@google.com" name="email" type="email"
+                                                       class="form-control" id="commentInputEmail" aria-describedby="emailHelp" />
+                                            </div>
+                                            <div class="col-md-6 col-12 form-group m-3">
+                                                <label for="basic-url" class="form-label" for="website">Website:</label>
+                                                <input id="website" placeholder="eg: www.google.com" name="website" type="text"
+                                                       class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4" />
+                                            </div>
+                                            <div class="col-md-6 col-12 form-group m-3">
+                                                <label class="form-label" for="your-review">Content:</label>
+                                                <textarea name="message" id="message" placeholder="type your comment"
+                                                    class="form-control" aria-label="With textarea"></textarea>
+                                            </div>
+                                            <input type="hidden" name="ownerRecordId" value="@Model.Product.Id" />
+                                            <input type="hidden" name="productSlug" value="@Model.Product.Slug" />
+                                            <div class=" col-md-6 col-12">
+                                                <input class="btn btn-primary" value="send" type="submit">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-</div>
-</div>
-
 </div>
