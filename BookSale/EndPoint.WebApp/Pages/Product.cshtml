@@ -6,11 +6,6 @@
     ViewData["metaDescription"] = Model.Product.MetaDescription;
 }
 
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
-    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z" />
-    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-</svg>
-
 <div class="border border-1">
 
     <div class="card-group m-2 text-end">
@@ -18,17 +13,20 @@
             <div class="col-lg-12">
 
                 <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">@Model.Product.Name</h1>
-                        <ul class="small">
-                            <li>
+                    <div class="card-header">
+                        <p>
+                            <span>
                                 <a asp-page="/Index">صفحه نخست</a>
-                            </li>
-                            <li>
+                            </span>
+                            &nbsp;>&nbsp;
+                            <span>
                                 <a asp-page="/ProductCategory" asp-route-id="@Model.Product.CategorySlug">@Model.Product.Category</a>
-                            </li>
-                            <li class="active">@Model.Product.Name</li>
-                        </ul>
+                            </span>
+                            &nbsp;>&nbsp;
+                            <span class="active">
+                                @Model.Product.Name
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -78,24 +76,10 @@
                         <p class="card-text small">
                             <a asp-page="/ProductCategory" asp-route-id="@Model.Product.CategorySlug">@Model.Product.Category</a>
                         </p>
-                        <h2 class="card-title">@Model.Product.Name</h2>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
-                        </svg>
-                        <div class="product-rating">
-                            <span class="rating">
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star active"></i>
-                                <i class="bi bi-star active"></i>
-                                <i class="bi bi-star-outline"></i>
-                            </span>
+                        <div>
+                            <h2 class="card-title">@Model.Product.Name</h2>
 
-                            <span class="review-count">
-                                <a href="#">(2 reviews)</a> | <a href="#">نظر دهید</a>
-                            </span>
                         </div>
-
                         <p class="small" style="direction:rtl">
                             @if (Model.Product.HasDiscount)
                             {
@@ -135,12 +119,31 @@
                             <div class="product-buttons">
 
                                 <a class="cart-btn" onclick="addToCart('@Model.Product.Id', '@Model.Product.Name', '@Model.Product.DoublePrice', '@Model.Product.Picture')">
-                                    <i class="bi bi-cart-plus"></i> افزودن به سبد خرید
+                                    <i class="bi bi-cart-plus" style="font-size: 2rem; color: cornflowerblue;"></i> افزودن به سبد خرید
                                 </a>
                             </div>
                         </div>
-
                         <p class="single-info mb-0">تگ ها: @Model.Product.Keywords </p>
+                    </div>
+
+                    <div class="card-footer" id="nav-tab" role="tablist">
+                        <div class="text-start">
+
+                            <span>
+                                <i class="bi bi-star-fill" style="font-size: 1.5rem; color: orange;"></i>
+                                <i class="bi bi-star-fill" style="font-size: 1.5rem; color: orange;"></i>
+                                <i class="bi bi-star" style="font-size: 1.5rem; color: orange;"></i>
+                                <i class="bi bi-star" style="font-size: 1.5rem; color: orange;"></i>
+                                <i class="bi bi-star" style="font-size: 1.5rem; color: orange;"></i>
+
+                            </span>
+
+                            <span>
+                                <a href="#">(@Model.Product.Comments.Count reviews)</a>
+                            </span>
+
+                        </div>
+                        <button class="btn btn-outline-info" id="nav-comment-tab" data-bs-toggle="tab" data-bs-target="#nav-comment" type="button" role="tab" aria-controls="nav-comment" aria-selected="false">نظر دهید</button>
                     </div>
 
                 </div>
@@ -205,11 +208,11 @@
                                             <div class="col-md-6 col-12 form-group m-3">
                                                 <label class="form-label" for="your-review">Content:</label>
                                                 <textarea name="message" id="message" placeholder="type your comment"
-                                                    class="form-control" aria-label="With textarea"></textarea>
+                                                          class="form-control" aria-label="With textarea"></textarea>
                                             </div>
                                             <input type="hidden" name="ownerRecordId" value="@Model.Product.Id" />
                                             <input type="hidden" name="productSlug" value="@Model.Product.Slug" />
-                                            <div class=" col-md-6 col-12">
+                                            <div class="col-md-6 col-12">
                                                 <input class="btn btn-primary" value="send" type="submit">
                                             </div>
                                         </div>
