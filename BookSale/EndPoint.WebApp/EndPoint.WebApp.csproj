@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\sign-in.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\backgrounds\bkg_testimonials.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\backgrounds\category-image-1820x400.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\banners\banner7.jpg" />
@@ -93,6 +97,10 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\testimonial\testimor2-72x72.png" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\img\testimonial\testimor3-72x72.png" />
     <_ContentIncludedByDefault Remove="wwwroot\ProductPictures\جغرافیا\جغرافیای-ایران-و-جهان\2024-04-28-10-25-38-pngtree-photo-coming-soon-abstract-admin-banner-image_1262901.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\sign-in.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
