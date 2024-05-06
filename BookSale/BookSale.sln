@@ -138,7 +138,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogManagement.Presentation
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.AccountAcl", "ShopManagement.Infrastructure.AccountAcl\ShopManagement.Infrastructure.AccountAcl.csproj", "{9A43A83B-2C99-4246-AA07-AEA480F616FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndPoint.WebApp", "EndPoint.WebApp\EndPoint.WebApp.csproj", "{2AD47BD0-B063-4E0A-8136-10C634AD7E81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndPoint.WebApp", "EndPoint.WebApp\EndPoint.WebApp.csproj", "{2AD47BD0-B063-4E0A-8136-10C634AD7E81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
