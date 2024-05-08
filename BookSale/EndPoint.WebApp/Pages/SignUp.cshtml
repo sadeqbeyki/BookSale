@@ -1,0 +1,42 @@
+﻿@page
+@model EndPoint.WebApp.Pages.SignUpModel
+@{
+    ViewData["Title"] = "ورود و ثبت نام";
+}
+
+<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+    @if (Model.RegisterMessage != null)
+    {
+        <div class="alert alert-danger">@Model.RegisterMessage</div>
+    }
+    <form method="post" asp-page-handler="Register">
+        <div class="login-form">
+            <h4 class="login-title">ثبت نام</h4>
+            <div class="row">
+                <div class="col-md-6 col-12 mb-20">
+                    <label>نام</label>
+                    <input type="text" name="fullname" placeholder="نام">
+                </div>
+                <div class="col-md-6 col-12 mb-20">
+                    <label>نام کاربری</label>
+                    <input type="text" name="username" placeholder="نام کاربری">
+                </div>
+                <div class="col-md-12 mb-20">
+                    <label>موبایل</label>
+                    <input type="number" name="mobile" placeholder="موبایل">
+                </div>
+                <div class="col-md-6 mb-20">
+                    <label>گذرواژه</label>
+                    <input type="password" name="password" placeholder="گذرواژه">
+                </div>
+                <div class="col-md-6 mb-20">
+                    <label>تکرار گذرواژه</label>
+                    <input type="password" name="password" placeholder="تکرار گذرواژه">
+                </div>
+                <div class="col-12">
+                    <button class="register-button mt-0">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
