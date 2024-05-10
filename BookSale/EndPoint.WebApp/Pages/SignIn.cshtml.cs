@@ -4,20 +4,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EndPoint.WebApp.Pages;
 
-public class SignInModel : PageModel
+public class SignInModel(IAccountApplication accountApplication) : PageModel
 {
     [TempData]
     public string LoginMessage { get; set; }
-    private readonly IAccountApplication _accountApplication;
+    private readonly IAccountApplication _accountApplication = accountApplication;
 
-    public SignInModel(IAccountApplication accountApplication)
-    {
-        _accountApplication = accountApplication;
-    }
-
-    public void OnGet()
-    {
-    }
     public IActionResult OnPostLogin(Login command)
     {
         var result = _accountApplication.Login(command);
