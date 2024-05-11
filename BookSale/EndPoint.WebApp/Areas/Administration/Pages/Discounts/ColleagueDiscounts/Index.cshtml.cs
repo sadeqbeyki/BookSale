@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Product;
 
-namespace ServiceHost.Areas.Administration.Pages.Discounts.ColleagueDiscounts;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Discounts.ColleagueDiscounts;
 //[Authorize(Roles = Roles.Administrator)]
 
 public class IndexModel : PageModel
@@ -36,7 +36,7 @@ public class IndexModel : PageModel
         {
             Products = _productApplication.GetProducts()
         };
-        return Partial("./Create",command);
+        return Partial("./Create", command);
     }
     [NeedsPermission(DiscountPermissions.DefineColleagueDiscount)]
     public JsonResult OnPostCreate(DefineColleagueDiscount command)

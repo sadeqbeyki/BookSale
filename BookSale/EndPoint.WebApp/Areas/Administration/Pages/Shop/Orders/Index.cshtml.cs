@@ -1,12 +1,10 @@
-using System.Collections.Generic;
 using AccountManagement.Application.Contracts.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ServiceHost.Areas.Administration.Pages.Accounts.Role;
 using ShopManagement.Application.Contracts.Order;
 
-namespace ServiceHost.Areas.Administration.Pages.Shop.Orders;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Shop.Orders;
 
 public class IndexModel : PageModel
 {

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Configuration.Permissions;
 
-namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Shop.ProductCategories;
 //[Authorize(Roles = "1, 3")]
 public class IndexModel : PageModel
 {

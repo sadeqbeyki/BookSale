@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nancy.Json;
 using ShopManagement.Application.Contracts.Order;
 
-namespace ServiceHost.Pages;
+namespace EndPoint.WebApp.Pages;
 
 public class CartModel : PageModel
 {
@@ -30,7 +30,7 @@ public class CartModel : PageModel
         }
         else
         {
-             RedirectToAction("/Cart");
+            RedirectToAction("/Cart");
         }
     }
 

@@ -1,7 +1,7 @@
 using AppFramework.Application.ZarinPal;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceHost.Pages;
+namespace EndPoint.WebApp.Pages;
 
 public class PaymentResultModel : PageModel
 {

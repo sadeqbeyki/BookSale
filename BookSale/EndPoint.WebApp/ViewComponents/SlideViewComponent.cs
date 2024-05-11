@@ -1,7 +1,7 @@
 ﻿using AppQuery.Contracts.Slide;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ServiceHost.ViewComponents;
+namespace EndPoint.WebApp.ViewComponents;
 
 public class SlideViewComponent : ViewComponent
 {

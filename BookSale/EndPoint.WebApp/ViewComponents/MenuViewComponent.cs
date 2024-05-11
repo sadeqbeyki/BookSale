@@ -3,26 +3,25 @@ using AppQuery.Contracts.ArticleCategory;
 using AppQuery.Contracts.ProductCategory;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ServiceHost.ViewComponents
-{
-    public class MenuViewComponent :ViewComponent
-    {
-        private readonly IProductCategoryQuery _productCategoryQuery;
-        private readonly IArticleCategoryQuery _articleCategoryQuery;
-        public MenuViewComponent(IProductCategoryQuery productCategoryQuery, IArticleCategoryQuery articleCategoryQuery)
-        {
-            _productCategoryQuery = productCategoryQuery;
-            _articleCategoryQuery = articleCategoryQuery;
-        }
+namespace EndPoint.WebApp.ViewComponents;
 
-        public IViewComponentResult Invoke()
+public class MenuViewComponent : ViewComponent
+{
+    private readonly IProductCategoryQuery _productCategoryQuery;
+    private readonly IArticleCategoryQuery _articleCategoryQuery;
+    public MenuViewComponent(IProductCategoryQuery productCategoryQuery, IArticleCategoryQuery articleCategoryQuery)
+    {
+        _productCategoryQuery = productCategoryQuery;
+        _articleCategoryQuery = articleCategoryQuery;
+    }
+
+    public IViewComponentResult Invoke()
+    {
+        var result = new MenuModel
         {
-            var result = new MenuModel
-            {
-                ArticleCategories = _articleCategoryQuery.GetArticleCategories(),
-                ProductCategories = _productCategoryQuery.GetProductCategories()
-            };
-            return View(result);
-        }
+            ArticleCategories = _articleCategoryQuery.GetArticleCategories(),
+            ProductCategories = _productCategoryQuery.GetProductCategories()
+        };
+        return View(result);
     }
 }

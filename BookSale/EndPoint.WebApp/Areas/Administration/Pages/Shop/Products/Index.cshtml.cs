@@ -6,7 +6,7 @@ using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Configuration.Permissions;
 
-namespace ServiceHost.Areas.Administration.Pages.Shop.Products;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Shop.Products;
 public class IndexModel : PageModel
 {
     [TempData] public string Message { get; set; }

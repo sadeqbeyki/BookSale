@@ -6,6 +6,7 @@ using AppFramework.Infrastructure;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
+using EndPoint.WebApp;
 using InventoryManagement.Configuration;
 using InventoryManagement.Presentation.Api;
 using Microsoft.AspNetCore.Authentication.Cookies;

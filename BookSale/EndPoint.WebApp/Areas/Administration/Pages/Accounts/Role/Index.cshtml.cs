@@ -4,12 +4,12 @@ using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
- 
-namespace ServiceHost.Areas.Administration.Pages.Accounts.Role;
+
+namespace EndPoint.WebApp.Areas.Administration.Pages.Accounts.Role;
 
 public class IndexModel : PageModel
 {
-    [TempData] 
+    [TempData]
     public string Message { get; set; }
     public List<RoleViewModel> RolesList;
 

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nancy.Json;
 using ShopManagement.Application.Contracts.Order;
 
-namespace ServiceHost.Pages;
+namespace EndPoint.WebApp.Pages;
 
 [Authorize]
 public class CheckoutModel : PageModel

@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Configuration", "ShopManagement.Configuration\ShopManagement.Configuration.csproj", "{B30F6A38-60A9-4834-A07D-B9EE9FB15216}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{6D93401B-0EFB-41A9-A574-8D98CF33493E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CAD7D02D-6D16-480A-88C6-5EA08A7CD056}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -170,10 +168,6 @@ Global
 		{B30F6A38-60A9-4834-A07D-B9EE9FB15216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30F6A38-60A9-4834-A07D-B9EE9FB15216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30F6A38-60A9-4834-A07D-B9EE9FB15216}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D93401B-0EFB-41A9-A574-8D98CF33493E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D93401B-0EFB-41A9-A574-8D98CF33493E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D93401B-0EFB-41A9-A574-8D98CF33493E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D93401B-0EFB-41A9-A574-8D98CF33493E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58550D24-8F54-45F8-AD33-644645C23BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58550D24-8F54-45F8-AD33-644645C23BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58550D24-8F54-45F8-AD33-644645C23BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU

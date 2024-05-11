@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ServiceHost.Areas.Administration.Pages.Blog.Articles;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Blog.Articles;
 
 public class IndexModel : PageModel
 {
@@ -25,7 +25,7 @@ public class IndexModel : PageModel
     [NeedsPermission(BlogPermissions.ListArticles)]
     public void OnGet(ArticleSearchModel searchModel)
     {
-        ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(),"Id","Name");
+        ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(), "Id", "Name");
         Articles = _articleApplication.Search(searchModel);
     }
 }

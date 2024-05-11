@@ -1,7 +1,7 @@
 using AppFramework.Application;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
-using ServiceHost;
+using EndPoint.WebApp;
 
 var builder = WebApplication.CreateBuilder(args);
 

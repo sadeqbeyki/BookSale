@@ -26,41 +26,40 @@ using ShopManagement.Infrastructure.EFCore.Repositories;
 using ShopManagement.Infrastructure.EFCore.Repository;
 using ShopManagement.Infrastructure.InventoryAcl;
 
-namespace ShopManagement.Configuration
+namespace ShopManagement.Configuration;
+
+public class ShopConfigureServices
 {
-    public class ShopConfigureServices
+    public static void Configure(IServiceCollection services, string connectionString)
     {
-        public static void Configure(IServiceCollection services, string connectionString)
-        {
-            services.AddTransient<IProductCategoryApplication, ProductCategoryApplication>();
-            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+        services.AddTransient<IProductCategoryApplication, ProductCategoryApplication>();
+        services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
 
-            services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IProductApplication, ProductApplication>();
+        services.AddTransient<IProductRepository, ProductRepository>();
+        services.AddTransient<IProductApplication, ProductApplication>();
 
-            services.AddTransient<IProductPictureRepository, ProductPictureRepository>();
-            services.AddTransient<IProductPictureApplication, ProductPictureApplication>();
+        services.AddTransient<IProductPictureRepository, ProductPictureRepository>();
+        services.AddTransient<IProductPictureApplication, ProductPictureApplication>();
 
-            services.AddTransient<ISlideApplication, SlideApplication>();
-            services.AddTransient<ISlideRepository, SlideRepository>();
+        services.AddTransient<ISlideApplication, SlideApplication>();
+        services.AddTransient<ISlideRepository, SlideRepository>();
 
-            services.AddTransient<ISideQuery, SlideQuery>();
+        services.AddTransient<ISideQuery, SlideQuery>();
 
-            services.AddTransient<IProductQuery, ProductQuery>();
-            services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
+        services.AddTransient<IProductQuery, ProductQuery>();
+        services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
 
-            services.AddTransient<IOrderRepository, OrderRepository>();
-            services.AddTransient<IOrderApplication, OrderApplication>();
+        services.AddTransient<IOrderRepository, OrderRepository>();
+        services.AddTransient<IOrderApplication, OrderApplication>();
 
-            services.AddTransient<ICartCalculatorService, CartCalculatorService>();
+        services.AddTransient<ICartCalculatorService, CartCalculatorService>();
 
-            services.AddSingleton<ICartService, CartService>();
-            services.AddTransient<IShopInventoryAcl, ShopInventoryAcl>();
-            services.AddTransient<IShopAccountAcl, ShopAccountAcl>();
+        services.AddSingleton<ICartService, CartService>();
+        services.AddTransient<IShopInventoryAcl, ShopInventoryAcl>();
+        services.AddTransient<IShopAccountAcl, ShopAccountAcl>();
 
-            services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
+        services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
 
-            services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
-        }
+        services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
     }
 }

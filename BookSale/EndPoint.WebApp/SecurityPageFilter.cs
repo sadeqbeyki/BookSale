@@ -3,38 +3,37 @@ using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Reflection;
 
-namespace ServiceHost
+namespace EndPoint.WebApp;
+
+public class SecurityPageFilter : IPageFilter
 {
-    public class SecurityPageFilter : IPageFilter
+    private readonly IAuthHelper _authHelper;
+
+    public SecurityPageFilter(IAuthHelper authHelper)
     {
-        private readonly IAuthHelper _authHelper;
+        _authHelper = authHelper;
+    }
 
-        public SecurityPageFilter(IAuthHelper authHelper)
-        {
-            _authHelper = authHelper;
-        }
+    public void OnPageHandlerExecuted(PageHandlerExecutedContext context)
+    {
+    }
 
-        public void OnPageHandlerExecuted(PageHandlerExecutedContext context)
-        {
-        }
+    public void OnPageHandlerExecuting(PageHandlerExecutingContext context)
+    {
+        var handlerPermission =
+            (NeedsPermissionAttribute)context.HandlerMethod.MethodInfo.GetCustomAttribute(
+                typeof(NeedsPermissionAttribute));
 
-        public void OnPageHandlerExecuting(PageHandlerExecutingContext context)
-        {
-            var handlerPermission =
-                (NeedsPermissionAttribute)context.HandlerMethod.MethodInfo.GetCustomAttribute(
-                    typeof(NeedsPermissionAttribute));
+        if (handlerPermission == null)
+            return;
 
-            if (handlerPermission == null)
-                return;
+        var accountPermissions = _authHelper.GetPermissions();
 
-            var accountPermissions = _authHelper.GetPermissions();
+        if (accountPermissions.All(x => x != handlerPermission.Permission))
+            context.HttpContext.Response.Redirect("/Account");
+    }
 
-            if (accountPermissions.All(x => x != handlerPermission.Permission))
-                context.HttpContext.Response.Redirect("/Account");
-        }
-
-        public void OnPageHandlerSelected(PageHandlerSelectedContext context)
-        {
-        }
+    public void OnPageHandlerSelected(PageHandlerSelectedContext context)
+    {
     }
 }

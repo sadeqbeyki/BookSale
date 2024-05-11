@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.Slide;
 
-namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
+namespace EndPoint.WebApp.Areas.Administration.Pages.Shop.Slides
 {
     public class IndexModel : PageModel
     {

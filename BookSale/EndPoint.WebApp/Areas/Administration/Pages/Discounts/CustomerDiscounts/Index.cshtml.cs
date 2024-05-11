@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Product;
 
-namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Discounts.CustomerDiscounts;
 //[Authorize(Roles = Roles.Administrator)]
 public class IndexModel : PageModel
 {

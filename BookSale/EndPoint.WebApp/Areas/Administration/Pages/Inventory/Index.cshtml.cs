@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Product;
 
 
-namespace ServiceHost.Areas.Administration.Pages.Inventory;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Inventory;
+
 [Authorize(Roles = Roles.Administrator)]
 public class IndexModel : PageModel
 {

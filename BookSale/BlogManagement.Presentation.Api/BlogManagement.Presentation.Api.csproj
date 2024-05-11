@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AppQuery\AppQuery.csproj" />
     <ProjectReference Include="..\BlogManagement.Infrastructure.Configuration\BlogManagement.Infrastructure.Configuration.csproj" />
-    <ProjectReference Include="..\ServiceHost\ServiceHost.csproj" />
+    <ProjectReference Include="..\EndPoint.WebApp\EndPoint.WebApp.csproj" />
   </ItemGroup>
 
 </Project>

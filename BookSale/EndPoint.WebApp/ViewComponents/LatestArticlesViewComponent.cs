@@ -1,21 +1,20 @@
 ﻿using AppQuery.Contracts.Article;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ServiceHost.ViewComponents
+namespace EndPoint.WebApp.ViewComponents;
+
+public class LatestArticlesViewComponent : ViewComponent
 {
-    public class LatestArticlesViewComponent : ViewComponent
+    private readonly IArticleQuery _articleQuery;
+
+    public LatestArticlesViewComponent(IArticleQuery articleQuery)
     {
-        private readonly IArticleQuery _articleQuery;
+        _articleQuery = articleQuery;
+    }
 
-        public LatestArticlesViewComponent(IArticleQuery articleQuery)
-        {
-            _articleQuery = articleQuery;
-        }
-
-        public IViewComponentResult Invoke()
-        {
-            var articles = _articleQuery.LatestArticles();
-            return View(articles);
-        }
+    public IViewComponentResult Invoke()
+    {
+        var articles = _articleQuery.LatestArticles();
+        return View(articles);
     }
 }

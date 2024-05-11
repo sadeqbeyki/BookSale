@@ -1,21 +1,20 @@
 using AppQuery.Contracts.ProductCategory;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceHost.Pages
+namespace EndPoint.WebApp.Pages;
+
+public class ProductCategoryModel : PageModel
 {
-    public class ProductCategoryModel : PageModel
+    public ProductCategoryQueryModel ProductCategory;
+    private readonly IProductCategoryQuery _productCategoryQuery;
+
+    public ProductCategoryModel(IProductCategoryQuery productCategoryQuery)
     {
-        public ProductCategoryQueryModel ProductCategory;
-        private readonly IProductCategoryQuery _productCategoryQuery;
+        _productCategoryQuery = productCategoryQuery;
+    }
 
-        public ProductCategoryModel(IProductCategoryQuery productCategoryQuery)
-        {
-            _productCategoryQuery = productCategoryQuery;
-        }
-
-        public void OnGet(string id)
-        {
-            ProductCategory = _productCategoryQuery.GetProductCategoryWithProductsBy(id);
-        }
+    public void OnGet(string id)
+    {
+        ProductCategory = _productCategoryQuery.GetProductCategoryWithProductsBy(id);
     }
 }

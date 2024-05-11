@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ServiceHost.Areas.Administration.Pages.Accounts.Account;
+namespace EndPoint.WebApp.Areas.Administration.Pages.Accounts.Account;
+
 [Authorize(Roles = Roles.Administrator)]
 public class IndexModel : PageModel
 {
