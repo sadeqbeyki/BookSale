@@ -1,6 +1,6 @@
 ﻿@page
-@    using ShopManagement.Configuration.Permissions
-@model             IndexModel
+@using ShopManagement.Configuration.Permissions
+@model EndPoint.WebApp.Areas.Administration.Pages.Shop.ProductCategories.IndexModel
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -67,8 +67,8 @@
                                         <td>@item.CreationDate</td>
                                         <td>
                                             <a Permission="@ShopPermissions.EditProductCategory"
-                                           class="btn btn-warning pull-right m-rl-5"
-                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                               class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>

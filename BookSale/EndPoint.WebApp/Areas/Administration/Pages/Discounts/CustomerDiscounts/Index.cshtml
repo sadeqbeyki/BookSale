@@ -1,6 +1,6 @@
 ﻿@page
-@    using DiscountManagement.Configuration.Permissions
-@model             IndexModel
+@using DiscountManagement.Configuration.Permissions
+@model EndPoint.WebApp.Areas.Administration.Pages.Discounts.CustomerDiscounts.IndexModel
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -81,7 +81,7 @@
                                         <td>@item.CreationDate</td>
                                         <td>
                                             <a Permission="@DiscountPermissions.EditCustomerDiscount" class="btn btn-warning waves-effect waves-light m-b-5"
-                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>

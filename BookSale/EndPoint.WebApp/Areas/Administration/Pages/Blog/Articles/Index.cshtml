@@ -1,6 +1,6 @@
 ﻿@page
-@    using BlogManagement.Infrastructure.Configuration.Permissions
-@model             IndexModel
+@using BlogManagement.Infrastructure.Configuration.Permissions
+@model EndPoint.WebApp.Areas.Administration.Pages.Blog.Articles.IndexModel
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -76,9 +76,9 @@
                                         <td>@item.ShortDescription</td>
                                         <td>@item.PublishDate</td>
                                         <td>
-                                            <a permission="BlogPermissions.EditArticle" 
-                                            class="btn btn-warning pull-right m-rl-5" 
-                                            asp-page="./Edit" asp-route-id="@item.Id">
+                                            <a permission="BlogPermissions.EditArticle"
+                                               class="btn btn-warning pull-right m-rl-5"
+                                               asp-page="./Edit" asp-route-id="@item.Id">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>

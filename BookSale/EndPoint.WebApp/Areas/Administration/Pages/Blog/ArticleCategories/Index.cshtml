@@ -1,6 +1,6 @@
 ﻿@page
-@    using BlogManagement.Infrastructure.Configuration.Permissions
-@model              IndexModel
+@using BlogManagement.Infrastructure.Configuration.Permissions
+@model EndPoint.WebApp.Areas.Administration.Pages.Blog.ArticleCategories.IndexModel
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -72,9 +72,9 @@
                                         <td>@item.ArticlesCount</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a permission="BlogPermissions.EditArticleCategory" 
-                                            class="btn btn-warning pull-right m-rl-5"
-                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                            <a permission="BlogPermissions.EditArticleCategory"
+                                               class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 
 @section Scripts {
     <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>
