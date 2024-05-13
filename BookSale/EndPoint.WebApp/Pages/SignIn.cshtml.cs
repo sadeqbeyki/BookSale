@@ -10,6 +10,9 @@ public class SignInModel(IAccountApplication accountApplication) : PageModel
     public string LoginMessage { get; set; }
     private readonly IAccountApplication _accountApplication = accountApplication;
 
+    public void OnGet()
+    {
+    }
     public IActionResult OnPostLogin(Login command)
     {
         var result = _accountApplication.Login(command);

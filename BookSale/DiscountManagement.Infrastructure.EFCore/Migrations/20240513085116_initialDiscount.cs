@@ -12,7 +12,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Colleagues",
+                name: "Discount_Colleagues",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -24,11 +24,11 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Colleagues", x => x.Id);
+                    table.PrimaryKey("PK_Discount_Colleagues", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "DiscountCustomers",
+                name: "Discount_Customers",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -42,7 +42,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiscountCustomers", x => x.Id);
+                    table.PrimaryKey("PK_Discount_Customers", x => x.Id);
                 });
         }
 
@@ -50,10 +50,10 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Colleagues");
+                name: "Discount_Colleagues");
 
             migrationBuilder.DropTable(
-                name: "DiscountCustomers");
+                name: "Discount_Customers");
         }
     }
 }

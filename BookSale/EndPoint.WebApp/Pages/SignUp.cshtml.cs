@@ -14,7 +14,9 @@ public class SignUpModel : PageModel
     {
         _accountApplication = accountApplication;
     }
-
+    public void OnGet()
+    {
+    }
     public IActionResult OnPostRegister(RegisterAccount command)
     {
         var result = _accountApplication.Register(command);

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiscountManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(DiscountContext))]
-    [Migration("20240513082107_initialDiscount")]
+    [Migration("20240513085116_initialDiscount")]
     partial class initialDiscount
     {
         /// <inheritdoc />
@@ -47,7 +47,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colleagues", (string)null);
+                    b.ToTable("Discount_Colleagues", (string)null);
                 });
 
             modelBuilder.Entity("DiscountManagement.Domain.CustomerDiscountAgg.CustomerDiscount", b =>
@@ -80,7 +80,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DiscountCustomers", (string)null);
+                    b.ToTable("Discount_Customers", (string)null);
                 });
 #pragma warning restore 612, 618
         }

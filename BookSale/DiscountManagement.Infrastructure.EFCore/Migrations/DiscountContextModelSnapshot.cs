@@ -44,7 +44,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colleagues", (string)null);
+                    b.ToTable("Discount_Colleagues", (string)null);
                 });
 
             modelBuilder.Entity("DiscountManagement.Domain.CustomerDiscountAgg.CustomerDiscount", b =>
@@ -77,7 +77,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DiscountCustomers", (string)null);
+                    b.ToTable("Discount_Customers", (string)null);
                 });
 #pragma warning restore 612, 618
         }
