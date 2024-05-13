@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommentManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(CommentContext))]
-    [Migration("20240410164149_initialComment")]
+    [Migration("20240513082913_initialComment")]
     partial class initialComment
     {
         /// <inheritdoc />

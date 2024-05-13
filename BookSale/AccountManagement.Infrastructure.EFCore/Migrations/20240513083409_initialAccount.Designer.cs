@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccountManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(AccountContext))]
-    [Migration("20240412172525_initialAccount")]
+    [Migration("20240513083409_initialAccount")]
     partial class initialAccount
     {
         /// <inheritdoc />

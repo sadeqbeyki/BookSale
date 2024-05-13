@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiscountManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(DiscountContext))]
-    [Migration("20240410163357_initialDiscount")]
+    [Migration("20240513082107_initialDiscount")]
     partial class initialDiscount
     {
         /// <inheritdoc />

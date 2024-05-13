@@ -8,7 +8,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Configurations
     {
         public void Configure(EntityTypeBuilder<CustomerDiscount> builder)
         {
-            builder.ToTable("DiscountCustomers");
+            builder.ToTable("Discount_Customers");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Reason).HasMaxLength(500);
         }

@@ -8,7 +8,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Configurations
     {
         public void Configure(EntityTypeBuilder<ColleagueDiscount> builder)
         {
-            builder.ToTable("Colleagues");
+            builder.ToTable("Discount_Colleagues");
             builder.HasKey(x => x.Id);
         }
     }
