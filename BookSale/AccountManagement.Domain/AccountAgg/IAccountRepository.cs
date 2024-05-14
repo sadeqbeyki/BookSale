@@ -9,5 +9,7 @@ namespace AccountManagement.Domain.AccountAgg
         EditAccount GetDetails(long id);
         List<AccountViewModel> GetAccounts();
         List<AccountViewModel> Search(AccountSearchModel searchModel);
+
+        void AddUserToRole(Account user, List<string> roles);
     }
 }

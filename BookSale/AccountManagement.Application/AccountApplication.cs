@@ -14,6 +14,7 @@ namespace AccountManagement.Application
         private readonly IAuthHelper _authHelper;
         private readonly IRoleRepository _roleRepository;
 
+
         public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher,
             IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository)
         {
@@ -52,6 +53,7 @@ namespace AccountManagement.Application
 
             var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
             _accountRepository.Create(account);
+            //add to tole
             _accountRepository.SaveChanges();
             return operation.Succeeded();
         }
@@ -59,7 +61,7 @@ namespace AccountManagement.Application
         private void InitialUserData()
         {
             var roles = _roleRepository.List();
-            if (roles == null)
+            if (roles.Count <= 0)
             {
                 var addRoles = new List<Role>
                     {
@@ -72,9 +74,11 @@ namespace AccountManagement.Application
                 {
                     _roleRepository.Create(item);
                 }
-                var user = new Account("admin", "administrator", "74107410", "09101112233", 1, "");
-                _accountRepository.Create(user);
-                _accountRepository.SaveChanges();
+                _roleRepository.SaveChanges();
+
+                //var user = new Account("admin", "administrator", "74107410", "09101112233", 1, "");
+                //_accountRepository.Create(user);
+                //_accountRepository.SaveChanges();
             };
         }
 

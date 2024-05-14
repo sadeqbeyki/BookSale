@@ -2,6 +2,8 @@
 using AccountManagement.Domain.AccountAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
+
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository
@@ -9,10 +11,13 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
     public class AccountRepository : BaseRepository<long, Account>, IAccountRepository
     {
         private readonly AccountContext _context;
+        private readonly UserManager<Account> _userManager;
 
-        public AccountRepository(AccountContext context) : base(context)
+
+        public AccountRepository(AccountContext context, UserManager<Account> userManager) : base(context)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public List<AccountViewModel> GetAccounts()
@@ -70,5 +75,10 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
 
             return query.OrderByDescending(x => x.Id).ToList();
         }
+        public void AddUserToRole(Account user, List<string> roles)
+        {
+            var addUserRole = _userManager.AddToRolesAsync(user, roles);
+        }
     }
+
 }
