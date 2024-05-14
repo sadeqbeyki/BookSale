@@ -7,13 +7,15 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="~/lib/img/logo.png" class="img-fluid" alt="bookSale">
-            bookSale
-        </a>
+        <div class="text-center mb-3">
+            <a class="navbar-brand" href="#">
+                <img src="~/lib/img/login-logo.png" class="img-fluid" alt="bookSale" width="64" height="64">
+            </a>
+            <h5 class="fw-normal">bookSale</h5>
+        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -50,42 +52,45 @@
                     <a class="nav-link" asp-page="/Contact">Contact Us</a>
                 </li>
 
-                @if (authHelper.IsAuthenticated())
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Account" asp-page-handler="LogOut">Logout</a>
-                    </li>
-                    @if (authHelper.CurrentAccountRole() == Roles.Administrator)
-                    {
-                        <li>
-                            <a href="/administration">Control Panel</a>
-                        </li>
-                    }
-                }
-                else
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Account">Register / Login</a>
-                    </li>
-                }
-
-                <li class="nav-item">
-                    <a class="nav-link disabled">Chat</a>
-                </li>
+                
 
             </ul>
         </div>
 
-        <li class="nav-item me-2">
+        <div class="nav-item me-2">
             <a asp-page="/Cart" class="nav-link">
                 <i class="bi bi-cart"></i>
                 Cart
             </a>
-        </li>
+        </div>
 
-        <form class="d-flex" role="search">
+        <form class="d-flex px-2" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            @if (authHelper.IsAuthenticated())
+            {
+                <li class="nav-item">
+                    <a class="btn btn-outline-danger" asp-page="/Account" asp-page-handler="LogOut">Logout</a>
+                </li>
+                @if (authHelper.CurrentAccountRole() == Roles.Administrator)
+                {
+                    <li>
+                        <a class="btn btn-outline-warning" href="/administration">Control Panel</a>
+                    </li>
+                }
+            }
+            else
+            {
+                <li class="nav-item px-2">
+                    <a class="btn btn-outline-primary" asp-page="/SignIn">SignIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary" asp-page="/SignUp">SignUp</a>
+                </li>
+            }
+        </ul>
     </div>
 </nav>
