@@ -1,42 +1,75 @@
 ﻿@page
 @model EndPoint.WebApp.Pages.SignUpModel
 @{
-    ViewData["Title"] = "ثبت نام";
+    ViewData["Title"] = "SignUp";
 }
 
-<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-    @if (Model.RegisterMessage != null)
-    {
-        <div class="alert alert-danger">@Model.RegisterMessage</div>
-    }
-    <form method="post" asp-page-handler="Register">
-        <div class="login-form">
-            <h4 class="login-title">ثبت نام</h4>
-            <div class="row">
-                <div class="col-md-6 col-12 mb-20">
-                    <label>نام</label>
-                    <input type="text" name="fullname" placeholder="نام">
+<div class="card-group">
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+        @if (Model.RegisterMessage != null)
+        {
+            <div class="alert alert-danger">@Model.RegisterMessage</div>
+        }
+        <div class="card">
+            <form method="post" asp-page-handler="Register">
+
+                <div class="card-header">
+                    <h4 class="card-title">Sign Up</h4>
                 </div>
-                <div class="col-md-6 col-12 mb-20">
-                    <label>نام کاربری</label>
-                    <input type="text" name="username" placeholder="نام کاربری">
+
+                <div class="card-body">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">First and last name</span>
+                        <input type="text" name="fullname" aria-label="First name" class="form-control">
+                        @*
+                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="Last name" class="form-control">
+                        *@
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@@</span>
+                        <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">@@example.com</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password">
+                        <span class="input-group-text">AGAIN</span>
+                        <input type="password" name="password" class="form-control" placeholder="RepeatPassword" aria-label="RepeatPassword">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">+98</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">90</a></li>
+                            <li><a class="dropdown-item" href="#">91</a></li>
+                            <li><a class="dropdown-item" href="#">92</a></li>
+                            <li><a class="dropdown-item" href="#">93</a></li>
+                            <li><a class="dropdown-item" href="#">94</a></li>
+                            <li><a class="dropdown-item" href="#">95</a></li>
+                            <li><a class="dropdown-item" href="#">96</a></li>
+                            <li><a class="dropdown-item" href="#">97</a></li>
+                            <li><a class="dropdown-item" href="#">98</a></li>
+                            <li><a class="dropdown-item" href="#">99</a></li>
+                        </ul>
+                        <input type="number" name="mobile" class="form-control" aria-label="CountryCodes" placeholder="Phone Number">
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary mt-0">Register</button>
+                    </div>
                 </div>
-                <div class="col-md-12 mb-20">
-                    <label>موبایل</label>
-                    <input type="number" name="mobile" placeholder="موبایل">
-                </div>
-                <div class="col-md-6 mb-20">
-                    <label>گذرواژه</label>
-                    <input type="password" name="password" placeholder="گذرواژه">
-                </div>
-                <div class="col-md-6 mb-20">
-                    <label>تکرار گذرواژه</label>
-                    <input type="password" name="password" placeholder="تکرار گذرواژه">
-                </div>
-                <div class="col-12">
-                    <button class="register-button mt-0">ثبت نام</button>
-                </div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12 text-center">
+            <img src="~/lib/img/registerImage.png" class="img-fluid" alt="bookSale" width="460" height="460">
+    </div>
 </div>
