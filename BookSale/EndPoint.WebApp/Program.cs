@@ -11,7 +11,6 @@ using InventoryManagement.Configuration;
 using InventoryManagement.Presentation.Api;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
-using ServiceHost;
 using ShopManagement.Configuration;
 using ShopManagement.Presentation.Api;
 using System.Text.Encodings.Web;

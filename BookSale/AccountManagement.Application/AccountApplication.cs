@@ -53,9 +53,19 @@ namespace AccountManagement.Application
 
             var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
             _accountRepository.Create(account);
-            //add to tole
+
+            AddUserToRole(account);
+
             _accountRepository.SaveChanges();
             return operation.Succeeded();
+        }
+
+        private void AddUserToRole(Account account)
+        {
+            var users = _accountRepository.GetAccounts();
+            if (users.Count <= 0)
+                _accountRepository.AddUserToRole(account, ["SystemUser", "Administrator"]);
+            _accountRepository.AddUserToRole(account, ["SystemUser"]);
         }
 
         private void InitialUserData()

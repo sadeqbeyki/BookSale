@@ -20,4 +20,8 @@
     <ProjectReference Include="..\AppFramework\AppFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\Base\" />
+  </ItemGroup>
+
 </Project>

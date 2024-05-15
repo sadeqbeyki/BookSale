@@ -7,24 +7,25 @@ using AccountManagement.Domain.RoleAgg;
 using AccountManagement.Infrastructure.EFCore;
 using AccountManagement.Infrastructure.EFCore.Repository;
 using AppFramework.Infrastructure;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AccountManagement.Configuration
+namespace AccountManagement.Configuration;
+
+public class AccountConfigureServices
 {
-    public class AccountConfigureServices
+    public static void Configure(IServiceCollection services, string connectionString)
     {
-        public static void Configure(IServiceCollection services, string connectionString)
-        {
-            services.AddTransient<IAccountApplication, AccountApplication>();
-            services.AddTransient<IAccountRepository,AccountRepository>();
+        services.AddTransient<IAccountApplication, AccountApplication>();
+        services.AddScoped<IAccountRepository,AccountRepository>();
 
-            services.AddTransient<IRoleRepository, RoleRepository>();
-            services.AddTransient<IRoleApplication,RoleApplication>();
+        services.AddTransient<IRoleRepository, RoleRepository>();
+        services.AddTransient<IRoleApplication,RoleApplication>();
 
-            services.AddScoped<IPermissionExposer, AccountPermissionExposer>();
+        services.AddScoped<IPermissionExposer, AccountPermissionExposer>();
 
-            services.AddDbContext<AccountContext>(x => x.UseSqlServer(connectionString));
-        }
+        services.AddDbContext<AccountContext>(x => x.UseSqlServer(connectionString));
     }
 }
