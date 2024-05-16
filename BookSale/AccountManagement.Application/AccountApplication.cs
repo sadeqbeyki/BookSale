@@ -51,19 +51,25 @@ namespace AccountManagement.Application
             var path = $"ProfilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
 
-            var account = new Account(command.FullName, command.UserName, password, command.Mobile, command.RoleId, picturePath);
+            var account = new Account(
+                command.FullName,
+                command.UserName, password,
+                command.Mobile,
+                command.RoleId,
+                picturePath);
+
             _accountRepository.Create(account);
+            _accountRepository.SaveChanges();
 
             AddUserToRole(account);
 
-            _accountRepository.SaveChanges();
             return operation.Succeeded();
         }
 
         private void AddUserToRole(Account account)
         {
             var users = _accountRepository.GetAccounts();
-            if (users.Count <= 0)
+            if (users.Count == 1)
                 _accountRepository.AddUserToRole(account, ["SystemUser", "Administrator"]);
             _accountRepository.AddUserToRole(account, ["SystemUser"]);
         }
@@ -85,10 +91,6 @@ namespace AccountManagement.Application
                     _roleRepository.Create(item);
                 }
                 _roleRepository.SaveChanges();
-
-                //var user = new Account("admin", "administrator", "74107410", "09101112233", 1, "");
-                //_accountRepository.Create(user);
-                //_accountRepository.SaveChanges();
             };
         }
 

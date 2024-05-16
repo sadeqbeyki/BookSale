@@ -21,7 +21,7 @@ public class Account : IdentityUser<long>
         RoleId = roleId;
 
         if (roleId == 0)
-            RoleId = 2;
+            RoleId = 10003;
 
         ProfilePhoto = profilePhoto;
         CreationDate = DateTime.Now;

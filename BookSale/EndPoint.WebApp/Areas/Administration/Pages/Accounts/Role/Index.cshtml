@@ -6,7 +6,7 @@
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت نقش ها";
 }
-@if (User.IsInRole("1") == true)
+@if (User.IsInRole("10002") == true)
 {
     <div>
         <div Permission="@AccountPermissions.CreateRole" class="row">

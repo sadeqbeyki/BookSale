@@ -1,20 +1,21 @@
-﻿namespace AppFramework.Infrastructure
-{
-    public static class Roles
-    {
-        public const string Administrator = "1";
-        public const string SystemUser = "2";
-        public const string ContentUploader = "3";
-        public const string ColleagueUser = "6";
+﻿namespace AppFramework.Infrastructure;
 
-        public static string GetRoleBy(long id)
+public static class Roles
+{
+    public const string Administrator = "10002";
+    public const string SystemUser = "10003";
+    public const string ContentUploader = "10004";
+    public const string ColleagueUser = "10005";
+
+    public static string GetRoleBy(long id)
+    {
+        return id switch
         {
-            return id switch
-            {
-                1 => "مدیرسیستم",
-                3 => "محتوا گذار",
-                _ => "",
-            };
-        }
+            10002 => "Administrator",
+            10003 => "Registred User",
+            10004 => "Content Manager",
+            10005 => "Colleague User",
+            _ => "",
+        };
     }
 }
