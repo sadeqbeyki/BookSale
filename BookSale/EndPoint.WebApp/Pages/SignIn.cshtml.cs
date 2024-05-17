@@ -8,19 +8,21 @@ public class SignInModel(IAccountApplication accountApplication) : PageModel
 {
     [TempData]
     public string LoginMessage { get; set; }
+    public Login Command;
+
     private readonly IAccountApplication _accountApplication = accountApplication;
 
     public void OnGet()
     {
     }
-    public IActionResult OnPostLogin(Login command)
+    public IActionResult OnPost(Login command)
     {
         var result = _accountApplication.Login(command);
         if (result.IsSucceeded)
             return RedirectToAction("Index");
 
         LoginMessage = result.Message;
-        return RedirectToPage("/Account");
+        return RedirectToPage("/SignIn");
     }
     public IActionResult OnGetLogOut()
     {

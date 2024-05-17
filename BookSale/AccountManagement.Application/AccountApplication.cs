@@ -53,7 +53,8 @@ namespace AccountManagement.Application
 
             var account = new Account(
                 command.FullName,
-                command.UserName, password,
+                command.UserName,
+                password,
                 command.Mobile,
                 command.RoleId,
                 picturePath);
