@@ -21,8 +21,8 @@ public class SignUpModel : PageModel
     {
         var result = _accountApplication.Register(command);
         if (result.IsSucceeded)
-            return RedirectToPage("/Account");
+            return RedirectToPage("/SignIn");
         RegisterMessage = result.Message;
-        return RedirectToPage("/Account");
+        return RedirectToPage("/SignUp");
     }
 }

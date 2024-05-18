@@ -27,7 +27,7 @@ public class AccountModel : PageModel
             return RedirectToAction("Index");
 
         LoginMessage = result.Message;
-        return RedirectToPage("/Account");
+        return RedirectToPage("/Auth");
     }
     public IActionResult OnGetLogOut()
     {
@@ -39,8 +39,8 @@ public class AccountModel : PageModel
     {
         var result = _accountApplication.Register(command);
         if (result.IsSucceeded)
-            return RedirectToPage("/Account");
+            return RedirectToPage("/Auth");
         RegisterMessage = result.Message;
-        return RedirectToPage("/Account");
+        return RedirectToPage("/Auth");
     }
 }

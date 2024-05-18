@@ -2,16 +2,16 @@
 @using Newtonsoft.Json
 @model EndPoint.WebApp.Areas.Administration.Pages.IndexModel
 @{
-    ViewData["Title"] = "مدیریت";
+    ViewData["Title"] = "Control Panel";
 }
 
     <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
-            <h4 class="pull-left page-title">خوش آمدید ! </h4>
-            <ol class="breadcrumb pull-right">
-                <li><a href="#">نبشت گاه</a></li>
-                <li class="active">داشبورد</li>
+            <h4 class="card-title">ٌWellcome ! </h4>
+            <ol class="list-group">
+                <li class="list-group-item"><a href="#">نبشت گاه</a></li>
+                <li class="list-group-item active">Dashboard</li>
             </ol>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-info"><i class="ion-social-usd"></i></span>
             <div class="mini-stat-info text-right text-muted">
-                <span class="counter">15852</span>
+                <span class="bi-arrow-counterclockwise">15852</span>
                 Total Sales
             </div>
             <div class="tiles-progress">
@@ -38,6 +38,15 @@
             </div>
         </div>
     </div>
+
+@*     <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+            <h5 class="card-title">Info card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div> *@
+
     <div class="col-md-6 col-sm-6 col-lg-3">
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-purple"><i class="ion-ios7-cart"></i></span>

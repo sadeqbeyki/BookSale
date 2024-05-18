@@ -73,7 +73,7 @@
             @if (authHelper.IsAuthenticated())
             {
                 <li class="nav-item">
-                    <a class="btn btn-outline-danger" asp-page="/Account" asp-page-handler="LogOut">Logout</a>
+                    <a class="btn btn-outline-danger" asp-page="/Auth" asp-page-handler="LogOut">Logout</a>
                 </li>
                 @if (authHelper.CurrentAccountRole() == Roles.Administrator)
                 {
