@@ -1,0 +1,27 @@
+﻿@inject AppFramework.Application.IAuthHelper AuthHelper;
+@{
+    var currentAccount = AuthHelper.CurrentAccountInfo();
+}
+<div class="card">
+    <div class="card-body">
+        <div class="pull-right">
+            <img src="~/AdminTheme/assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+        </div>
+        <div class="user-info">
+            <div class="dropdown">
+                <a href="#" class="btn btn-outline-info dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    @currentAccount.FullName
+                    <span class="dropdown-divider"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-fullscreen"></i> Lock screen</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eject"></i> Logout</a></li>
+                </ul>
+            </div>
+
+            <p class="small">@currentAccount.Role</p>
+        </div>
+    </div>
+</div>

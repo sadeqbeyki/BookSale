@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EndPoint.WebApp.Pages;
 
-public class AccountModel : PageModel
+public class AuthModel : PageModel
 {
     [TempData]
     public string LoginMessage { get; set; }
@@ -12,7 +12,7 @@ public class AccountModel : PageModel
     public string RegisterMessage { get; set; }
     private readonly IAccountApplication _accountApplication;
 
-    public AccountModel(IAccountApplication accountApplication)
+    public AuthModel(IAccountApplication accountApplication)
     {
         _accountApplication = accountApplication;
     }
