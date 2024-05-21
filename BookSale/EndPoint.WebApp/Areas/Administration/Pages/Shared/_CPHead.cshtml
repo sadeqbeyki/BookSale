@@ -1,0 +1,46 @@
+﻿@inject AppFramework.Application.IAuthHelper AuthHelper;
+@{
+    var currentAccount = AuthHelper.CurrentAccountInfo();
+}
+
+<nav class="navbar bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+
+        <span class="text-center">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-book"></i>bookSale
+
+            </a>
+        </span>
+
+
+
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+    </div>
+</nav>
+
+<div class="card m-2">
+    <div class="card-body">
+        <span>
+            <img src="" alt="" class="thumb-md img-circle">
+        </span>
+        <div class="dropdown">
+            <a href="#" class="btn btn-outline-success dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                @currentAccount.FullName
+                <span class="dropdown-divider"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-fullscreen"></i> Lock screen</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-eject"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <p class="small">@currentAccount.Role</p>
+    </div>
+</div>
