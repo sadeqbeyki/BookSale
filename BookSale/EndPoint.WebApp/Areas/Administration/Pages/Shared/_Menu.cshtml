@@ -5,59 +5,179 @@
     var currentAccount = AuthHelper.CurrentAccountInfo();
 }
 
-<ul class="list-group">
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
 
-    <li class="list-group-item">
-        <a asp-page="/Index" class="waves-effect active"><i class="md md-home"></i><span> داشبورد </span></a>
+    @@media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+    .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+        z-index: 1500;
+    }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+</style>
+
+<link href="~/panel/css/sidebars.css" rel="stylesheet" type="text/css" />
+<script src="~/panel/js/sidebars.js"></script>
+
+<ul class="list-unstyled ps-0">
+
+    <li class="mb-1">
+        <a asp-page="/Index" class="nav-link link-body-emphasis">
+            داشبورد
+            <i class="bi bi-speedometer2"></i>
+        </a>
     </li>
-    <li class="list-group-item">
-        <a asp-page="/Comments/Index" class="waves-effect"><i class="md md-home"></i><span> کامنت ها </span></a>
+    <li><hr class="table-group-divider"></li>
+
+    <li class="mb-1">
+        <a asp-page="/Comments/Index" class="nav-link link-body-emphasis">
+            کامنت ها
+            <i class="bi bi-signal"></i>
+        </a>
     </li>
 
     @if (AuthHelper.CurrentAccountRole() == Roles.Administrator)
     {
-        <li class="list-group-item">
-            <a asp-page="/inventory/Index" class="waves-effect"><i class="md md-home"></i><span> انبارداری </span></a>
+        <li class="mb-1">
+            <a asp-page="/inventory/Index" class="nav-link link-body-emphasis">
+                انبارداری
+                <i class="bi bi-basket"></i>
+            </a>
         </li>
-        <li class="list-group-item">
-            <a asp-page="/Shop/Orders/Index" class="waves-effect"><i class="md md-home"></i><span> سفارشات </span></a>
-        </li>
-        <li class="list-group-item">
-            <a class="waves-effect"><i class="md md-mail"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
-            <ul class="list-unstyled">
-                <li><a asp-page="/Shop/Slides/Index"> اسلایدر</a></li>
-                <li><a asp-page="/Shop/ProductCategories/Index">گروه محصولات</a></li>
-                <li><a asp-page="/Shop/Products/Index"> محصولات</a></li>
-                <li><a asp-page="/Shop/ProductPictures/Index">عکس محصولات</a></li>
-            </ul>
+        <li class="mb-1">
+            <a asp-page="/Shop/Orders/Index" class="nav-link link-body-emphasis">
+                <span> سفارشات </span>
+                <i class="bi bi-cart3"></i>
+            </a>
         </li>
 
-        <li class="list-group-item">
-            <a class="waves-effect"><i class="md md-mail"></i><span> سیستم تخفیفات </span><span class="pull-right"><i class="md md-add"></i></span></a>
-            <ul class="list-unstyled">
-                <li><a asp-page="/Discounts/CustomerDiscounts/Index"> تخفیف مشتری</a></li>
-                <li><a asp-page="/Discounts/ColleagueDiscounts/Index">تخفیف همکاری</a></li>
-            </ul>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#shop-collapse" aria-expanded="false">
+                فروشگاه
+                <i class="bi bi-shop"></i>
+            </button>
+            <div class="collapse" id="shop-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a asp-page="/Shop/Slides/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">اسلایدر<i class="bi bi-sliders"></i> </a></li>
+                    <li><a asp-page="/Shop/ProductCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">دسته بندی کتاب ها<i class="bi bi-diagram-2"></i></a></li>
+                    <li><a asp-page="/Shop/Products/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">کتاب ها<i class="bi bi-book"></i></a></li>
+                    <li><a asp-page="/Shop/ProductPictures/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> تصاویر کتاب ها<i class="bi bi-images"></i></a></li>
+                </ul>
+            </div>
         </li>
 
-        <li class="list-group-item">
-            <a class="waves-effect"><i class="md md-mail"></i><span>  مدیریت کاربران </span><span class="pull-right"><i class="md md-add"></i></span></a>
-            <ul class="list-unstyled">
-                <li><a asp-page="/Accounts/Account/Index">کاربران</a></li>
-                <li><a asp-page="/Accounts/Role/Index">نقش ها</a></li>
-            </ul>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#percent-collapse" aria-expanded="false">
+                سیستم تخفیفات
+                <i class="bi bi-percent"></i>
+            </button>
+            <div class="collapse" id="percent-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a asp-page="/Discounts/CustomerDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">تخفیف مشتری</a></li>
+                    <li><a asp-page="/Discounts/ColleagueDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">تخفیف همکار</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#people-collapse" aria-expanded="false">
+                مدیریت کاربران
+                <i class="bi bi-people"></i>
+            </button>
+            <div class="collapse" id="people-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a asp-page="/Accounts/Account/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> کاربران</a></li>
+                    <li><a asp-page="/Accounts/Role/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">نقش ها</a></li>
+                </ul>
+            </div>
         </li>
     }
-    <li class="list-group-item">
-        <a class="waves-effect"><i class="md md-mail"></i><span> سیستم بلاگینگ </span><span class="pull-right"><i class="md md-add"></i></span></a>
-        <ul class="list-unstyled">
-            <li><a asp-page="/Blog/Articles/Index">مقالات</a></li>
-            <li><a asp-page="/Blog/ArticleCategories/Index">گروه مقالات</a></li>
-        </ul>
+
+    <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#articles-collapse" aria-expanded="false">
+            سیستم بلاگینگ
+            <i class="bi bi-journals"></i>
+        </button>
+        <div class="collapse" id="articles-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a asp-page="/Blog/Articles/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> مقالات</a></li>
+                <li><a asp-page="/Blog/ArticleCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">دسته بندی مقالات</a></li>
+            </ul>
+        </div>
     </li>
 
-    <li class="list-group-item">
-        <a asp-page="/Auth" asp-page-handler="Logout" class="waves-effect active"><i class="fa fa-sign-out"></i><span> خروج </span></a>
+    <li>
+        <a asp-page="/Auth" asp-page-handler="Logout" class="nav-link link-body-emphasis">
+            <span> خروج </span>
+            <i class="bi bi-door-open"></i>
+        </a>
     </li>
 </ul>
 
