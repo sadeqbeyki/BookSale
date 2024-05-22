@@ -90,16 +90,16 @@
 
     <li class="mb-1">
         <a asp-page="/Index" class="nav-link link-body-emphasis">
-            داشبورد
             <i class="bi bi-speedometer2"></i>
+            داشبورد
         </a>
     </li>
     <li><hr class="table-group-divider"></li>
 
     <li class="mb-1">
         <a asp-page="/Comments/Index" class="nav-link link-body-emphasis">
-            کامنت ها
             <i class="bi bi-signal"></i>
+            کامنت ها
         </a>
     </li>
 
@@ -107,54 +107,95 @@
     {
         <li class="mb-1">
             <a asp-page="/inventory/Index" class="nav-link link-body-emphasis">
-                انبارداری
                 <i class="bi bi-basket"></i>
+                انبارداری
             </a>
         </li>
         <li class="mb-1">
             <a asp-page="/Shop/Orders/Index" class="nav-link link-body-emphasis">
-                <span> سفارشات </span>
                 <i class="bi bi-cart3"></i>
+                <span> سفارشات </span>
             </a>
         </li>
 
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#shop-collapse" aria-expanded="false">
-                فروشگاه
                 <i class="bi bi-shop"></i>
+                فروشگاه
             </button>
             <div class="collapse" id="shop-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a asp-page="/Shop/Slides/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">اسلایدر<i class="bi bi-sliders"></i> </a></li>
-                    <li><a asp-page="/Shop/ProductCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">دسته بندی کتاب ها<i class="bi bi-diagram-2"></i></a></li>
-                    <li><a asp-page="/Shop/Products/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">کتاب ها<i class="bi bi-book"></i></a></li>
-                    <li><a asp-page="/Shop/ProductPictures/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> تصاویر کتاب ها<i class="bi bi-images"></i></a></li>
+                    <li>
+                        <a asp-page="/Shop/ProductCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-diagram-2"></i>
+                             دسته
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Shop/Products/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-book"></i>
+                            کتاب ها
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Shop/Slides/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-sliders"></i>
+                            اسلایدر
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Shop/ProductPictures/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-images"></i>
+                            تصاویر
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>
 
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#percent-collapse" aria-expanded="false">
-                سیستم تخفیفات
                 <i class="bi bi-percent"></i>
+                تخفیف
             </button>
             <div class="collapse" id="percent-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a asp-page="/Discounts/CustomerDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">تخفیف مشتری</a></li>
-                    <li><a asp-page="/Discounts/ColleagueDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">تخفیف همکار</a></li>
+                    <li>
+                        <a asp-page="/Discounts/CustomerDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-person-up"></i>
+                            مشتری
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Discounts/ColleagueDiscounts/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-person-badge"></i>
+
+                            همکار
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>
 
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#people-collapse" aria-expanded="false">
-                مدیریت کاربران
                 <i class="bi bi-people"></i>
+                کاربران
             </button>
             <div class="collapse" id="people-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a asp-page="/Accounts/Account/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> کاربران</a></li>
-                    <li><a asp-page="/Accounts/Role/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">نقش ها</a></li>
+                    <li>
+                        <a asp-page="/Accounts/Account/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-person-bounding-box"></i>
+                            کاربران
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Accounts/Role/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                            <i class="bi bi-r-square"></i>
+                            نقش ها
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -162,21 +203,31 @@
 
     <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#articles-collapse" aria-expanded="false">
-            سیستم بلاگینگ
             <i class="bi bi-journals"></i>
+            بلاگ
         </button>
         <div class="collapse" id="articles-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a asp-page="/Blog/Articles/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded"> مقالات</a></li>
-                <li><a asp-page="/Blog/ArticleCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">دسته بندی مقالات</a></li>
+                <li>
+                    <a asp-page="/Blog/Articles/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="bi bi-journal-richtext"></i>
+                        مقالات
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/Blog/ArticleCategories/Index" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="bi bi-diagram-2"></i>
+                        دسته 
+                    </a>
+                </li>
             </ul>
         </div>
     </li>
 
     <li>
         <a asp-page="/Auth" asp-page-handler="Logout" class="nav-link link-body-emphasis">
-            <span> خروج </span>
             <i class="bi bi-door-open"></i>
+            <span> خروج </span>
         </a>
     </li>
 </ul>
