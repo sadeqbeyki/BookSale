@@ -7,8 +7,8 @@ public class Account : IdentityUser<long>
 {
     public string FullName { get; private set; }
     public string Password { get; private set; }
-    public long RoleId { get; private set; }
-    public Role Role { get; set; }
+    //public long RoleId { get; private set; }
+    //public Role Role { get; set; }
     public string ProfilePhoto { get; private set; }
     public DateTime CreationDate { get; set; }
 
@@ -18,10 +18,10 @@ public class Account : IdentityUser<long>
         UserName = userName;
         Password = password;
         PhoneNumber = phoneNumber;
-        RoleId = roleId;
+        //RoleId = roleId;
 
-        if (roleId == 0)
-            RoleId = 10003;
+        //if (roleId == 0)
+        //    RoleId = 2;
 
         ProfilePhoto = profilePhoto;
         CreationDate = DateTime.Now;
@@ -31,7 +31,7 @@ public class Account : IdentityUser<long>
         FullName = fullName;
         UserName = userName;
         PhoneNumber = phoneNumber;
-        RoleId = roleId;
+        //RoleId = roleId;
         if (!string.IsNullOrEmpty(profilePhoto))
             ProfilePhoto = profilePhoto;
     }

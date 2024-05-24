@@ -116,7 +116,7 @@ namespace AccountManagement.Application
             return _accountRepository.GetDetails(id);
         }
 
-        public OperationResult Login(Login command)
+        public async OperationResult Login(Login command)
         {
             var operation = new OperationResult();
             var account = _accountRepository.GetBy(command.UserName);
@@ -129,6 +129,8 @@ namespace AccountManagement.Application
 
             var permissions = _roleRepository.Get(account.RoleId)
                 .Permissions.Select(x => x.Code).ToList();
+
+
 
             var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName, account.UserName, account.PhoneNumber, permissions);
 

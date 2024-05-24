@@ -42,7 +42,7 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
             FullName = a.FullName,
             UserName = a.UserName,
             Mobile = a.PhoneNumber,
-            RoleId = a.RoleId
+            //RoleId = a.RoleId
         }).FirstOrDefault(x => x.Id == id);
     }
 
@@ -78,5 +78,13 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
     public void AddUserToRole(Account user, List<string> roles)
     {
         var addUserRole = _userManager.AddToRolesAsync(user, roles);
+    }
+
+    public async Task<List<string>> GetUserRolesAsync(long userId)
+    {
+        var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == userId)
+            ?? throw new Exception("User not found");
+        var roles = await _userManager.GetRolesAsync(user);
+        return roles.ToList();
     }
 }

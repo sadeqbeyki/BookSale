@@ -2,19 +2,19 @@
 
 public static class Roles
 {
-    public const string Administrator = "10002";
-    public const string SystemUser = "10003";
-    public const string ContentUploader = "10004";
-    public const string ColleagueUser = "10005";
+    public const string Administrator = "1";
+    public const string SystemUser = "2";
+    public const string ContentUploader = "3";
+    public const string ColleagueUser = "4";
 
     public static string GetRoleBy(long id)
     {
         return id switch
         {
-            10002 => "Administrator",
-            10003 => "Registred User",
-            10004 => "Content Manager",
-            10005 => "Colleague User",
+            1 => "Administrator",
+            2 => "Registred User",
+            3 => "Content Manager",
+            4 => "Colleague User",
             _ => "",
         };
     }

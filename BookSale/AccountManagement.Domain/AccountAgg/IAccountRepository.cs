@@ -11,4 +11,5 @@ public interface IAccountRepository : IBaseRepository<long, Account>
     List<AccountViewModel> Search(AccountSearchModel searchModel);
 
     void AddUserToRole(Account user, List<string> roles);
+    Task<List<string>> GetUserRolesAsync(long userId);
 }

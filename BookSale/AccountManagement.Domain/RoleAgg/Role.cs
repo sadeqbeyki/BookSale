@@ -7,7 +7,7 @@ namespace AccountManagement.Domain.RoleAgg
     {
         public DateTime CreationDate { get; private set; }
         public List<Permission> Permissions { get; private set; }
-        public List<Account> Accounts { get; private set; }
+        //public List<Account> Accounts { get; private set; }
 
         protected Role()
         {
@@ -16,7 +16,7 @@ namespace AccountManagement.Domain.RoleAgg
         {
             Name = name;
             Permissions = permissions;
-            Accounts = new List<Account>();
+            //Accounts = new List<Account>();
             CreationDate = DateTime.Now;    
         }
 
