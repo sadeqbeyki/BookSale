@@ -1,5 +1,6 @@
 ﻿using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
+using AccountManagement.Domain.RoleAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -13,11 +14,12 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
     private readonly UserManager<Account> _userManager;
 
 
+
     public AccountRepository(AccountContext context, IServiceProvider serviceProvider) : base(context)
     {
         _context = context;
         _userManager = (UserManager<Account>)serviceProvider.GetService(typeof(UserManager<Account>));
-
+        
     }
 
     public List<AccountViewModel> GetAccounts()
@@ -85,6 +87,7 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
         var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == userId)
             ?? throw new Exception("User not found");
         var roles = await _userManager.GetRolesAsync(user);
+
         return roles.ToList();
     }
 }

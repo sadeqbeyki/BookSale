@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AccountManagement.Domain.RoleAgg
 {
-    public class Role : IdentityRole<long>
+    public class Role : IdentityRole<int>
     {
         public DateTime CreationDate { get; private set; }
         public List<Permission> Permissions { get; private set; }

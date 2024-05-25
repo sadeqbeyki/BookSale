@@ -77,7 +77,7 @@ namespace AccountManagement.Application
 
         private void InitialUserData()
         {
-            var roles = _roleRepository.List();
+            var roles = _roleRepository.GetRoles();
             if (roles.Count <= 0)
             {
                 var addRoles = new List<Role>
@@ -116,7 +116,7 @@ namespace AccountManagement.Application
             return _accountRepository.GetDetails(id);
         }
 
-        public async OperationResult Login(Login command)
+        public async Task<OperationResult> Login(Login command)
         {
             var operation = new OperationResult();
             var account = _accountRepository.GetBy(command.UserName);
@@ -127,12 +127,19 @@ namespace AccountManagement.Application
             if (!Verified)
                 return operation.Failed(ApplicationMessages.WrongUserPass);
 
-            var permissions = _roleRepository.Get(account.RoleId)
-                .Permissions.Select(x => x.Code).ToList();
 
+            //
+            var roleList = await _accountRepository.GetUserRolesAsync(account.Id);
 
-
-            var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName, account.UserName, account.PhoneNumber, permissions);
+            var permissions = new List<int>();
+            int roleId = 0;
+            foreach (var item in roleList)
+            {
+                roleId = _roleRepository.GetRolesId(item);
+                permissions = _roleRepository.Get(roleId).Permissions.Select(x => x.Code).ToList();
+            }
+            //
+            var authViewModel = new AuthViewModel(account.Id, account.FullName, account.UserName, account.PhoneNumber, permissions);
 
             _authHelper.SignIn(authViewModel);
             return operation.Succeeded();

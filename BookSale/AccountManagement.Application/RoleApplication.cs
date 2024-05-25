@@ -50,7 +50,7 @@ namespace AccountManagement.Application
 
         public List<RoleViewModel> List()
         {
-            return _roleRepository.List();
+            return _roleRepository.GetRoles();
         }
     }
 }

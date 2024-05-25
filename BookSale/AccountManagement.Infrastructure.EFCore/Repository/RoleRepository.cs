@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository
 {
-    public class RoleRepository : BaseRepository<long, Role>, IRoleRepository
+    public class RoleRepository : BaseRepository<int, Role>, IRoleRepository
     {
         private readonly AccountContext _accountContext;
 
@@ -15,7 +15,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             _accountContext = accountContext;
         }
 
-        public EditRole GetDetails(long id)
+        public EditRole GetDetails(int id)
         {
             var role = _accountContext.Roles.Select(x => new EditRole
             {
@@ -35,7 +35,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             return permissions.Select(x => new PermissionDto(x.Code, x.Name)).ToList();
         }
 
-        public List<RoleViewModel> List()
+        public List<RoleViewModel> GetRoles()
         {
             return _accountContext.Roles.Select(r => new RoleViewModel
             {
@@ -43,6 +43,13 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 Name = r.Name,
                 CreationDate = r.CreationDate.ToFarsi()
             }).ToList();
+        }
+
+        public int GetRolesId(string roleName)
+        {
+            var role = _accountContext.Roles
+                .FirstOrDefault(r => r.Name == roleName);
+            return role.Id;
         }
     }
 }
