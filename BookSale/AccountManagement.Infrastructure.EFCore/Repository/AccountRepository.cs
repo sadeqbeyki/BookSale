@@ -50,16 +50,17 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
 
     public List<AccountViewModel> Search(AccountSearchModel searchModel)
     {
-        var query = _context.Accounts.Include(x => x.Role)
-            .Select(x => new AccountViewModel
+        var users = _userManager.GetUsersInRoleAsync(searchModel.RoleName).Result;
+
+            var query = users.Select(x => new AccountViewModel
             {
                 Id = x.Id,
                 FullName = x.FullName,
                 UserName = x.UserName,
                 Mobile = x.PhoneNumber,
                 ProfilePhoto = x.ProfilePhoto,
-                RoleId = x.RoleId,
-                Role = x.Role.Name,
+                //RoleId = x.RoleId,
+                //Roles = x.Role.Name,
                 CreationDate = x.CreationDate.ToFarsi()
             });
 
@@ -72,8 +73,8 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
         if (!string.IsNullOrWhiteSpace(searchModel.Mobile))
             query = query.Where(x => x.Mobile.Contains(searchModel.Mobile));
 
-        if (searchModel.RoleId > 0)
-            query = query.Where(x => x.RoleId == searchModel.RoleId);
+        //if (searchModel.RoleId > 0)
+        //    query = query.Where(x => x.RoleId == searchModel.RoleId);
 
         return query.OrderByDescending(x => x.Id).ToList();
     }

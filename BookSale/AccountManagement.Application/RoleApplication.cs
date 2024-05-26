@@ -43,7 +43,7 @@ namespace AccountManagement.Application
             return operation.Succeeded();
         }
 
-        public EditRole GetDetails(long id)
+        public EditRole GetDetails(int id)
         {
             return _roleRepository.GetDetails(id);
         }

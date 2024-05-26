@@ -1,8 +1,10 @@
 ﻿using System.Security.Claims;
 using AppFramework.Infrastructure;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Newtonsoft.Json;
 
 namespace AppFramework.Application
@@ -18,7 +20,6 @@ namespace AppFramework.Application
 
         public AuthViewModel CurrentAccountInfo()
         {
-
             var result = new AuthViewModel();
             if (!IsAuthenticated())
                 return result;
@@ -26,9 +27,9 @@ namespace AppFramework.Application
             var claims = _contextAccessor.HttpContext.User.Claims.ToList();
             result.Id = long.Parse(claims.FirstOrDefault(x => x.Type == "AccountId").Value);
             result.UserName = claims.FirstOrDefault(x => x.Type == "UserName").Value;
-            result.RoleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value);
+            //result.RoleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value);
             result.FullName = claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
-            result.Role = Roles.GetRoleBy(result.RoleId);
+            //result.Role = Roles.GetRoleBy(result.RoleId);
             return result;
         }
 
@@ -76,10 +77,13 @@ namespace AppFramework.Application
         public void SignIn(AuthViewModel account)
         {
             var permissions = JsonConvert.SerializeObject(account.Permissions);
+            IList<string> rolesOfUser =  _userManager.GetRolesAsync(user);
+
             var claims = new List<Claim>
             {
                 new Claim("AccountId", account.Id.ToString()),
                 new Claim(ClaimTypes.Name, account.FullName),
+                
                 new Claim(ClaimTypes.Role, account.RoleId.ToString()),
                 new Claim("UserName", account.UserName), // Or Use ClaimTypes.NameIdentifier
                 new Claim("permissions", permissions),

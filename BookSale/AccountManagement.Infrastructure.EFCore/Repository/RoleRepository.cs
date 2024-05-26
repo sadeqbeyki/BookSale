@@ -1,18 +1,23 @@
 ﻿using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository
 {
     public class RoleRepository : BaseRepository<int, Role>, IRoleRepository
     {
         private readonly AccountContext _accountContext;
+        private readonly RoleManager<Role> _roleManager;
 
-        public RoleRepository(AccountContext accountContext) : base(accountContext)
+        public RoleRepository(AccountContext accountContext, IServiceProvider serviceProvider) : base(accountContext)
         {
             _accountContext = accountContext;
+            _roleManager = (RoleManager<Role>)serviceProvider.GetService(typeof(RoleManager<Role>));
         }
 
         public EditRole GetDetails(int id)
@@ -50,6 +55,12 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             var role = _accountContext.Roles
                 .FirstOrDefault(r => r.Name == roleName);
             return role.Id;
+        }
+
+        public string GetRoleName(Role role)
+        {
+            var roleName = _roleManager.GetRoleNameAsync(role).Result;
+            return roleName;
         }
     }
 }
