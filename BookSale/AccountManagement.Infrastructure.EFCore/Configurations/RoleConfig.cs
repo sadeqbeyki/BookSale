@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AccountManagement.Infrastructure.EFCore.Configurations;
 
-public class RoleConfig : IEntityTypeConfiguration<Role>
+public class RoleConfig : IEntityTypeConfiguration<ApplicationRole>
 {
-    public void Configure(EntityTypeBuilder<Role> builder)
+    public void Configure(EntityTypeBuilder<ApplicationRole> builder)
     {
         builder.ToTable("Roles");
         builder.HasKey(x => x.Id);

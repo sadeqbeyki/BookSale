@@ -1,6 +1,7 @@
 ﻿using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.UserAgg;
 using AppFramework;
 using AppFramework.Application;
 
@@ -51,7 +52,7 @@ namespace AccountManagement.Application
             var path = $"ProfilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
 
-            var account = new Account(
+            var account = new ApplicationUser(
                 command.FullName,
                 command.UserName,
                 password,
@@ -67,7 +68,7 @@ namespace AccountManagement.Application
             return operation.Succeeded();
         }
 
-        private void AddUserToRole(Account account)
+        private void AddUserToRole(ApplicationUser account)
         {
             var users = _accountRepository.GetAccounts();
             if (users.Count == 1)
@@ -80,7 +81,7 @@ namespace AccountManagement.Application
             var roles = _roleRepository.GetRoles();
             if (roles.Count <= 0)
             {
-                var addRoles = new List<Role>
+                var addRoles = new List<ApplicationRole>
                     {
                         new("Administrator", new List<Permission>()),
                         new("SystemUser", new List<Permission>()),

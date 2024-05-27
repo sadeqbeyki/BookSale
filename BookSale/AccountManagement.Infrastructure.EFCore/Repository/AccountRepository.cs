@@ -1,6 +1,6 @@
 ﻿using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
-using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.UserAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -8,18 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository;
 
-public class AccountRepository : BaseRepository<long, Account>, IAccountRepository
+public class AccountRepository : BaseRepository<long, ApplicationUser>, IAccountRepository
 {
     private readonly AccountContext _context;
-    private readonly UserManager<Account> _userManager;
-
-
+    private readonly UserManager<ApplicationUser> _userManager;
 
     public AccountRepository(AccountContext context, IServiceProvider serviceProvider) : base(context)
     {
         _context = context;
-        _userManager = (UserManager<Account>)serviceProvider.GetService(typeof(UserManager<Account>));
-        
+        _userManager = (UserManager<ApplicationUser>)serviceProvider.GetService(typeof(UserManager<ApplicationUser>));
     }
 
     public List<AccountViewModel> GetAccounts()
@@ -31,7 +28,7 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
         }).ToList();
     }
 
-    public Account GetBy(string username)
+    public ApplicationUser GetBy(string username)
     {
         return _context.Accounts.FirstOrDefault(x => x.UserName == username);
     }
@@ -78,7 +75,7 @@ public class AccountRepository : BaseRepository<long, Account>, IAccountReposito
 
         return query.OrderByDescending(x => x.Id).ToList();
     }
-    public void AddUserToRole(Account user, List<string> roles)
+    public void AddUserToRole(ApplicationUser user, List<string> roles)
     {
         var addUserRole = _userManager.AddToRolesAsync(user, roles);
     }

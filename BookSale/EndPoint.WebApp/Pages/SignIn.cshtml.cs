@@ -17,7 +17,7 @@ public class SignInModel(IAccountApplication accountApplication) : PageModel
     }
     public IActionResult OnPost(Login command)
     {
-        var result = _accountApplication.Login(command);
+        var result = _accountApplication.Login(command).Result;
         if (result.IsSucceeded)
             return RedirectToAction("Index");
 

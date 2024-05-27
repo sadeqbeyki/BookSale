@@ -22,7 +22,7 @@ public class AuthModel : PageModel
     }
     public IActionResult OnPostLogin(Login command)
     {
-        var result = _accountApplication.Login(command);
+        var result = _accountApplication.Login(command).Result;
         if (result.IsSucceeded)
             return RedirectToAction("Index");
 

@@ -1,15 +1,16 @@
 ﻿using AccountManagement.Application.Contracts.Account;
+using AccountManagement.Domain.UserAgg;
 using AppFramework.Domain;
 
 namespace AccountManagement.Domain.AccountAgg;
 
-public interface IAccountRepository : IBaseRepository<long, Account>
+public interface IAccountRepository : IBaseRepository<long, ApplicationUser>
 {
-    Account GetBy(string username);
+    ApplicationUser GetBy(string username);
     EditAccount GetDetails(long id);
     List<AccountViewModel> GetAccounts();
     List<AccountViewModel> Search(AccountSearchModel searchModel);
 
-    void AddUserToRole(Account user, List<string> roles);
+    void AddUserToRole(ApplicationUser user, List<string> roles);
     Task<List<string>> GetUserRolesAsync(long userId);
 }

@@ -19,7 +19,7 @@ public class EditModel : PageModel
         _exposers = exposers;
     }
 
-    public void OnGet(long id)
+    public void OnGet(int id)
     {
         Command = _roleApplication.GetDetails(id);
         foreach (var exposer in _exposers)

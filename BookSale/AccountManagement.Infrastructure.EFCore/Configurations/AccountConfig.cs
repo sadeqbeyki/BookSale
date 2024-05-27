@@ -1,12 +1,12 @@
-﻿using AccountManagement.Domain.AccountAgg;
+﻿using AccountManagement.Domain.UserAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AccountManagement.Infrastructure.EFCore.Configurations;
 
-public class AccountConfig : IEntityTypeConfiguration<Account>
+public class AccountConfig : IEntityTypeConfiguration<ApplicationUser>
 {
-    public void Configure(EntityTypeBuilder<Account> builder)
+    public void Configure(EntityTypeBuilder<ApplicationUser> builder)
     {
         builder.ToTable("Accounts");
         builder.HasKey(x => x.Id);
