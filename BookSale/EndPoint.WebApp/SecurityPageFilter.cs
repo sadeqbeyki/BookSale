@@ -1,4 +1,4 @@
-﻿using AppFramework.Application;
+﻿using AccountManagement.Domain.Auth;
 using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Reflection;

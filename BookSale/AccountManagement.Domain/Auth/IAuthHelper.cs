@@ -1,4 +1,4 @@
-﻿namespace AppFramework.Application;
+﻿namespace AccountManagement.Domain.Auth;
 
 public interface IAuthHelper
 {

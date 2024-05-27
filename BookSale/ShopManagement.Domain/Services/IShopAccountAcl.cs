@@ -3,4 +3,5 @@
 public interface IShopAccountAcl
 {
     (string name, string mobile) GetAccountBy(long id);
+    long CurrentAccountId();
 }

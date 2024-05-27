@@ -9,21 +9,19 @@ namespace ShopManagement.Application;
 
 public class OrderApplication : IOrderApplication
 {
-    private readonly IAuthHelper _authHelper;
     private readonly IConfiguration _configuration;
     private readonly IOrderRepository _orderRepository;
     private readonly IShopInventoryAcl _shopInventoryAcl;
     private readonly ISmsService _smsService;
     private readonly IShopAccountAcl _shopAccountAcl;
 
-    public OrderApplication(IAuthHelper authHelper,
+    public OrderApplication(
         IConfiguration configuration,
         IOrderRepository orderRepository,
         IShopInventoryAcl shopInventoryAcl,
         ISmsService smsService,
         IShopAccountAcl shopAccountAcl)
     {
-        _authHelper = authHelper;
         _configuration = configuration;
         _orderRepository = orderRepository;
         _shopInventoryAcl = shopInventoryAcl;
@@ -33,7 +31,7 @@ public class OrderApplication : IOrderApplication
 
     public long PlaceOrder(Cart cart)
     {
-        var currentAccountId = _authHelper.CurrentAccountId();
+        var currentAccountId = _shopAccountAcl.CurrentAccountId();
         var order = new Order(currentAccountId, cart.PaymentMethod, cart.TotalAmount, cart.DiscountAmount,
             cart.PayAmount);
 

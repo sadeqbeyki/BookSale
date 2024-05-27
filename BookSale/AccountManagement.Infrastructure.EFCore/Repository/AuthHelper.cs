@@ -1,12 +1,11 @@
 ﻿using System.Security.Claims;
-using System.Security.Principal;
-using Microsoft.AspNet.Identity;
+using AccountManagement.Domain.Auth;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace AppFramework.Application;
+namespace AccountManagement.Infrastructure.EFCore.Repository;
 
 public class AuthHelper : IAuthHelper
 {

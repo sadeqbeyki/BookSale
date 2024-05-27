@@ -1,4 +1,4 @@
-﻿using AppFramework.Application;
+﻿using AccountManagement.Domain.Auth;
 using AppFramework.Infrastructure;
 using AppQuery.Contracts;
 using DiscountManagement.Infrastructure.EFCore;

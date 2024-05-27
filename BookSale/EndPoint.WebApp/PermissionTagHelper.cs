@@ -1,4 +1,4 @@
-﻿using AppFramework.Application;
+﻿using AccountManagement.Domain.Auth;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace EndPoint.WebApp;
