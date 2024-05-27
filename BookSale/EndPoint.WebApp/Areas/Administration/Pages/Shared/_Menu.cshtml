@@ -1,5 +1,6 @@
-﻿@    using AppFramework.Infrastructure
-@inject             IAuthHelper AuthHelper;
+﻿@using AccountManagement.Domain.Auth
+@using AppFramework.Infrastructure
+@inject IAuthHelper AuthHelper;
 @*@inject IAuthHelper localizer*@
 @{
     var currentAccount = AuthHelper.CurrentAccountInfo();

@@ -1,4 +1,5 @@
-﻿@inject             IAuthHelper AuthHelper;
+﻿@using AccountManagement.Domain.Auth
+@inject IAuthHelper AuthHelper;
 @{
     var currentAccount = AuthHelper.CurrentAccountInfo();
 }
