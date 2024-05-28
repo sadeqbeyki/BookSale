@@ -1,4 +1,4 @@
-﻿using AccountManagement.Domain.UserAgg;
+﻿using AccountManagement.Domain.Entities.UserAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +8,7 @@ public class AccountConfig : IEntityTypeConfiguration<ApplicationUser>
 {
     public void Configure(EntityTypeBuilder<ApplicationUser> builder)
     {
-        builder.ToTable("Accounts");
+        builder.ToTable("Users");
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.FullName).HasMaxLength(100);

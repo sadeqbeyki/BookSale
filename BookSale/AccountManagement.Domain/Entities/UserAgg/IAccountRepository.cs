@@ -1,8 +1,7 @@
 ﻿using AccountManagement.Application.Contracts.Account;
-using AccountManagement.Domain.UserAgg;
 using AppFramework.Domain;
 
-namespace AccountManagement.Domain.AccountAgg;
+namespace AccountManagement.Domain.Entities.UserAgg;
 
 public interface IAccountRepository : IBaseRepository<long, ApplicationUser>
 {

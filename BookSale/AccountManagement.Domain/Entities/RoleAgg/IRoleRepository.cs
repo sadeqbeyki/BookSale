@@ -1,7 +1,7 @@
 ﻿using AccountManagement.Application.Contracts.Role;
 using AppFramework.Domain;
 
-namespace AccountManagement.Domain.RoleAgg
+namespace AccountManagement.Domain.Entities.RoleAgg
 {
     public interface IRoleRepository : IBaseRepository<int, ApplicationRole>
     {

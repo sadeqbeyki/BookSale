@@ -1,5 +1,5 @@
 ﻿using AccountManagement.Application.Contracts.Account;
-using AccountManagement.Domain.Auth;
+using AccountManagement.Domain.Entities.Auth;
 using ShopManagement.Domain.Services;
 
 namespace ShopManagement.Infrastructure.AccountAcl;

@@ -1,10 +1,10 @@
-﻿namespace AccountManagement.Domain.Auth;
+﻿namespace AccountManagement.Domain.Entities.Auth;
 
 public interface IAuthHelper
 {
     void SignOut();
     bool IsAuthenticated();
-    void SignIn(AuthViewModel account);
+    Task SignIn(AuthViewModel account);
     string CurrentAccountRole();
     AuthViewModel CurrentAccountInfo();
     List<int> GetPermissions();

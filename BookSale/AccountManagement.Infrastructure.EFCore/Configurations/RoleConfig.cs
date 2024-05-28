@@ -1,4 +1,4 @@
-﻿using AccountManagement.Domain.RoleAgg;
+﻿using AccountManagement.Domain.Entities.RoleAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

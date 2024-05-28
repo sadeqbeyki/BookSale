@@ -1,4 +1,4 @@
-﻿namespace AccountManagement.Domain.RoleAgg
+﻿namespace AccountManagement.Domain.Entities.RoleAgg
 {
     public class Permission
     {

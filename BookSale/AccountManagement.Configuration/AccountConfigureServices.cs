@@ -2,8 +2,8 @@
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Application.Contracts.Role;
 using AccountManagement.Configuration.Permissions;
-using AccountManagement.Domain.AccountAgg;
-using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.Entities.RoleAgg;
+using AccountManagement.Domain.Entities.UserAgg;
 using AccountManagement.Infrastructure.EFCore;
 using AccountManagement.Infrastructure.EFCore.Repository;
 using AppFramework.Infrastructure;
@@ -26,6 +26,6 @@ public class AccountConfigureServices
 
         services.AddScoped<IPermissionExposer, AccountPermissionExposer>();
 
-        services.AddDbContext<AccountContext>(x => x.UseSqlServer(connectionString));
+        services.AddDbContext<AppIdentityDbContext>(x => x.UseSqlServer(connectionString));
     }
 }

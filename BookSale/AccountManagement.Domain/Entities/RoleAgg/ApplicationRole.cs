@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace AccountManagement.Domain.RoleAgg;
+namespace AccountManagement.Domain.Entities.RoleAgg;
 
 public class ApplicationRole : IdentityRole<int>
 {
@@ -14,7 +14,7 @@ public class ApplicationRole : IdentityRole<int>
     {
         Name = name;
         Permissions = permissions;
-        CreationDate = DateTime.Now;    
+        CreationDate = DateTime.Now;
     }
 
     public void Edit(string name, List<Permission> permissions)

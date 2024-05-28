@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using AccountManagement.Domain.Auth;
+using AccountManagement.Domain.Entities.Auth;
 using AppFramework.Application.ZarinPal;
 using AppQuery.Contracts;
 using AppQuery.Contracts.Product;

@@ -10,9 +10,9 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
     public class OrderRepository : BaseRepository<long, Order>, IOrderRepository
     {
         private readonly ShopContext _context;
-        private readonly AccountContext _accountContext;
+        private readonly AppIdentityDbContext _accountContext;
 
-        public OrderRepository(ShopContext context, AccountContext accountContext) : base(context)
+        public OrderRepository(ShopContext context, AppIdentityDbContext accountContext) : base(context)
         {
             _context = context;
             _accountContext = accountContext;

@@ -1,6 +1,5 @@
 ﻿using AccountManagement.Application.Contracts.Account;
-using AccountManagement.Domain.AccountAgg;
-using AccountManagement.Domain.UserAgg;
+using AccountManagement.Domain.Entities.UserAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -10,10 +9,10 @@ namespace AccountManagement.Infrastructure.EFCore.Repository;
 
 public class AccountRepository : BaseRepository<long, ApplicationUser>, IAccountRepository
 {
-    private readonly AccountContext _context;
+    private readonly AppIdentityDbContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public AccountRepository(AccountContext context, IServiceProvider serviceProvider) : base(context)
+    public AccountRepository(AppIdentityDbContext context, IServiceProvider serviceProvider) : base(context)
     {
         _context = context;
         _userManager = (UserManager<ApplicationUser>)serviceProvider.GetService(typeof(UserManager<ApplicationUser>));

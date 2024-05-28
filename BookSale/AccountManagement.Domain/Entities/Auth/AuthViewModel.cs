@@ -1,4 +1,4 @@
-﻿namespace AccountManagement.Domain.Auth;
+﻿namespace AccountManagement.Domain.Entities.Auth;
 
 public class AuthViewModel
 {

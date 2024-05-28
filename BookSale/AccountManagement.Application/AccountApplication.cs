@@ -1,9 +1,8 @@
 ﻿using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Application.Contracts.Auth;
-using AccountManagement.Domain.AccountAgg;
-using AccountManagement.Domain.Auth;
-using AccountManagement.Domain.RoleAgg;
-using AccountManagement.Domain.UserAgg;
+using AccountManagement.Domain.Entities.Auth;
+using AccountManagement.Domain.Entities.RoleAgg;
+using AccountManagement.Domain.Entities.UserAgg;
 using AppFramework;
 using AppFramework.Application;
 

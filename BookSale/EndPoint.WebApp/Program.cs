@@ -1,7 +1,7 @@
 using AccountManagement.Application;
 using AccountManagement.Application.Contracts.Auth;
 using AccountManagement.Configuration;
-using AccountManagement.Domain.Auth;
+using AccountManagement.Domain.Entities.Auth;
 using AccountManagement.Infrastructure.EFCore.Repository;
 using AppFramework.Application;
 using AppFramework.Application.Sms;

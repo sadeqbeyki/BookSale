@@ -1,5 +1,5 @@
 ﻿using AccountManagement.Application.Contracts.Role;
-using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.Entities.RoleAgg;
 using AppFramework.Application;
 using AppFramework.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -9,10 +9,10 @@ namespace AccountManagement.Infrastructure.EFCore.Repository;
 
 public class RoleRepository : BaseRepository<int, ApplicationRole>, IRoleRepository
 {
-    private readonly AccountContext _accountContext;
+    private readonly AppIdentityDbContext _accountContext;
     private readonly RoleManager<ApplicationRole> _roleManager;
 
-    public RoleRepository(AccountContext accountContext, IServiceProvider serviceProvider) : base(accountContext)
+    public RoleRepository(AppIdentityDbContext accountContext, IServiceProvider serviceProvider) : base(accountContext)
     {
         _accountContext = accountContext;
         _roleManager = (RoleManager<ApplicationRole>)serviceProvider.GetService(typeof(RoleManager<ApplicationRole>));

@@ -9,11 +9,11 @@ namespace InventoryManagement.Infrastructure.EFCore.Repositories
 {
     public class InventoryRepository : BaseRepository<long, Inventory>, IInventoryRepository
     {
-        private readonly AccountContext _accountContext;
+        private readonly AppIdentityDbContext _accountContext;
         private readonly ShopContext _shopContext;
         private readonly InventoryContext _inventoryContext;
 
-        public InventoryRepository(InventoryContext inventoryContext, ShopContext shopContext, AccountContext accountContext) : base(inventoryContext)
+        public InventoryRepository(InventoryContext inventoryContext, ShopContext shopContext, AppIdentityDbContext accountContext) : base(inventoryContext)
         {
             _inventoryContext = inventoryContext;
             _shopContext = shopContext;

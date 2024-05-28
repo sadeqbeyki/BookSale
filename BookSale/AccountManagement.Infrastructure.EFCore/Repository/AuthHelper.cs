@@ -1,19 +1,27 @@
 ﻿using System.Security.Claims;
-using AccountManagement.Domain.Auth;
+using AccountManagement.Domain.Entities.Auth;
+using AccountManagement.Domain.Entities.UserAgg;
+using AccountManagement.Infrastructure.EFCore.Repository.Base;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository;
 
-public class AuthHelper : IAuthHelper
+public class AuthHelper : ServiceBase<AuthHelper>, IAuthHelper
 {
     private readonly IHttpContextAccessor _contextAccessor;
+    private new readonly UserManager<ApplicationUser> _userManager;
 
-    public AuthHelper(IHttpContextAccessor contextAccessor)
+    public AuthHelper(
+        IHttpContextAccessor contextAccessor,
+        UserManager<ApplicationUser> userManager,
+        IServiceProvider serviceProvider) : base(serviceProvider)
     {
         _contextAccessor = contextAccessor;
+        _userManager = userManager;
     }
 
     public AuthViewModel CurrentAccountInfo()
@@ -72,29 +80,25 @@ public class AuthHelper : IAuthHelper
         //return claims.Count > 0;
     }
 
-    public void SignIn(AuthViewModel account)
+    public async Task SignIn(AuthViewModel account)
     {
         var permissions = JsonConvert.SerializeObject(account.Permissions);
 
+        ApplicationUser user = await _userManager.FindByIdAsync(account.Id.ToString());
+        IList<string> rolesOfUser = await _userManager.GetRolesAsync(user);
 
-        //IList<string> rolesOfUser = await _userManager.GetRolesAsync(user);
-
-        //var claimss = new List<Claim>();
-        //foreach (var role in rolesOfUser)
-        //{
-        //    claimss.Add(new Claim(ClaimTypes.Role, role));
-        //}
-
-        var claims = new List<Claim>
+        List<Claim> claims = [];
+        foreach (var role in rolesOfUser)
         {
-            new Claim("AccountId", account.Id.ToString()),
-            new Claim(ClaimTypes.Name, account.FullName),
-            
-            //new Claim(ClaimTypes.Role, account.RoleId.ToString()),
-            new Claim("UserName", account.UserName), // Or Use ClaimTypes.NameIdentifier
-            new Claim("permissions", permissions),
-            new Claim("Mobile", account.Mobile)
-        };
+            claims.Add(new Claim(ClaimTypes.Role, role));
+        }
+
+        claims.Add(new Claim("AccountId", account.Id.ToString()));
+        claims.Add(new Claim(ClaimTypes.Name, account.FullName));
+        claims.Add(new Claim("UserName", account.UserName)); // Or Use ClaimTypes.NameIdentifier
+        claims.Add(new Claim("permissions", permissions));
+        claims.Add(new Claim("Mobile", account.Mobile));
+
 
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 

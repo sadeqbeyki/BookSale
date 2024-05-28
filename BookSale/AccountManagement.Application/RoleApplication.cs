@@ -1,5 +1,5 @@
 ﻿using AccountManagement.Application.Contracts.Role;
-using AccountManagement.Domain.RoleAgg;
+using AccountManagement.Domain.Entities.RoleAgg;
 using AppFramework.Application;
 
 namespace AccountManagement.Application
