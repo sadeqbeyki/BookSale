@@ -10,9 +10,9 @@ public class AuthModel : PageModel
     public string LoginMessage { get; set; }
     [TempData]
     public string RegisterMessage { get; set; }
-    private readonly IAccountApplication _accountApplication;
+    private readonly IUserApplication _accountApplication;
 
-    public AuthModel(IAccountApplication accountApplication)
+    public AuthModel(IUserApplication accountApplication)
     {
         _accountApplication = accountApplication;
     }

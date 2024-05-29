@@ -6,11 +6,11 @@ namespace ShopManagement.Infrastructure.AccountAcl;
 
 public class ShopAccountAcl : IShopAccountAcl
 {
-    private readonly IAccountApplication _accountApplication;
+    private readonly IUserApplication _accountApplication;
     private readonly IAuthHelper _authHelper;
 
 
-    public ShopAccountAcl(IAccountApplication accountApplication, IAuthHelper authHelper)
+    public ShopAccountAcl(IUserApplication accountApplication, IAuthHelper authHelper)
     {
         _accountApplication = accountApplication;
         _authHelper = authHelper;

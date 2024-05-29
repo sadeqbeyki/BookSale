@@ -7,7 +7,7 @@ namespace AccountManagement.Infrastructure.EFCore;
 
 public class AppIdentityDbContext : DbContext
 {
-    public DbSet<ApplicationUser> Accounts { get; set; }
+    public DbSet<ApplicationUser> Users { get; set; }
     public DbSet<ApplicationRole> Roles { get; set; }
     public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
     {

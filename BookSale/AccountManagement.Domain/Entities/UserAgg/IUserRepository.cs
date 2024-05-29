@@ -3,7 +3,7 @@ using AppFramework.Domain;
 
 namespace AccountManagement.Domain.Entities.UserAgg;
 
-public interface IAccountRepository : IBaseRepository<long, ApplicationUser>
+public interface IUserRepository : IBaseRepository<long, ApplicationUser>
 {
     ApplicationUser GetBy(string username);
     EditAccount GetDetails(long id);

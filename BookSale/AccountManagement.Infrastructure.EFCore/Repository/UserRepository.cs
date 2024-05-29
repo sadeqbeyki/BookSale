@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository;
 
-public class AccountRepository : BaseRepository<long, ApplicationUser>, IAccountRepository
+public class UserRepository : BaseRepository<long, ApplicationUser>, IUserRepository
 {
     private readonly AppIdentityDbContext _context;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public AccountRepository(AppIdentityDbContext context, IServiceProvider serviceProvider) : base(context)
+    public UserRepository(AppIdentityDbContext context, IServiceProvider serviceProvider) : base(context)
     {
         _context = context;
         _userManager = (UserManager<ApplicationUser>)serviceProvider.GetService(typeof(UserManager<ApplicationUser>));
@@ -20,7 +20,7 @@ public class AccountRepository : BaseRepository<long, ApplicationUser>, IAccount
 
     public List<AccountViewModel> GetAccounts()
     {
-        return _context.Accounts.Select(x => new AccountViewModel
+        return _context.Users.Select(x => new AccountViewModel
         {
             Id = x.Id,
             FullName = x.FullName
@@ -29,12 +29,12 @@ public class AccountRepository : BaseRepository<long, ApplicationUser>, IAccount
 
     public ApplicationUser GetBy(string username)
     {
-        return _context.Accounts.FirstOrDefault(x => x.UserName == username);
+        return _context.Users.FirstOrDefault(x => x.UserName == username);
     }
 
     public EditAccount GetDetails(long id)
     {
-        return _context.Accounts.Select(a => new EditAccount
+        return _context.Users.Select(a => new EditAccount
         {
             Id = a.Id,
             FullName = a.FullName,

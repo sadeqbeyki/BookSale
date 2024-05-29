@@ -19,9 +19,9 @@ public class IndexModel : PageModel
     public SelectList RolesSelectList;
 
     private readonly IRoleApplication _roleApplication;
-    private readonly IAccountApplication _accountApplication;
+    private readonly IUserApplication _accountApplication;
 
-    public IndexModel(IAccountApplication accountApplication, IRoleApplication roleApplication)
+    public IndexModel(IUserApplication accountApplication, IRoleApplication roleApplication)
     {
         _accountApplication = accountApplication;
         _roleApplication = roleApplication;

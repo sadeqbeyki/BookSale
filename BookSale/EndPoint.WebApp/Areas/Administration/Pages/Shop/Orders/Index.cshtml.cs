@@ -13,9 +13,9 @@ public class IndexModel : PageModel
     public List<OrderViewModel> Orders;
 
     private readonly IOrderApplication _orderApplication;
-    private readonly IAccountApplication _accountApplication;
+    private readonly IUserApplication _accountApplication;
 
-    public IndexModel(IOrderApplication orderApplication, IAccountApplication accountApplication)
+    public IndexModel(IOrderApplication orderApplication, IUserApplication accountApplication)
     {
         _orderApplication = orderApplication;
         _accountApplication = accountApplication;

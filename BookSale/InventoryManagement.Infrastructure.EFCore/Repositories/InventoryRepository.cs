@@ -37,7 +37,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Repositories
 
         public List<InventoryOperationViewModel> GetOperationLog(long inventoryId)
         {
-            var accounts = _accountContext.Accounts.Select(x => new { x.Id, x.FullName }).ToList();
+            var accounts = _accountContext.Users.Select(x => new { x.Id, x.FullName }).ToList();
             var inventory = _inventoryContext.Inventory.FirstOrDefault(x => x.Id == inventoryId);
             var operations = inventory.Operations.Select(x => new InventoryOperationViewModel
             {

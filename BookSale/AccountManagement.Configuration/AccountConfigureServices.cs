@@ -18,8 +18,8 @@ public class AccountConfigureServices
 {
     public static void Configure(IServiceCollection services, string connectionString)
     {
-        services.AddTransient<IAccountApplication, AccountApplication>();
-        services.AddScoped<IAccountRepository,AccountRepository>();
+        services.AddTransient<IUserApplication, UserApplication>();
+        services.AddScoped<IUserRepository,UserRepository>();
 
         services.AddTransient<IRoleRepository, RoleRepository>();
         services.AddTransient<IRoleApplication,RoleApplication>();

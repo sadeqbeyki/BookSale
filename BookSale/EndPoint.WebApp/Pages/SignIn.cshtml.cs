@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EndPoint.WebApp.Pages;
 
-public class SignInModel(IAccountApplication accountApplication) : PageModel
+public class SignInModel(IUserApplication accountApplication) : PageModel
 {
     [TempData]
     public string LoginMessage { get; set; }
     public Login Command;
 
-    private readonly IAccountApplication _accountApplication = accountApplication;
+    private readonly IUserApplication _accountApplication = accountApplication;
 
     public void OnGet()
     {

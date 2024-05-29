@@ -8,9 +8,9 @@ public class SignUpModel : PageModel
 {
     [TempData]
     public string RegisterMessage { get; set; }
-    private readonly IAccountApplication _accountApplication;
+    private readonly IUserApplication _accountApplication;
 
-    public SignUpModel(IAccountApplication accountApplication)
+    public SignUpModel(IUserApplication accountApplication)
     {
         _accountApplication = accountApplication;
     }

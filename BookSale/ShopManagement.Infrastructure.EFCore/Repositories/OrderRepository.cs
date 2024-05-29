@@ -55,7 +55,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public List<OrderViewModel> Search(OrderSearchModel searchModel)
         {
-            var accounts = _accountContext.Accounts.Select(x => new {x.Id, x.FullName}).ToList();
+            var accounts = _accountContext.Users.Select(x => new {x.Id, x.FullName}).ToList();
             var query = _context.Orders.Select(x => new OrderViewModel
             {
                 Id = x.Id,
