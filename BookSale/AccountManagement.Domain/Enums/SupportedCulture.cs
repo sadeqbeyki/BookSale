@@ -1,4 +1,4 @@
-﻿using AccountManagement.Domain.Base.Attributes;
+﻿using AccountManagement.Domain.Attributes;
 using System.Text.Json.Serialization;
 
 namespace AccountManagement.Domain.Enums;

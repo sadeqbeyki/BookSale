@@ -1,4 +1,4 @@
-﻿using AccountManagement.Domain.Base.Exceptions;
+﻿using AccountManagement.Domain.Exceptions;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 

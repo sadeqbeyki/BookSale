@@ -1,14 +1,8 @@
 ﻿using AccountManagement.Domain.Const;
 using AccountManagement.Domain.Entities.Base;
 using AccountManagement.Domain.Entities.UserAgg;
-using AppFramework.Application.Email;
-using Identity.Application.Common.Exceptions;
-using Identity.Application.Interfaces.Base;
-using Identity.Domain.Entities.User;
-using Identity.Persistance;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository.Base;
